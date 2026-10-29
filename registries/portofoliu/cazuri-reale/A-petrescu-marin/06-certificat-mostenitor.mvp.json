@@ -1,0 +1,23 @@
+{
+  "id": "A-06",
+  "raw_name": "A-petrescu-marin/scan/06-certificat-mostenitor.pdf",
+  "document_type": "heir_certificate",
+  "received_on": "2026-10-14",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "1640318184124",
+    "testament": false,
+    "heirs": [
+      {"id": "H1", "name": "Doina Petrescu", "share": "1/4", "relationship": "soție"},
+      {"id": "H2", "name": "Radu Petrescu", "share": "1/4", "relationship": "fiu"},
+      {"id": "H3", "name": "Ioana Petrescu", "share": "1/4", "relationship": "fiică"},
+      {"id": "H4", "name": "Sorin Petrescu", "share": "1/4", "relationship": "fiu"}
+    ],
+    "case_file": "211/2026",
+    "document_number": "64",
+    "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+    "notary_name": "Adrian FICTIV",
+    "ibans": ["RO00 RZBR 0000 0000 8501 0001"]
+  },
+  "_fictiv": true
+}

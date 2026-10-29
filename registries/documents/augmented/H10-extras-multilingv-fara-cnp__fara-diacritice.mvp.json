@@ -1,0 +1,25 @@
+{
+  "id": "hard-H10-fara-diacritice",
+  "raw_name": "H10-extras-multilingv-fara-cnp__fara-diacritice.md",
+  "document_type": "death_certificate",
+  "received_on": "2026-10-01",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": null,
+    "date_of_death": "2026-09-03",
+    "name": "Maria Ionescu",
+    "birth_date": "1958-05-12",
+    "father": "POPESCU ION",
+    "mother": "POPESCU ANA",
+    "spouse": "IONESCU ION",
+    "document_variant": "multilingual_extract",
+    "reference": "EMD 0000000",
+    "document_number": "0000000",
+    "document_series": "EMD"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "hard/H10-extras-multilingv-fara-cnp.md",
+  "_variant": "fara-diacritice"
+}

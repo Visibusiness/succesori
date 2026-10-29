@@ -1,0 +1,58 @@
+# DECISIONS
+
+Decizii luate (sau de luat), cu dată și cine. Ce se confirmă/infirmă din BRIEF.
+
+## Deschise (de decis de echipă)
+### D1 — Cotele moștenitorilor în scenariul demo (2026-10-28, ridicat de nicolas din sarcina 002)
+- BRIEF: soț 1/2, Andrei 1/4, Elena 1/4.
+- Legea (C.civ. art. 972, 975, fără testament): soț **1/4**, copiii **3/8** fiecare. Cu lichidarea comunității pe un cont bun comun: soț 5/8, copii 3/16 fiecare. Nicio variantă legală nu dă 1/2–1/4–1/4.
+- Opțiuni: (a) Maria a lăsat **testament** → 1/2–1/4–1/4 e valid (respectă rezerva copiilor 3/16, art. 1088); (b) trecem la cotele legale 1/4–3/8–3/8.
+- Oricum: agentul **nu calculează cotele din lege**, le extrage din certificatul de moștenitor și verifică doar că însumează 1.
+- Decizie (2026-10-28, Nicolas): demo-ul tratează **ambele** variante — (A) moștenire legală, (B) testament 1/2–1/4–1/4 — cu research pe practica notarială reală (sarcina 012). Agentul lucrează identic în ambele: cotele vin din certificat.
+
+## Confirmate / infirmate din BRIEF
+- 2026-10-28 · nicolas · **Pensia**: legea aplicabilă e Legea 360/2023 (127/2019 abrogată). Pensia lunii decesului se cuvine (art. 100 alin. 1 lit. a: încetează „începând cu luna următoare”). În demo: pensia din 15 sept **nu** se returnează; doar cea din octombrie, la cererea casei de pensii (excepție expresă de la art. 2187, Legea 360/2023 art. 156 alin. 8).
+- 2026-10-28 · nicolas · **Art. 2187** C.civ. = cont curent indiviz între moștenitori după deces (operațiuni doar cu acordul tuturor), nu cotitularii din timpul vieții (art. 2186).
+- 2026-10-28 · nicolas · **Minor (Elena, 15 ani)**: acceptă singură (art. 41 alin. 3); încasarea cu acordul scris al tatălui; partajul/renunțarea cer instanța de tutelă + curator special (tatăl e comoștenitor). Agentul blochează plata părții minorului până la documentele de reprezentare.
+- 2026-10-28 · nicolas · **Volum**: ~17–34k dosare/an (central 24k), nu 25–30k ferm (`kb/data/estimare-volum-cost.md`).
+- 2026-10-28 · nicolas · **Comision Premium**: real = **60 lei/lună** (lista de tarife PF 2026; scutire doar cu venit ≥ 2.000 EUR / active ≥ 40.000 EUR + 1 tranzacție/lună). BRIEF avea 25 lei → demo-ul trece pe **60 lei** (se potrivește și cu cazul Bragadiru).
+- 2026-10-28 · nicolas · **CGB**: ediția în vigoare 26.02.2026; clauza corectă e 3.2.5: lit. b) împuterniciți „numai pe timpul vieții titularului”, lit. c) moștenitori cu certificat de moștenitor sau hotărâre judecătorească, lit. d) carduri suplimentare (nu „3.2 b/d”; corectat după 017). Blocarea **parțială** nu oprește comisionul (3.8.3) → agentul cere explicit oprirea comisionului de la data decesului. Debitul direct încetează la deces (7.7.1 c).
+- 2026-10-28 · nicolas · **Depozit nescadent**: lichidarea anticipată (3–12 luni) pierde toată dobânda → agentul propune moștenitorilor așteptarea scadenței, nu lichidarea.
+- 2026-10-28 · nicolas · **Asigurare credit**: UNIQA, opțională; acoperă principalul rămas + max. 3 rate restante (plafon 260.000 lei), nu dobânzi/comisioane; avizare în 30 de zile de la deces/aflare.
+- 2026-10-28 · nicolas · **Răspuns către notar**: obligație în Legea 36/1995 art. 81 alin. 2; **fără termen legal** — termenul practic e data dezbaterii din adresă. Extrasul multilingv de deces nu are CNP → potrivire pe nume + data nașterii + părinți.
+- 2026-10-28 · nicolas · **Semnalul DGEP**: vine săptămânal prin SFTP (+ web service la cerere), conține data decesului, NU seria certificatului/moștenitori/notar. Contractul bancă–DGEP interzice decizii cu efect juridic semnificativ bazate exclusiv pe datele DGEP (GDPR art. 22) ⇒ **pe semnal DGEP agentul aplică doar măsuri reversibile** (blocare debit, suspendare mandat/carduri/debitări directe/comisioane); închiderea definitivă a cardurilor și revocarea se confirmă la primirea certificatului de deces sau de un operator.
+- 2026-10-28 · nicolas · **Caz-cheie pentru pitch**: Bragadiru 2023 (Raiffeisen, 60 lei/lună, 2.331,45 lei reținuți, „nu există dovezi că banca ar fi fost înștiințată”). Răspunsul nostru: feed-ul DGEP + chitanță pentru fiecare document primit.
+- 2026-10-28 · nicolas · **Secret bancar**: OUG 99/2006 forma 05.03.2026, art. 113. RIL ÎCCJ 9/2024: moștenitorii primesc informații despre perioada dinainte de deces „numai în măsura în care justifică scopul”, dispozitivul nu cere certificat de moștenitor ⇒ regula agentului (ce i se spune unei rude fără certificat) **de validat cu compliance Raiffeisen** — întrebare pentru mentori.
+- 2026-10-28 · nicolas · **Outsourcing/DORA (pitch)**: Faza 1 (serviciu intern) NU scapă de DORA art. 28/30 dacă LLM-ul e un furnizor extern TIC (registru de informații + clauze contractuale minime rămân); se evită doar notificarea BNR prealabilă (Reg. 5/2013) dacă funcția e evaluată ca necritică. Slide-ul nu spune „fără obligații”, spune „obligații minime, standard pentru orice furnizor cloud”.
+- 2026-10-28 · nicolas · **Vocabularul `document_type` (canonic în cod = EN, ca în agent/)**: `dgep_signal`, `notary_request`, `insurance_certificate`, `insurer_response`, `heir_certificate`, `supplementary_certificate`, `death_certificate` (+ `heir_status_certificate`, `power_of_attorney`, `court_decision`, `other`). Numele RO din KB (`certificat_mostenitor_suplimentar` etc.) rămân în documentație; maparea RO→EN e în `kb/glosar.md`. `.mvp.json` (021) folosește EN.
+- 2026-10-28 · nicolas · **DEMO_MODE**: datele fictive (CNP mascat, IBAN cu control `00`) nu trec cifrele de control ⇒ `DEMO_MODE=1` sare DOAR peste verificarea cifrei de control CNP/IBAN (V1, V6 din `kb/tech/document-extraction-approach.md`); toate celelalte validări rămân active. În afara demo-ului, `DEMO_MODE` e oprit.
+- 2026-10-28 · nicolas · **Coduri de escaladare**: `shares_invalid`, `cnp_mismatch`, `matched_without_iban`, `product_ambiguous`, `identity_unconfirmed`, `document_illegible` (numele din cod rămâne, nu `illegible`), `indemnity_mismatch` (propus 038).
+- 2026-10-28 · nicolas · **Comunicare cu moștenitorii (034)**: nicio bancă RO nu are canal digital pentru moștenitori. Consimțământul (Legea 506/2004 art. 12) e necesar doar pentru mesaje **comerciale**; mesajele operaționale despre dosar au temei GDPR art. 6(1)(b)/(c)/(f). ⇒ regula 3 din `.claude/agents/heir-communicator.md` e prea largă — de reformulat de owner-ul fișierului (runda 3).
+- 2026-10-28 · nicolas · **Evaluarea extracției (030)** — ground truth = ce scrie în document, nu ID-uri interne:
+  1. Eval, server, retro rulează cu `DEMO_MODE=1`; extractorul copiază CNP-ul exact cum e scris (inclusiv `X`), fără să-l anuleze.
+  2. `products`/`loan_id` (CC-1, CRD-1) ies din ground truth-ul de extracție; în loc: `ibans[]` și `loan_contract` (cum apar în document). Maparea la ID-uri interne o face pipeline-ul (potrivire IBAN/contract în core).
+  3. `reference` se împarte în `case_file` (nr. dosar succesoral) și `document_number` (nr. certificatului/adresei/poliței).
+  4. `heirs`: comparat normalizat — nume (majuscule, fără diacritice), `share` ca fracție, `minor` bool; cheile în plus și `id` se ignoră (id-ul îl dă pipeline-ul).
+  5. `notary_office` și `notary_name` separate; `insurer` comparat normalizat (prefix „UNIQA” = „UNIQA Asigurări de viață S.A.”).
+  6. `testament` e bool strict în schema extractorului.
+- 2026-10-28 · nicolas · **Demo stabil**: `coordonare/bin/promoveaza` pornește :8000 cu `DEMO_MODE=1` implicit; promovat a5ac6c1 (037, 30 teste verzi), smoke test pași 1–7 → PAYMENT_PENDING_APPROVAL.
+- 2026-10-28 · nicolas · ~~Freeze reversibil vs. definitiv (răspuns la 042a): adresa notarului ⇒ definitiv~~ **ÎNLOCUITĂ** de decizia de mai jos („Freeze pe adresa notarului…”, commit 2c5a8b5): adresa notarului ⇒ tot reversibil; definitiv doar la certificatul de deces sau prin operator (mai conservator, coerent cu D-DGEP). Ecranul arată motivul blocării.
+
+## Întrebări pentru mentorii Raiffeisen (strânse din rapoarte)
+1. Câți clienți decedați/an are banca (validează 17–34k)? Cost orar back-office?
+2. Banca folosește deja feed-ul săptămânal DGEP pentru blocarea conturilor? În cât timp după deces apare înregistrarea?
+3. Compliance: ce i se spune unei rude fără certificat, după RIL ÎCCJ 9/2024?
+4. Compensarea (CGB 3.5.1) se aplică după deces pe masa succesorală (ex. dobânda restantă la credit)?
+5. Convenția de dobândă la depozite (Act/365?) și dobânda creditului între deces și plata indemnizației UNIQA.
+6. Plata către moștenitorul minor: cerem acordul reprezentantului + cont pe numele minorului, sau autorizarea instanței?
+7. RBI are un pilot intern similar (bereavement / death notification)?
+- 2026-10-28 · nicolas · **Freeze pe adresa notarului fără semnal DGEP/certificat (042a, constatarea 1)**: tot **reversibil**. Definitiv doar la certificatul de deces sau prin operator (D-DGEP). `REVERSIBLE_ONLY_SOURCES` include `notary_request`.
+- 2026-10-28 · nicolas · **Data evenimentului „pensie necuvenită” (042a, constatarea 2)**: `events.at` e data documentului declanșator; în demo mișcările sunt preîncărcate. Cosmetic; dacă juriul întreabă: „în producție evenimentul apare când intră pensia”. Nu schimbăm.
+- 2026-10-28 · nicolas · **retro.py scrie în `.claude/skills/`**: intenționat; codul (`agent/`, `tests/`, `kb/`) nu e atins de bucla de învățare.
+
+## Propuneri din retro
+- 2026-10-28 · retro-learner · **Confidence globală vs. câmpuri cu încredere mică** (eval 12:10:55: 03 și H5 cad sub pragul 0,8 deși restul câmpurilor e sigur; câmpuri 95,6%, prag 89,5%, față de 97,9% / 94,7% la 12:10:03 ⇒ variație între rulări). Propunere de cod: `confidence` globală = min peste câmpurile obligatorii ale tipului, nu peste toate (ex. `unidentified_products`, CNP mascat în demo). Neaplicat; decide owner-ul `agent/extract.py`.
+- 2026-10-28 · nicolas · **Zgomotul evalului extractorului (042b)**: același cod dă 99,2%–100% între rulări (1 câmp din ~130). `retro.py` păstrează un ciclu dacă `după ≥ înainte − 1,0 pct` (toleranță), nu doar la egal/mai mare. Cifra pentru pitch: **95,6% → 100% pe câmpuri după 2 cicluri de retro** (raport 039), cu mențiunea „±1 pct zgomot”.
+- 2026-10-28 · nicolas · **retro.py folosește `claude -p --dangerously-skip-permissions`**: acceptat; agentul scrie doar în `.claude/skills/` și `runs/`, iar codul nu e atins (verificat de auditor).
+- 2026-10-28 · retro-learner (runda 1, 131910Z) · **Din auditul 130938Z, de triat de master** (nu aplicate): (a) termenul `notary_answer` apare „îndeplinit” deși răspunsul e `draft_pending_signature` și generat după termen; (b) plan trimis la `pending_approval` cu IBAN invalid (`iban_invalid` soft) fără avertisment; (c) `net_account.net` nu scade `withheld` și nu documentează de ce; (d) liniile DEP-1 însumează 2.104.000 vs 2.069.238 (capital + dobândă), fără `warnings`; (e) conflict de interese când reprezentantul legal al minorului e coerede (C.civ. art. 144–146). **Nu** propun nimic pentru „cote 5/8–3/16 greșite” (C1) și „cazul Bragadiru” ca regulă (obs. 1): primele sunt scenariul cu lichidarea comunității de la rândul 8, al doilea e alegere explicită; auditorul nu a avut acces la fișiere. Dedupe-ul SUPPLEMENT_NEEDED (C6) e deja în TASKS 046.
+- 2026-10-28 · nicolas · **A/B extractor Haiku vs Sonnet (050)**: Sonnet train 99,2% / holdout 99,3%; Haiku train 98,6% / holdout **97,7%** (tip și prag 100% la ambele); Haiku ≈ $0,0045/document. Criteriul era „Haiku ≥ Sonnet − 1 pct pe holdout”: −1,6 pct ⇒ **extractorul rămâne pe Sonnet** (economia de ~$0,1/dosar nu justifică erori pe câmpuri pe care banca acționează). Haiku rămâne candidat pentru triaj rapid (tip + lizibilitate, unde a avut 100%) și pentru `heir-communicator` (de testat cu verificare umană).

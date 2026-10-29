@@ -1,0 +1,50 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.95,
+ "fields": {
+  "cnp": "1640318184124",
+  "date_of_death": "2026-08-11",
+  "reference": "DGEP-MOCK-2026-08-24-008501",
+  "document_number": "DGEP-MOCK-2026-08-24-008501",
+  "name": "PETRESCU MARIN"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "date_of_death": 0.97,
+  "reference": 0.95,
+  "document_number": 0.95,
+  "name": 0.97
+ },
+ "evidence": {
+  "cnp": "CNP: 1640318184124",
+  "date_of_death": "Data decesului: 11.08.2026",
+  "reference": "Mesaj: DGEP-MOCK-2026-08-24-008501",
+  "document_number": "DGEP-MOCK-2026-08-24-008501",
+  "name": "Numele de familie: PETRESCU"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.053978700000000004,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P13/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:33+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "1640318184124"
+ }
+}

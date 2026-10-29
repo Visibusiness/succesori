@@ -1,0 +1,18 @@
+{
+  "id": "real-12",
+  "raw_name": "real-text/12-certificat-european-mostenitor-formular-v.md",
+  "document_type": "heir_certificate",
+  "received_on": null,
+  "confidence": 0.5,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "document_number": null,
+    "heirs": null,
+    "testament": null,
+    "ibans": null,
+    "notary_office": null,
+    "notary_name": null
+  },
+  "_source": "forme/UE-formular-V-certificat-european-mostenitor-ro.pdf"
+}

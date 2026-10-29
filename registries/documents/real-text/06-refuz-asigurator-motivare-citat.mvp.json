@@ -1,0 +1,16 @@
+{
+  "id": "real-06",
+  "raw_name": "real-text/06-refuz-asigurator-motivare-citat.md",
+  "document_type": "insurer_response",
+  "received_on": null,
+  "confidence": 0.5,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": "refused",
+    "amount": null,
+    "claim_number": null,
+    "document_number": null
+  },
+  "_source": "jurisprudenta/CACluj-sent1739-2013-refuz-plata-asigurare-deces-credit.txt (citat: motivarea refuzului asigurătorului)"
+}

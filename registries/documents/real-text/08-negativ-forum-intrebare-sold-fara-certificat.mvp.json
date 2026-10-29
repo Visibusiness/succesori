@@ -1,0 +1,14 @@
+{
+  "id": "real-08",
+  "raw_name": "real-text/08-negativ-forum-intrebare-sold-fara-certificat.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "heirs": null,
+    "ibans": null
+  },
+  "_source": "forum/notaripro-cont-bancar-pentru-succesiune.txt (întrebarea)"
+}

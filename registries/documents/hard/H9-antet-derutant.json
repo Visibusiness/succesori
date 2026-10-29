@@ -1,0 +1,47 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H9",
+  "doc_type": "certificat_mostenitor",
+  "received_at": "2026-10-22",
+  "client_id": "RC1001",
+  "source_text": "H9-antet-derutant.md",
+  "fields": {
+    "nr_certificat": "87",
+    "data_certificat": "2026-10-22",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "titlu_document": "ADRESĂ",
+    "mostenitori": [
+      {
+        "prenume": "ION",
+        "cota": "1/4"
+      },
+      {
+        "prenume": "ANDREI",
+        "cota": "3/8"
+      },
+      {
+        "prenume": "ELENA",
+        "cota": "3/8"
+      }
+    ]
+  },
+  "expected_agent": {
+    "state_after": "SUPPLEMENT_REQUESTED",
+    "sum_cote": "1/1",
+    "escalation": false,
+    "coverage_gaps": [
+      "DEP-1"
+    ],
+    "flags": [
+      "MINOR_HEIR",
+      "CONFLICT_INTERESE_PARINTE_MINOR",
+      "misleading_header"
+    ],
+    "same_as": "04-certificat-mostenitor-A",
+    "classified_as": "certificat_mostenitor",
+    "not_classified_as": "adresa_notar",
+    "note": "tipul vine din conținut: „certific următoarele”, moștenitori cu cote, masă succesorală, „Prezentul certificat face dovada…”; titlul e ignorat"
+  }
+}

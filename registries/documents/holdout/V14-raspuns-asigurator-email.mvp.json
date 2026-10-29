@@ -1,0 +1,15 @@
+{
+  "id": "holdout-V14",
+  "raw_name": "holdout/V14-raspuns-asigurator-email",
+  "document_type": "insurer_response",
+  "received_on": "2026-11-03",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000771-FICTIV",
+    "decision": "approved",
+    "amount": 1234567,
+    "claim_number": "DV-0520/2026",
+    "loan_contract": "FC-2024-0042"
+  }
+}

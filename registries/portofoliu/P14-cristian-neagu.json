@@ -1,0 +1,216 @@
+{
+ "id": "P14",
+ "case_id": "SC-2026-0114",
+ "stage": "plan_de_aprobat",
+ "stage_label": "Plan de plată de aprobat, doi minori (caz real: Trib. Alba, dec. civ. 839/A/2015)",
+ "real_case": "Tribunalul Alba, Decizia civilă nr. 839/A din 08.12.2015 (apel la Sentința civilă nr. 78/2015 a Judecătoriei S.) (vezi README.md)",
+ "source": "registries/portofoliu/cazuri-reale/B-neagu-cristian/README.md",
+ "customer": {
+  "cif": "RC8502",
+  "name": "Cristian Neagu",
+  "cnp": "1750914013511",
+  "birth_date": "1975-09-14",
+  "spouse": "Mirela Neagu",
+  "cards": [
+   "C-B1",
+   "P14-CARD"
+  ]
+ },
+ "products": [
+  {
+   "id": "P14-CC",
+   "type": "current_account",
+   "balance": 1842000,
+   "estate_fraction": "1/2",
+   "iban": "RO12 RZBR 0000 0000 8502 0001"
+  },
+  {
+   "id": "P14-CRD",
+   "type": "personal_loan",
+   "outstanding": 2418170,
+   "rate_pct": 8.95,
+   "last_interest_paid": "2026-06-20",
+   "insurance_policy_id": "UQ-8502001-FICTIV",
+   "loan_contract": "NP-2024-085021",
+   "installment": 82936
+  },
+  {
+   "id": "P14-CARD",
+   "type": "credit_card",
+   "outstanding": 345000,
+   "rate_pct": 0.0,
+   "last_interest_paid": null,
+   "insurance_policy_id": null,
+   "iban": "RO87 RZBR 0000 0000 8502 0009"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-06-05",
+   "amount": -6000,
+   "kind": "fee",
+   "fee_code": "PREMIUM",
+   "by_mandate_holder": false
+  },
+  {
+   "date": "2026-07-05",
+   "amount": -6000,
+   "kind": "fee",
+   "fee_code": "PREMIUM",
+   "by_mandate_holder": false
+  }
+ ],
+ "contacts": {
+  "Mirela Neagu": {
+   "email": "mirela.neagu@example.invalid",
+   "sms": "+40 700 000 853",
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Mun. Sebeș, Str. Fictivă nr. 8, Jud. Alba"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P14-D1",
+    "received_on": "2026-07-13",
+    "file": "P14/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "date_of_death": "2026-07-02",
+     "document_number": "DGEP-MOCK-2026-07-13-008502"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P14-D2",
+    "received_on": "2026-07-20",
+    "file": "P14/02-certificat-deces-scan.pdf",
+    "expected_type": "death_certificate",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "name": "Cristian Neagu",
+     "birth_date": "1975-09-14",
+     "date_of_death": "2026-07-02",
+     "father": "NEAGU VASILE",
+     "mother": "POPA FLOAREA",
+     "document_series": "DA",
+     "document_number": "502714",
+     "death_record_number": "36"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P14-D3",
+    "received_on": "2026-07-20",
+    "file": "P14/03-certificat-asigurare-scan.pdf",
+    "expected_type": "insurance_certificate",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "policy_id": "UQ-8502001-FICTIV",
+     "insurer": "UNIQA Asigurări de viață S.A.",
+     "loan_contract": "NP-2024-085021",
+     "document_number": "UQ-8502001-FICTIV"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P14-D4",
+    "received_on": "2026-08-25",
+    "file": "P14/04-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "date_of_death": "2026-07-02",
+     "case_file": "154/2026",
+     "document_number": "227",
+     "notary_office": "Biroul Individual Notarial „Model Carmen”",
+     "notary_name": "Carmen MODEL"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P14-D5",
+    "received_on": "2026-09-15",
+    "file": "P14/05-raspuns-asigurator-scan.pdf",
+    "expected_type": "insurer_response",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "policy_id": "UQ-8502001-FICTIV",
+     "decision": "approved",
+     "amount": 2418170,
+     "document_number": "6120",
+     "claim_number": "DV-0588/2026",
+     "loan_contract": "NP-2024-085021"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P14-D6",
+    "received_on": "2026-10-06",
+    "file": "P14/06-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "1750914013511",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Mirela Neagu",
+       "share": "1/4",
+       "relationship": "soție"
+      },
+      {
+       "id": "H2",
+       "name": "Darius Neagu",
+       "share": "3/8",
+       "relationship": "fiu",
+       "minor": true,
+       "legal_representative": "Liviu Toma"
+      },
+      {
+       "id": "H3",
+       "name": "Andrei Vlad",
+       "share": "3/8",
+       "relationship": "fiu",
+       "minor": true,
+       "legal_representative": "Simona Vlad"
+      }
+     ],
+     "case_file": "154/2026",
+     "document_number": "41",
+     "notary_office": "Biroul Individual Notarial „Model Carmen”",
+     "notary_name": "Carmen MODEL",
+     "ibans": [
+      "RO12 RZBR 0000 0000 8502 0001",
+      "RO87 RZBR 0000 0000 8502 0009"
+     ]
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "PAYMENT_PENDING_APPROVAL",
+  "escalations": [
+   "contact_no_channel",
+   "contact_no_channel",
+   "minor_heir",
+   "minor_heir"
+  ],
+  "decisions": [
+   "plata",
+   "escaladare",
+   "escaladare",
+   "escaladare",
+   "escaladare"
+  ],
+  "plan": true
+ }
+}

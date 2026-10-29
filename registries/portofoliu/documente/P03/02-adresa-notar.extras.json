@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.95,
+ "fields": {
+  "cnp": "1561121133425",
+  "case_file": "305/2026",
+  "hearing_date": "2026-12-08",
+  "date_of_death": "2026-09-29",
+  "document_number": "1203",
+  "notary_office": "Societatea Profesională Notarială „Dobre & Asociații”",
+  "notary_name": "Mircea DOBRE",
+  "name": "MARINESCU CONSTANTIN"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "case_file": 0.97,
+  "hearing_date": 0.96,
+  "date_of_death": 0.96,
+  "document_number": 0.95,
+  "notary_office": 0.9,
+  "notary_name": 0.95,
+  "name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1561121133425",
+  "case_file": "Dosar succesoral nr. 305/2026",
+  "hearing_date": "fixat pentru data de 08.12.2026",
+  "date_of_death": "decedat la data de 29.09.2026",
+  "document_number": "Nr. 1203 / 09.10.2026",
+  "notary_office": "Societatea Profesională Notarială „Dobre & Asociații”",
+  "notary_name": "Notar public Mircea DOBRE",
+  "name": "MARINESCU CONSTANTIN"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0561075,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P03/02-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "02-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

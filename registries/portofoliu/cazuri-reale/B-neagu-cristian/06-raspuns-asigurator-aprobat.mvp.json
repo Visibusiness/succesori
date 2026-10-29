@@ -1,0 +1,17 @@
+{
+  "id": "B-06",
+  "raw_name": "B-neagu-cristian/scan/06-raspuns-asigurator-aprobat.pdf",
+  "document_type": "insurer_response",
+  "received_on": "2026-09-15",
+  "confidence": 0.95,
+  "fields": {
+    "cnp": "1750914013511",
+    "policy_id": "UQ-8502001-FICTIV",
+    "decision": "approved",
+    "amount": 2418170,
+    "document_number": "6120",
+    "claim_number": "DV-0588/2026",
+    "loan_contract": "NP-2024-085021"
+  },
+  "_fictiv": true
+}

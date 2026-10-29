@@ -1,0 +1,14 @@
+{
+  "id": "real-30",
+  "raw_name": "real-text/30-clauza-brd-cgb-2-39-2-decesul-clientului.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "ibans": null,
+    "case_file": null
+  },
+  "_source": "banci/brd-cgb-pf.txt (art. 2.39.2)"
+}

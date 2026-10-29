@@ -1,0 +1,13 @@
+{
+  "id": "real-38",
+  "raw_name": "real-text/38-negativ-raiffeisen-pagina-colaborare-dgep.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "date_of_death": null,
+    "document_number": null
+  },
+  "_source": "banci/rbro-dgep-colaborare.txt (corpul paginii)"
+}

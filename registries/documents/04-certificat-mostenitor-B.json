@@ -1,0 +1,142 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "04",
+  "doc_type": "certificat_mostenitor",
+  "received_at": "2026-10-22",
+  "client_id": "RC1001",
+  "source_text": "04-certificat-mostenitor-B.md",
+  "variant": "B",
+  "fields": {
+    "nr_certificat": "87",
+    "data_certificat": "2026-10-22",
+    "nr_dosar_succesoral": "123/2026",
+    "birou_notarial": "Biroul Individual Notarial „Exemplu Ana”",
+    "notar": "Ana EXEMPLU",
+    "defunct": {
+      "nume": "IONESCU",
+      "prenume": "MARIA",
+      "cnp": "2XXXXXXXXXXXX",
+      "ultim_domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1, Jud. Exemplu",
+      "data_decesului": "2026-09-03"
+    },
+    "regim_matrimonial": {
+      "tip": "comunitate_legala",
+      "conventie_matrimoniala": false,
+      "lichidare": "cont curent bun comun, cote soți 1/2 fiecare"
+    },
+    "masa_activ": [
+      {
+        "tip": "cont_curent",
+        "institutie": "Raiffeisen Bank S.A.",
+        "iban": "RO00 RZBR 0000 0000 0000 01",
+        "cota_defunct": "1/2",
+        "valoare_bani": 530000,
+        "moneda": "RON",
+        "componente": [
+          {
+            "descriere": "sold la data decesului",
+            "valoare_bani": 320000
+          },
+          {
+            "descriere": "pensie septembrie 2026, încasată la 15.09.2026",
+            "valoare_bani": 210000
+          }
+        ]
+      }
+    ],
+    "masa_pasiv": [
+      {
+        "creditor": "Raiffeisen Bank S.A.",
+        "nr_contract": "NP-2023-001001",
+        "descriere": "dobândă curentă la data decesului",
+        "valoare_bani": 2663
+      },
+      {
+        "creditor": "Raiffeisen Bank S.A.",
+        "nr_contract": "NP-2023-001001",
+        "descriere": "principal la data decesului",
+        "valoare_bani": 900000,
+        "asigurare": {
+          "asigurator": "UNIQA Asigurări de viață S.A.",
+          "nr_certificat": "UQ-0000000-FICTIV"
+        }
+      }
+    ],
+    "mostenitori": [
+      {
+        "nume": "IONESCU",
+        "prenume": "ION",
+        "cnp": "1XXXXXXXXXXX1",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1",
+        "calitate": "sot_supravietuitor",
+        "minor": false,
+        "reprezentant_legal": null,
+        "cota": "1/2",
+        "acceptare": true,
+        "titlu": "legatar_cu_titlu_universal"
+      },
+      {
+        "nume": "IONESCU",
+        "prenume": "ANDREI",
+        "cnp": "1XXXXXXXXXXX2",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 7",
+        "calitate": "fiu",
+        "minor": false,
+        "reprezentant_legal": null,
+        "cota": "1/4",
+        "acceptare": true,
+        "titlu": "legatar_cu_titlu_universal"
+      },
+      {
+        "nume": "IONESCU",
+        "prenume": "ELENA",
+        "cnp": "6XXXXXXXXXXX3",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1",
+        "calitate": "fiica",
+        "minor": true,
+        "varsta": 15,
+        "reprezentant_legal": "IONESCU ION (tată, încuviințare)",
+        "cota": "1/4",
+        "acceptare": true,
+        "titlu": "legatar_cu_titlu_universal"
+      }
+    ],
+    "temei_devolutiune": "testamentar",
+    "testament": {
+      "nr": "314",
+      "data": "2024-03-12",
+      "tip": "autentic"
+    },
+    "semnatura_notar": true,
+    "stampila": true
+  },
+  "expected_agent": {
+    "state_after": "SUPPLEMENT_REQUESTED",
+    "sum_cote": "1/1",
+    "escalation": false,
+    "coverage_gaps": [
+      "DEP-1"
+    ],
+    "actions": [
+      "request_supplementary_certificate",
+      "request_minor_documents"
+    ],
+    "flags": [
+      "MINOR_HEIR",
+      "CONFLICT_INTERESE_PARINTE_MINOR"
+    ],
+    "payments_now": [],
+    "fractie_efectiva_din_bun": {
+      "ION": "3/4",
+      "ANDREI": "1/8",
+      "ELENA": "1/8"
+    },
+    "split_cc1_bani_after_debts": {
+      "baza_bani": 527337,
+      "ION": 395503,
+      "ANDREI": 65917,
+      "ELENA": 65917
+    }
+  }
+}

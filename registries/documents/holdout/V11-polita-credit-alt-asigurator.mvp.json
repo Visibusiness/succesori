@@ -1,0 +1,14 @@
+{
+  "id": "holdout-V11",
+  "raw_name": "holdout/V11-polita-credit-alt-asigurator",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-08-28",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "policy_id": "EV-2022-778899",
+    "insurer": "EUROVITA Asigurări de Viață S.A.",
+    "loan_contract": "CR-2022-445566",
+    "document_number": "EV-2022-778899"
+  }
+}

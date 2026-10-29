@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1720519127599",
+  "name": "Vasile Tudor",
+  "birth_date": "1972-05-19",
+  "date_of_death": "2026-08-07",
+  "father": "TUDOR PETRU",
+  "mother": "ȘERBAN MIHAELA",
+  "document_series": "MC",
+  "document_number": "957846",
+  "death_record_number": "1771"
+ },
+ "_fictiv": true,
+ "_model": "anexa3",
+ "_variant": "pdf",
+ "id": "CD05-anexa3-pdf",
+ "raw_name": "forms-real/certificat-deces/CD05-anexa3.pdf",
+ "received_on": "2026-08-12",
+ "_split": "train",
+ "_document_variant": "certificat_fizic_2024"
+}

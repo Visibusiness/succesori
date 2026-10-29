@@ -1,0 +1,663 @@
+{
+ "id": "SC-2026-0001",
+ "cif": "RC1001",
+ "customer_name": "Maria Ionescu",
+ "date_of_death": "2026-09-03",
+ "learned_on": "2026-10-28",
+ "milestones": [
+  "certificate_received",
+  "coverage_complete",
+  "death_signalled",
+  "fees_reversed",
+  "frozen",
+  "insurance_claim_open",
+  "insurance_settled",
+  "notary_answered",
+  "paid",
+  "payment_pending_approval",
+  "payment_plan_ready",
+  "supplement_requested"
+ ],
+ "documents": [
+  {
+   "id": "doc-1",
+   "type": "dgep_signal",
+   "received_on": "2026-10-28",
+   "confidence": 0.9,
+   "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "document_number": "DGEP-MOCK-2026-09-20-000123"
+   },
+   "raw_name": "01-dgep-semnal.json"
+  },
+  {
+   "id": "doc-2",
+   "type": "notary_request",
+   "received_on": "2026-10-28",
+   "confidence": 0.9,
+   "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "name": "IONESCU MARIA",
+    "birth_date": "1958-05-12",
+    "date_of_death": "2026-09-03",
+    "case_file": "123/2026",
+    "hearing_date": "2026-10-20",
+    "document_number": "412",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU"
+   },
+   "raw_name": "02-adresa-notar.md"
+  },
+  {
+   "id": "doc-3",
+   "type": "insurance_certificate",
+   "received_on": "2026-10-28",
+   "confidence": 0.9,
+   "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000000-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "NP-2023-001001",
+    "document_number": "UQ-0000000-FICTIV"
+   },
+   "raw_name": "03-certificat-asigurare.md"
+  },
+  {
+   "id": "doc-4",
+   "type": "heir_certificate",
+   "received_on": "2026-10-28",
+   "confidence": 0.83,
+   "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "case_file": "123/2026",
+    "document_number": "87",
+    "testament": false,
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU",
+    "ibans": [
+     "RO00 RZBR 0000 0000 0000 01"
+    ],
+    "heirs": [
+     {
+      "name": "IONESCU ION",
+      "share": "1/4"
+     },
+     {
+      "name": "IONESCU ANDREI",
+      "share": "3/8"
+     },
+     {
+      "name": "IONESCU ELENA",
+      "share": "3/8",
+      "minor": true,
+      "legal_representative": "IONESCU ION"
+     }
+    ],
+    "_matched_products": [
+     "CC-1"
+    ]
+   },
+   "raw_name": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "id": "doc-5",
+   "type": "insurer_response",
+   "received_on": "2026-10-28",
+   "confidence": 0.9,
+   "fields": {
+    "policy_id": "UQ-0000000-FICTIV",
+    "decision": "approved",
+    "amount": 900000,
+    "claim_number": "DV-0451/2026",
+    "document_number": "7781",
+    "loan_contract": "NP-2023-001001",
+    "cnp": "2XXXXXXXXXXXX",
+    "name": "IONESCU MARIA",
+    "date_of_death": "2026-09-03",
+    "reason": null
+   },
+   "raw_name": "05-raspuns-asigurator.md"
+  },
+  {
+   "id": "doc-6",
+   "type": "supplementary_certificate",
+   "received_on": "2026-10-28",
+   "confidence": 0.83,
+   "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "case_file": "123/2026",
+    "ibans": [
+     "RO00 RZBR 0000 0000 0000 02"
+    ],
+    "document_number": "95",
+    "initial_certificate": "87",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU",
+    "_matched_products": [
+     "DEP-1"
+    ]
+   },
+   "raw_name": "06-certificat-suplimentar.md"
+  }
+ ],
+ "events": [
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "decision",
+   "summary": "Dosar de succesiune deschis pentru Maria Ionescu (RC1001).",
+   "rule": null,
+   "data": {},
+   "id": "E1"
+  },
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "document",
+   "summary": "Primit: dgep_signal (01-dgep-semnal.json), încredere 0.90",
+   "rule": null,
+   "data": {
+    "document_id": "doc-1"
+   },
+   "id": "E2"
+  },
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "document",
+   "summary": "Deces confirmat la data 2026-09-03 (sursă: dgep_signal); aflat la 2026-10-28.",
+   "rule": null,
+   "data": {},
+   "id": "E3"
+  },
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "action",
+   "summary": "Blocare reversibilă: semnal DGEP DGEP-MOCK-2026-09-20-000123 (GDPR art. 22: doar măsuri reversibile). Debit oprit, mandat suspendat (Andrei Ionescu), carduri C-1, C-2, debitări directe și comision suspendate.",
+   "rule": "CGB 3.2.5 b/d, 5.10.4 c, 7.7.1 c; C.civ. art. 2030; D-DGEP: semnal DGEP sau adresă de notar ⇒ doar reversibil, definitiv doar la certificat de deces sau prin operator (GDPR art. 22)",
+   "data": {
+    "trigger": "semnal DGEP DGEP-MOCK-2026-09-20-000123 (GDPR art. 22: doar măsuri reversibile)",
+    "reversible": true
+   },
+   "id": "E4"
+  },
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "action",
+   "summary": "Comisioane după deces stornate: 60.00 lei (1 mișcări).",
+   "rule": "comision de administrare nejustificat după deces (cazul Bragadiru 2023)",
+   "data": {},
+   "id": "E5"
+  },
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "kind": "action",
+   "summary": "Pensie necuvenită (2026-10-15): 2100.00 lei reținuți pentru retur CNPP.",
+   "rule": "Legea 360/2023 art. 100, art. 156 alin. 8",
+   "data": {},
+   "id": "E6"
+  },
+  {
+   "at": "2026-10-28T20:38:23+00:00",
+   "kind": "document",
+   "summary": "Primit: notary_request (02-adresa-notar.md), încredere 0.90",
+   "rule": null,
+   "data": {
+    "document_id": "doc-2"
+   },
+   "id": "E7"
+  },
+  {
+   "at": "2026-10-28T20:38:23+00:00",
+   "kind": "action",
+   "summary": "Răspuns către notar generat (dosar 123/2026): solduri la 2026-09-03; trimis la semnare.",
+   "rule": "Legea 36/1995 art. 81 alin. 2",
+   "data": {
+    "answer": {
+     "notary_file": "123/2026",
+     "as_of": "2026-09-03",
+     "products": [
+      {
+       "product_id": "CC-1",
+       "type": "current_account",
+       "principal": 320000,
+       "accrued_interest": 0,
+       "total": 320000
+      },
+      {
+       "product_id": "DEP-1",
+       "type": "term_deposit",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "total": 2069238
+      },
+      {
+       "product_id": "CRD-1",
+       "type": "personal_loan",
+       "principal": -900000,
+       "accrued_interest": -2663,
+       "total": -902663
+      }
+     ],
+     "post_death_credits": [
+      {
+       "movement": {
+        "date": "2026-09-15",
+        "amount": 210000,
+        "kind": "pension_credit",
+        "fee_code": null,
+        "by_mandate_holder": false
+       },
+       "code": "post_death_credit",
+       "amount": 210000
+      },
+      {
+       "movement": {
+        "date": "2026-10-15",
+        "amount": 210000,
+        "kind": "pension_credit",
+        "fee_code": null,
+        "by_mandate_holder": false
+       },
+       "code": "pension_return_CNPP",
+       "amount": 210000
+      }
+     ],
+     "mandate_withdrawals": [],
+     "loan_insurance": [
+      "UQ-0000000-FICTIV"
+     ],
+     "status": "draft_pending_signature"
+    }
+   },
+   "id": "E8"
+  },
+  {
+   "at": "2026-10-28T20:38:48+00:00",
+   "kind": "document",
+   "summary": "Primit: insurance_certificate (03-certificat-asigurare.md), încredere 0.90",
+   "rule": null,
+   "data": {
+    "document_id": "doc-3"
+   },
+   "id": "E9"
+  },
+  {
+   "at": "2026-10-28T20:38:48+00:00",
+   "kind": "action",
+   "summary": "Dosar de daună deschis la UNIQA Asigurări de viață S.A. pentru polița UQ-0000000-FICTIV; avizare până la 2026-11-27. Documente cerute moștenitorilor: cererea de despăgubire UNIQA (formularul F1), completată de moștenitor; copia certificatului de deces; copia certificatului medical constatator al decesului; documentele medicale din istoric (scrisori medicale, bilete de externare, investigații); documentele medico-legale care lămuresc împrejurările accidentului.",
+   "rule": "UNIQA Asigurări de viață S.A.: avizare în 30 de zile (ipoteză, de confirmat) de la deces/aflare (Condițiile Generale UNIQA nu sunt publice; 30 de zile e pe daune-viata.uniqa.ro (kb/bank-procedures/asigurare-viata-credit.md), neregăsit pe uniqa.ro/daune)",
+   "data": {
+    "insurer": "uniqa",
+    "hypothesis": true
+   },
+   "id": "E10"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "decision",
+   "summary": "Validare picată: iban_invalid pe ibans (soft): IBAN în format invalid: RO00 RZBR 0000 0000 0000 01",
+   "rule": "validare deterministă după LLM (document-extraction-approach §4)",
+   "data": {
+    "document_id": "doc-4",
+    "validation": {
+     "code": "iban_invalid",
+     "field": "ibans",
+     "severity": "soft",
+     "detail": "IBAN în format invalid: RO00 RZBR 0000 0000 0000 01"
+    }
+   },
+   "id": "E11"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "document",
+   "summary": "Primit: heir_certificate (04-certificat-mostenitor-A.md), încredere 0.83",
+   "rule": null,
+   "data": {
+    "document_id": "doc-4"
+   },
+   "id": "E12"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "document",
+   "summary": "Certificat de moștenitor: IONESCU ION 1/4, IONESCU ANDREI 3/8, IONESCU ELENA 3/8",
+   "rule": "cotele vin din certificat, nu din lege",
+   "data": {
+    "testament": false
+   },
+   "id": "E13"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "escalation",
+   "summary": "Escaladare: IONESCU ELENA este minor (sub 18 ani): plata părții sale se blochează până la acordul scris al reprezentantului legal (C.civ. art. 41, 144-146).",
+   "rule": null,
+   "data": {
+    "reason": "minor_heir",
+    "document_id": "doc-4"
+   },
+   "id": "E14"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "action",
+   "summary": "Certificatul nu acoperă: DEP-1. Cerere de certificat suplimentar generată către notar.",
+   "rule": "practica notarială: supliment la certificatul de moștenitor",
+   "data": {},
+   "id": "E15"
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "kind": "decision",
+   "summary": "Probleme găsite la 04-certificat-mostenitor-A.md: certificate_incomplete. Expeditor: necunoscut.",
+   "rule": "078: detectare deterministă (agent/deficiencies.py)",
+   "data": {
+    "document_id": "doc-4",
+    "problems": [
+     "certificate_incomplete"
+    ]
+   },
+   "id": "E16"
+  },
+  {
+   "at": "2026-10-28T20:40:05+00:00",
+   "kind": "action",
+   "summary": "Mesaj către IONESCU ION pe email (SUPPLEMENT_NEEDED), în outbox (mock).",
+   "rule": "heir-messaging: șablon aprobat, destinatar din dosar; fără date financiare pe SMS/WhatsApp",
+   "data": {},
+   "id": "E17"
+  },
+  {
+   "at": "2026-10-28T20:40:53+00:00",
+   "kind": "document",
+   "summary": "Primit: insurer_response (05-raspuns-asigurator.md), încredere 0.90",
+   "rule": null,
+   "data": {
+    "document_id": "doc-5"
+   },
+   "id": "E18"
+  },
+  {
+   "at": "2026-10-28T20:40:53+00:00",
+   "kind": "action",
+   "summary": "Indemnizație primită: 9000.00 lei; creditul stins de asigurător. Rămâne în sarcina masei succesorale: 26.63 lei (dobânda la data decesului, neacoperită).",
+   "rule": "C.civ. art. 1114",
+   "data": {
+    "indemnity_bani": 900000,
+    "remaining_debt_bani": 2663
+   },
+   "id": "E19"
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "kind": "decision",
+   "summary": "Validare picată: iban_invalid pe ibans (soft): IBAN în format invalid: RO00 RZBR 0000 0000 0000 02",
+   "rule": "validare deterministă după LLM (document-extraction-approach §4)",
+   "data": {
+    "document_id": "doc-6",
+    "validation": {
+     "code": "iban_invalid",
+     "field": "ibans",
+     "severity": "soft",
+     "detail": "IBAN în format invalid: RO00 RZBR 0000 0000 0000 02"
+    }
+   },
+   "id": "E20"
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "kind": "document",
+   "summary": "Primit: supplementary_certificate (06-certificat-suplimentar.md), încredere 0.83",
+   "rule": null,
+   "data": {
+    "document_id": "doc-6"
+   },
+   "id": "E21"
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "kind": "decision",
+   "summary": "Toate produsele sunt acoperite de certificat(e).",
+   "rule": null,
+   "data": {},
+   "id": "E22"
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "kind": "action",
+   "summary": "Plan de plată generat: 6 linii, 4284.61 lei plătibili acum; așteaptă aprobare umană.",
+   "rule": "C.civ. art. 1114, 2187; plata = acțiune ireversibilă ⇒ aprobare operator",
+   "data": {},
+   "id": "E23"
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "kind": "decision",
+   "summary": "Probleme închise de documentul 06-certificat-suplimentar.md: doc-4:certificate_incomplete.",
+   "rule": "078: documentul refăcut închide problema",
+   "data": {
+    "document_id": "doc-6"
+   },
+   "id": "E24"
+  },
+  {
+   "at": "2026-10-28T20:41:31+00:00",
+   "kind": "action",
+   "summary": "Mesaj către IONESCU ION pe email (MINOR_REPRESENTATION), în outbox (mock).",
+   "rule": "heir-messaging: șablon aprobat, destinatar din dosar; fără date financiare pe SMS/WhatsApp",
+   "data": {},
+   "id": "E25"
+  },
+  {
+   "at": "2026-10-28T20:44:11+00:00",
+   "kind": "decision",
+   "summary": "Plata aprobată de smoke-e2e: 4284.61 lei către 2 moștenitori; 4 linii rămân blocate.",
+   "rule": null,
+   "data": {},
+   "id": "E26"
+  }
+ ],
+ "escalations": [
+  {
+   "id": "ESC-1",
+   "reason": "minor_heir",
+   "detail": "IONESCU ELENA este minor (sub 18 ani): plata părții sale se blochează până la acordul scris al reprezentantului legal (C.civ. art. 41, 144-146).",
+   "document_id": "doc-4",
+   "resolved": false,
+   "data": {}
+  }
+ ],
+ "deadlines": [
+  {
+   "code": "succession_option",
+   "due": "2027-09-03",
+   "basis": "C.civ. art. 1103: opțiunea succesorală, 1 an de la deces",
+   "hypothesis": false
+  },
+  {
+   "code": "notary_answer",
+   "due": "2026-10-20",
+   "basis": "Legea 36/1995 art. 81 alin. 2: răspuns înainte de dezbatere",
+   "hypothesis": false
+  },
+  {
+   "code": "insurance_claim_notice",
+   "due": "2026-11-27",
+   "basis": "UNIQA Asigurări de viață S.A.: avizare în 30 de zile (ipoteză, de confirmat) de la deces/aflare (Condițiile Generale UNIQA nu sunt publice; 30 de zile e pe daune-viata.uniqa.ro (kb/bank-procedures/asigurare-viata-credit.md), neregăsit pe uniqa.ro/daune)",
+   "hypothesis": true
+  }
+ ],
+ "heirs": [
+  {
+   "id": "H1",
+   "name": "IONESCU ION",
+   "share": "1/4",
+   "minor": false,
+   "legal_representative": null
+  },
+  {
+   "id": "H2",
+   "name": "IONESCU ANDREI",
+   "share": "3/8",
+   "minor": false,
+   "legal_representative": null
+  },
+  {
+   "id": "H3",
+   "name": "IONESCU ELENA",
+   "share": "3/8",
+   "minor": true,
+   "legal_representative": "IONESCU ION"
+  }
+ ],
+ "coverage_gaps": [],
+ "payment_plan": {
+  "id": "PP-SC-2026-0001",
+  "status": "approved",
+  "net_account": {
+   "product_id": "CC-1",
+   "gross": 530000,
+   "debts_deducted": 2663,
+   "withheld": 210000,
+   "net": 527337
+  },
+  "withheld": [
+   {
+    "reason": "pension_return_CNPP",
+    "amount": 210000
+   }
+  ],
+  "lines": [
+   {
+    "heir_id": "H1",
+    "name": "IONESCU ION",
+    "product_id": "CC-1",
+    "fraction_of_product": "5/8",
+    "amount": 329585,
+    "blocked_reason": null
+   },
+   {
+    "heir_id": "H2",
+    "name": "IONESCU ANDREI",
+    "product_id": "CC-1",
+    "fraction_of_product": "3/16",
+    "amount": 98876,
+    "blocked_reason": null
+   },
+   {
+    "heir_id": "H3",
+    "name": "IONESCU ELENA",
+    "product_id": "CC-1",
+    "fraction_of_product": "3/16",
+    "amount": 98876,
+    "blocked_reason": "minor_requires_representation"
+   },
+   {
+    "heir_id": "H1",
+    "name": "IONESCU ION",
+    "product_id": "DEP-1",
+    "fraction_of_product": "5/8",
+    "amount": 1315000,
+    "blocked_reason": "depozit nescadent până la 2027-01-03: plată la scadență (lichidarea anticipată pierde dobânda)"
+   },
+   {
+    "heir_id": "H2",
+    "name": "IONESCU ANDREI",
+    "product_id": "DEP-1",
+    "fraction_of_product": "3/16",
+    "amount": 394500,
+    "blocked_reason": "depozit nescadent până la 2027-01-03: plată la scadență (lichidarea anticipată pierde dobânda)"
+   },
+   {
+    "heir_id": "H3",
+    "name": "IONESCU ELENA",
+    "product_id": "DEP-1",
+    "fraction_of_product": "3/16",
+    "amount": 394500,
+    "blocked_reason": "minor_requires_representation"
+   }
+  ],
+  "approved_by": "smoke-e2e"
+ },
+ "insurance": {
+  "policies": [
+   "UQ-0000000-FICTIV"
+  ],
+  "policy_id": "UQ-0000000-FICTIV",
+  "insurer": "UNIQA Asigurări de viață S.A.",
+  "claim_open": true,
+  "claim_opened_on": "2026-10-28",
+  "insurer_key": "uniqa",
+  "claim_documents": [
+   "cererea de despăgubire UNIQA (formularul F1), completată de moștenitor",
+   "copia certificatului de deces",
+   "copia certificatului medical constatator al decesului",
+   "documentele medicale din istoric (scrisori medicale, bilete de externare, investigații)",
+   "documentele medico-legale care lămuresc împrejurările accidentului"
+  ],
+  "payment_term": "10 de zile lucrătoare (ipoteză, de confirmat)",
+  "settled": true,
+  "paid": 900000,
+  "settled_on": "2026-10-28",
+  "remaining_debt": 2663
+ },
+ "flags": [
+  {
+   "code": "fee_to_reverse",
+   "amount": 6000,
+   "date": "2026-09-05"
+  },
+  {
+   "code": "post_death_credit",
+   "amount": 210000,
+   "date": "2026-09-15"
+  },
+  {
+   "code": "pension_return_CNPP",
+   "amount": 210000,
+   "date": "2026-10-15"
+  }
+ ],
+ "contact_channels": {
+  "H1": {
+   "name": "IONESCU ION",
+   "via": null,
+   "preferred": "email",
+   "email": "ion.ionescu@example.invalid",
+   "sms": "+40 700 000 001",
+   "verified": true,
+   "is_client": true
+  },
+  "H2": {
+   "name": "IONESCU ANDREI",
+   "via": null,
+   "preferred": "sms",
+   "email": "andrei.ionescu@example.invalid",
+   "sms": "+40 700 000 002",
+   "verified": true,
+   "is_client": true
+  },
+  "H3": {
+   "name": "IONESCU ELENA",
+   "via": "IONESCU ION",
+   "preferred": "email",
+   "email": null,
+   "sms": null,
+   "verified": false,
+   "is_client": false
+  }
+ },
+ "processed_document_keys": [
+  "dgep_signal:DGEP-MOCK-2026-09-20-000123:2026-09-03",
+  "heir_certificate:87:2026-09-03",
+  "insurance_certificate:UQ-0000000-FICTIV:",
+  "insurer_response:7781:2026-09-03",
+  "notary_request:412:2026-09-03",
+  "supplementary_certificate:95:"
+ ],
+ "state": "PAID",
+ "missing": [
+  "acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+ ]
+}

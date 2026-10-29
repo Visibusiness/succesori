@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.95,
+ "fields": {
+  "cnp": "2410702220870",
+  "name": "DUMITRESCU ELISABETA",
+  "date_of_death": "2026-10-08",
+  "case_file": "211/2026",
+  "hearing_date": "2026-11-03",
+  "document_number": "958",
+  "notary_office": "Biroul Individual Notarial „Popa Ioana”",
+  "notary_name": "Ioana POPA"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "name": 0.95,
+  "date_of_death": 0.97,
+  "case_file": 0.97,
+  "hearing_date": 0.97,
+  "document_number": 0.93,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 2410702220870",
+  "name": "defuncta DUMITRESCU ELISABETA",
+  "date_of_death": "decedată la data de 08.10.2026",
+  "case_file": "Dosar succesoral nr. 211/2026",
+  "hearing_date": "fixat pentru data de 03.11.2026",
+  "document_number": "Nr. 958 / 22.10.2026",
+  "notary_office": "Biroul Individual Notarial „Popa Ioana”",
+  "notary_name": "Notar public Ioana POPA"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0566175,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P02/02-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "02-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

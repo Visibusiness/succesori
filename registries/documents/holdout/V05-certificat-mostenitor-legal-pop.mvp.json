@@ -1,0 +1,28 @@
+{
+  "id": "holdout-V05",
+  "raw_name": "holdout/V05-certificat-mostenitor-legal-pop",
+  "document_type": "heir_certificate",
+  "received_on": "2026-10-14",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "testament": false,
+    "case_file": "88/2026",
+    "document_number": "54",
+    "notary_office": "Societatea Profesională Notarială „Exemplu și Asociații”",
+    "notary_name": "Radu EXEMPLU",
+    "ibans": [
+      "RO00RZBR0000000000000031"
+    ],
+    "heirs": [
+      {
+        "name": "Ioana Pop",
+        "share": "1/2"
+      },
+      {
+        "name": "Mihai Pop",
+        "share": "1/2"
+      }
+    ]
+  }
+}

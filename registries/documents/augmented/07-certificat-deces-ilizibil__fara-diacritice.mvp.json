@@ -1,0 +1,15 @@
+{
+  "id": "doc-07-fara-diacritice",
+  "raw_name": "07-certificat-deces-ilizibil__fara-diacritice.md",
+  "document_type": "death_certificate",
+  "received_on": "2026-11-12",
+  "confidence": 0.41,
+  "fields": {
+    "cnp": null,
+    "cnp_raw": "1############",
+    "date_of_death": null,
+    "document_number": null
+  },
+  "_augmented_from": "07-certificat-deces-ilizibil.md",
+  "_variant": "fara-diacritice"
+}

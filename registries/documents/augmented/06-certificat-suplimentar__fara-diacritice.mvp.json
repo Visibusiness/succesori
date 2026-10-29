@@ -1,0 +1,28 @@
+{
+  "id": "doc-06-fara-diacritice",
+  "raw_name": "06-certificat-suplimentar__fara-diacritice.md",
+  "document_type": "supplementary_certificate",
+  "received_on": "2026-11-10",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "reference": "95/2026",
+    "products": [
+      "DEP-1"
+    ],
+    "case_file": "123/2026",
+    "document_number": "95",
+    "initial_certificate": "87",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU",
+    "ibans": [
+      "RO00 RZBR 0000 0000 0000 02"
+    ]
+  },
+  "_deprecated_fields": [
+    "reference",
+    "products"
+  ],
+  "_augmented_from": "06-certificat-suplimentar.md",
+  "_variant": "fara-diacritice"
+}

@@ -1,0 +1,3 @@
+# regenerabile determinist: .venv/bin/python -m registries.generator.certificat_deces
+*.pdf
+*.png

@@ -1,0 +1,14 @@
+{
+  "id": "real-36",
+  "raw_name": "real-text/36-negativ-notaripro-dex-certificat-mostenitor.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "heirs": null,
+    "testament": null
+  },
+  "_source": "notari/notaripro-dex-certificat-mostenitor.txt (definiția)"
+}

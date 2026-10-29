@@ -1,0 +1,15 @@
+{
+  "id": "B-03",
+  "raw_name": "B-neagu-cristian/scan/03-certificat-asigurare.pdf",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-07-20",
+  "confidence": 0.91,
+  "fields": {
+    "cnp": "1750914013511",
+    "policy_id": "UQ-8502001-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "NP-2024-085021",
+    "document_number": "UQ-8502001-FICTIV"
+  },
+  "_fictiv": true
+}

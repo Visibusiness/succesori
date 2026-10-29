@@ -1,0 +1,58 @@
+{
+ "document_type": "insurer_response",
+ "confidence": 0.93,
+ "fields": {
+  "policy_id": "UQ-8501001-FICTIV",
+  "decision": "refused",
+  "claim_number": "DV-0702/2026",
+  "document_number": "8517",
+  "loan_contract": "NP-2026-085011",
+  "cnp": "1640318184124",
+  "reason": "Decesul s-a produs la 11.08.2026, în primele 12 luni de asigurare, ca urmare a unei afecțiuni (pancreatită cronică și ciroză hepatică) diagnosticată și tratată în ultimele 24 de luni anterior datei de început a asigurării (15.05.2026)",
+  "amount": null
+ },
+ "field_confidence": {
+  "policy_id": 0.95,
+  "decision": 0.98,
+  "claim_number": 0.93,
+  "document_number": 0.9,
+  "loan_contract": 0.93,
+  "cnp": 0.9,
+  "reason": 0.92,
+  "amount": 0.0
+ },
+ "evidence": {
+  "policy_id": "Număr Certificat de asigurare UQ-8501001-FICTIV",
+  "decision": "cererea de despăgubire a fost RESPINSĂ",
+  "claim_number": "DV-0702/2026",
+  "document_number": "Nr. 8517 / 26.10.2026",
+  "loan_contract": "nr. NP-2026-085011 din 15.05.2026",
+  "cnp": "1640318184124",
+  "reason": "Decesul s-a produs la 11.08.2026, în primele 12 luni de asigurare, ca urmare a acestor afecțiuni"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.059809299999999996,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P13/06-raspuns-asigurator-refuz-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:36+00:00",
+  "read": "06-raspuns-asigurator-refuz-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

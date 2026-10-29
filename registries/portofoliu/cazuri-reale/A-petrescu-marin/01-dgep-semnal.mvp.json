@@ -1,0 +1,13 @@
+{
+  "id": "A-01",
+  "raw_name": "A-petrescu-marin/01-dgep-semnal.json",
+  "document_type": "dgep_signal",
+  "received_on": "2026-08-24",
+  "confidence": 0.97,
+  "fields": {
+    "cnp": "1640318184124",
+    "date_of_death": "2026-08-11",
+    "document_number": "DGEP-MOCK-2026-08-24-008501"
+  },
+  "_fictiv": true
+}

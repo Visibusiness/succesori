@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1610606290773",
+  "name": "STAN NICOLAE",
+  "date_of_death": "2026-07-25",
+  "case_file": "188/2026",
+  "hearing_date": "2026-09-08",
+  "document_number": "655",
+  "notary_office": "Biroul Individual Notarial „Enache Dan”",
+  "notary_name": "Dan ENACHE"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "name": 0.95,
+  "date_of_death": 0.95,
+  "case_file": 0.95,
+  "hearing_date": 0.95,
+  "document_number": 0.9,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1610606290773",
+  "name": "defunctul STAN NICOLAE",
+  "date_of_death": "decedat la data de 25.07.2026",
+  "case_file": "Dosar succesoral nr. 188/2026",
+  "hearing_date": "fixat pentru data de 08.09.2026",
+  "document_number": "Nr. 655 / 06.08.2026",
+  "notary_office": "Biroul Individual Notarial „Enache Dan”",
+  "notary_name": "Notar public Dan ENACHE"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0557275,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P10/03-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:23+00:00",
+  "read": "03-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1311001188342",
+  "name": "Aurel Marin",
+  "birth_date": "1931-10-01",
+  "date_of_death": "2024-11-06",
+  "father": "MARIN PETRU",
+  "mother": "OPREA DOINA",
+  "document_series": "DE",
+  "document_number": "605701",
+  "death_record_number": "1950"
+ },
+ "_fictiv": true,
+ "_model": "anexa3",
+ "_variant": "pdf",
+ "id": "CD10-anexa3-pdf",
+ "raw_name": "forms-real/certificat-deces/CD10-anexa3.pdf",
+ "received_on": "2025-05-28",
+ "_split": "holdout",
+ "_document_variant": "certificat_fizic_2024"
+}

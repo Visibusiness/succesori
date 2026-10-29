@@ -1,0 +1,21 @@
+{
+  "id": "A-02",
+  "raw_name": "A-petrescu-marin/scan/02-certificat-deces.pdf",
+  "document_type": "death_certificate",
+  "received_on": "2026-08-27",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "1640318184124",
+    "name": "Marin Petrescu",
+    "birth_date": "1964-03-18",
+    "date_of_death": "2026-08-11",
+    "father": "PETRESCU ION",
+    "mother": "STANCIU ELENA",
+    "document_series": "DH",
+    "document_number": "408512",
+    "death_record_number": "1187"
+  },
+  "_document_variant": "certificat_fizic_2024",
+  "_model": "anexa3",
+  "_fictiv": true
+}

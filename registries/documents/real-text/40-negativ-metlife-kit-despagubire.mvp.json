@@ -1,0 +1,14 @@
+{
+  "id": "real-40",
+  "raw_name": "real-text/40-negativ-metlife-kit-despagubire.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "date_of_death": null
+  },
+  "_source": "forme/MetLife-kit-despagubire-asigurari-prin-banca.pdf (pașii 1–3 și documentele la deces)"
+}

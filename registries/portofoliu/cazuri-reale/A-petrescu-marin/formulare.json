@@ -1,0 +1,35 @@
+{
+  "_ce_e": "valorile cu care genereaza.py completează formularele oficiale (PDF MAI Anexa 3, UNIQA CD_UAV_V8_04.2024); aceleași ca în .md și .mvp.json",
+  "certificat_deces": {
+    "sex": "M", "surname": "PETRESCU", "first": "MARIN", "born": "1964-03-18", "died": "2026-08-11",
+    "cnp": "1640318184124",
+    "birth_place": ["Mun. Târgu Jiu", "Gorj"], "death_place": ["Mun. Târgu Jiu", "Gorj"],
+    "domicile": ["Mun. Târgu Jiu, Str. Fictivă nr. 14", "Gorj"],
+    "father": ["PETRESCU", "ION"], "mother": ["STANCIU", "ELENA"],
+    "act_no": "1187", "act_date": "2026-08-12",
+    "registered": ["Primăria Mun. Târgu Jiu", "Gorj"], "issued_by": "SPCLEP Târgu Jiu", "issued": "2026-08-12",
+    "series": "DH", "number": "408512"
+  },
+  "cerere_uniqa": {
+    "nume_asigurat": "PETRESCU MARIN",
+    "cnp": "1640318184124",
+    "certificat": "UQ-8501001-FICTIV",
+    "adresa_domiciliu": "Mun. Târgu Jiu, Str. Fictivă nr. 14, Jud. Gorj",
+    "adresa_corespondenta": "idem (PETRESCU DOINA)",
+    "data_intrarii": "15.05.2026",
+    "telefon": "0700 000 851",
+    "email": "doina.petrescu@example.invalid",
+    "risc": "Deces din orice cauza",
+    "data_eveniment": "11082026",
+    "cauza": ["Deces survenit în urma unor probleme medicale (pancreatită", "cronică, ciroză hepatică), la Spitalul Județean de Urgență", "Târgu Jiu, la 11.08.2026."],
+    "accident": false,
+    "data_accident": "", "loc_accident": "", "politie": "",
+    "medic_familie": ["Dr. FICTIV MARIA, CMI Medicină de familie,", "Mun. Târgu Jiu, Str. Fictivă nr. 5"],
+    "declarant": "PETRESCU DOINA",
+    "calitate": "soție, moștenitor",
+    "adresa_contact": "Mun. Târgu Jiu, Str. Fictivă nr. 14",
+    "telefon_declarant": "0700 000 851",
+    "email_declarant": "doina.petrescu@example.invalid",
+    "data_completarii": "27.08.2026"
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1451030031456",
+  "date_of_death": "2026-09-14",
+  "document_number": "DGEP-MOCK-2026-09-21-002391",
+  "name": "VLAD PETRE"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "date_of_death": 0.95,
+  "document_number": 0.93,
+  "name": 0.97
+ },
+ "evidence": {
+  "cnp": "CNP: 1451030031456",
+  "date_of_death": "Data decesului: 14.09.2026",
+  "document_number": "Mesaj: DGEP-MOCK-2026-09-21-002391",
+  "name": "Numele de familie: VLAD. Prenumele: PETRE"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0522151,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P11/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:26+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "1451030031456"
+ }
+}

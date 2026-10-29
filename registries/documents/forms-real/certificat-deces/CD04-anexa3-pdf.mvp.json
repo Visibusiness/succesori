@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1750904331340",
+  "name": "Constantin Zaharia",
+  "birth_date": "1975-09-04",
+  "date_of_death": "2025-06-17",
+  "father": "ZAHARIA DUMITRU",
+  "mother": "DUMITRU ȘTEFANIA",
+  "document_series": "TN",
+  "document_number": "314702",
+  "death_record_number": "897"
+ },
+ "_fictiv": true,
+ "_model": "anexa3",
+ "_variant": "pdf",
+ "id": "CD04-anexa3-pdf",
+ "raw_name": "forms-real/certificat-deces/CD04-anexa3.pdf",
+ "received_on": "2026-01-04",
+ "_split": "train",
+ "_document_variant": "certificat_fizic_2024"
+}

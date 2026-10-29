@@ -1,0 +1,12 @@
+{
+  "id": "holdout-V02",
+  "raw_name": "holdout/V02-deces-anexa6-electronic",
+  "document_type": "death_certificate",
+  "received_on": "2026-09-05",
+  "confidence": 0.95,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "document_number": "2026-0090417"
+  }
+}

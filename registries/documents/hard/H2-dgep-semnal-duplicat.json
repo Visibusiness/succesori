@@ -1,0 +1,26 @@
+{
+  "schema": "mosteniri.dgep.death_signal/v0",
+  "_generated_by_us": true,
+  "message_id": "DGEP-MOCK-2026-09-27-000141",
+  "channel": "periodic_sftp",
+  "batch_week": "2026-W39",
+  "bank_code": "RZBR",
+  "cnp": "2XXXXXXXXXXXX",
+  "last_name": "IONESCU",
+  "first_name": "MARIA",
+  "date_of_death": "2026-09-03",
+  "place_of_death": null,
+  "death_certificate": {
+    "series": null,
+    "number": null,
+    "issuer": null
+  },
+  "communicated_at": "2026-09-27T06:00:00+03:00",
+  "changed_fields": [],
+  "id_document": {
+    "type": "CI",
+    "series": "XX",
+    "number": "000000",
+    "expiry_date": "2030-01-01"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "holdout-V08",
+  "raw_name": "holdout/V08-certificat-suplimentar-pop",
+  "document_type": "supplementary_certificate",
+  "received_on": "2026-11-12",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "case_file": "88/2026",
+    "document_number": "61",
+    "initial_certificate": "54",
+    "notary_office": "Societatea Profesională Notarială „Exemplu și Asociații”",
+    "notary_name": "Radu EXEMPLU",
+    "ibans": [
+      "RO00 RZBR 0000 0000 0000 32"
+    ]
+  }
+}

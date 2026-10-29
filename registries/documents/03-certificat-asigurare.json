@@ -1,0 +1,37 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "03",
+  "doc_type": "polita_asigurare",
+  "received_at": "2026-09-30",
+  "client_id": "RC1001",
+  "source_text": "03-certificat-asigurare.md",
+  "fields": {
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "product_name": "Asigurare de viață pentru titularii de credite de nevoi personale negarantate",
+    "certificate_number": "UQ-0000000-FICTIV",
+    "insured_name": "IONESCU MARIA",
+    "insured_cnp": "2XXXXXXXXXXXX",
+    "beneficiary": "Raiffeisen Bank S.A.",
+    "loan_contract_number": "NP-2023-001001",
+    "loan_contract_date": "2023-05-10",
+    "start_date": "2023-05-10",
+    "initial_sum_insured_bani": 1500000,
+    "premium_type": "lunara",
+    "covered_risks": [
+      "deces",
+      "invaliditate_permanenta",
+      "spitalizare"
+    ],
+    "cap_bani": 26000000,
+    "termen_avizare_zile": 30
+  },
+  "expected_agent": {
+    "state_after": "INSURANCE_CLAIM_OPEN",
+    "product_id": "CRD-1",
+    "exclusion_flags": [],
+    "termen_avizare": "2026-10-20",
+    "checklist": "F1",
+    "indemnizatie_asteptata_bani": 900000
+  }
+}

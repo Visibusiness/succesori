@@ -1,0 +1,38 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H1",
+  "doc_type": "adresa_notar",
+  "received_at": "2026-09-18",
+  "client_id": "RC1001",
+  "source_text": "H1-adresa-notar-inainte-dgep.md",
+  "fields": {
+    "nr_inregistrare_adresa": "398",
+    "data_adresa": "2026-09-17",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "defunct_data_decesului": "2026-09-03",
+    "data_referinta_sold": "2026-09-03",
+    "termen_dezbatere": "2026-10-20"
+  },
+  "expected_agent": {
+    "sequence": [
+      "hard/H1-adresa-notar-inainte-dgep",
+      "01-dgep-semnal"
+    ],
+    "after_this_doc": {
+      "case_opened_by": "adresa_notar",
+      "freeze": true,
+      "freeze_reversible": true,
+      "fees_reversed_bani": 6000,
+      "state_after": "NOTARY_ANSWERED"
+    },
+    "after_dgep": {
+      "new_case": false,
+      "second_freeze": false,
+      "second_fee_reversal": false,
+      "dgep_attached_as": "confirmation"
+    },
+    "values_identical_to_main_scenario": true
+  }
+}

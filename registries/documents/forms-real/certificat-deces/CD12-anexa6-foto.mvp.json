@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.85,
+ "fields": {
+  "cnp": "2440928296636",
+  "name": "Rodica Șerban",
+  "birth_date": "1944-09-28",
+  "date_of_death": "2026-01-01",
+  "father": "ȘERBAN AUREL",
+  "mother": "CIOBANU VASILICA",
+  "document_series": null,
+  "document_number": "369860",
+  "death_record_number": "551"
+ },
+ "_fictiv": true,
+ "_model": "anexa6",
+ "_variant": "foto",
+ "id": "CD12-anexa6-foto",
+ "raw_name": "forms-real/certificat-deces/CD12-anexa6-foto.jpg",
+ "received_on": "2026-01-07",
+ "_split": "holdout",
+ "_document_variant": "certificat_electronic_2024"
+}

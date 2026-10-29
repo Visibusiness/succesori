@@ -1,0 +1,13 @@
+{
+  "id": "B-01",
+  "raw_name": "B-neagu-cristian/01-dgep-semnal.json",
+  "document_type": "dgep_signal",
+  "received_on": "2026-07-13",
+  "confidence": 0.97,
+  "fields": {
+    "cnp": "1750914013511",
+    "date_of_death": "2026-07-02",
+    "document_number": "DGEP-MOCK-2026-07-13-008502"
+  },
+  "_fictiv": true
+}

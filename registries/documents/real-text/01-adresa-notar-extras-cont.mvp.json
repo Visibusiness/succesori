@@ -1,0 +1,17 @@
+{
+  "id": "real-01",
+  "raw_name": "real-text/01-adresa-notar-extras-cont.md",
+  "document_type": "notary_request",
+  "received_on": null,
+  "confidence": 0.5,
+  "fields": {
+    "cnp": null,
+    "date_of_death": null,
+    "case_file": null,
+    "hearing_date": null,
+    "document_number": null,
+    "notary_office": null,
+    "notary_name": null
+  },
+  "_source": "forum/notaripro-supliment-mostenire.txt"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "real-22",
+  "raw_name": "real-text/22-cnp-cluj-cerere-verificare-evidente-succesorale.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "date_of_death": null,
+    "document_number": null,
+    "case_file": null
+  },
+  "_source": "notari/cluj-cerere-verificare-succesiune.pdf"
+}

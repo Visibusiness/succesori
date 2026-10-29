@@ -1,0 +1,16 @@
+{
+  "id": "doc-01",
+  "raw_name": "01-dgep-semnal.json",
+  "document_type": "dgep_signal",
+  "received_on": "2026-09-20",
+  "confidence": 0.97,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "reference": "DGEP-MOCK-2026-09-20-000123",
+    "document_number": "DGEP-MOCK-2026-09-20-000123"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ]
+}

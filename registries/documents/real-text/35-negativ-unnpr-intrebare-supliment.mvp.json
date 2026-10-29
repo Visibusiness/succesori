@@ -1,0 +1,14 @@
+{
+  "id": "real-35",
+  "raw_name": "real-text/35-negativ-unnpr-intrebare-supliment.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "initial_certificate": null,
+    "heirs": null
+  },
+  "_source": "notari/unnpr-intrebari-frecvente.txt"
+}

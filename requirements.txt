@@ -1,0 +1,10 @@
+# Pachetele importate efectiv de agent/, scripts/, tests/ și registries/generator/, cu versiunile testate (Python 3.11).
+# LLM-ul se apelează prin CLI-ul Claude Code (`claude -p`), instalat separat: npm install -g @anthropic-ai/claude-code
+fastapi==0.162.0            # agent/api.py, inbox_portal.py, doc_preview.py
+uvicorn[standard]==0.54.0   # serverul API
+python-multipart==0.0.32    # upload de fișiere (UploadFile/Form)
+httpx==0.28.1               # fastapi.testclient în tests/; apelurile HTTP din scripts/ folosesc urllib
+PyMuPDF==1.24.14            # fitz: poarta de siguranță pe PDF (agent/guard.py), generatorul de PDF
+pillow==11.0.0              # PIL: scanările degradate din registries/generator/certificat_deces.py
+pytest==9.2.0
+playwright==1.64.1          # doar scripts/ui_e2e.py; apoi `playwright install chromium`

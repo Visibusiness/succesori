@@ -1,0 +1,217 @@
+{
+ "id": "P07",
+ "case_id": "SC-2026-0107",
+ "stage": "plan_de_aprobat",
+ "stage_label": "Plan de plată de aprobat, cu un minor (escaladare)",
+ "customer": {
+  "cif": "RC3107",
+  "name": "Vasile Petrescu",
+  "cnp": "1580909120612",
+  "birth_date": "1958-09-09",
+  "spouse": "Ileana Petrescu",
+  "cards": [
+   "C-3107"
+  ]
+ },
+ "products": [
+  {
+   "id": "P07-CC",
+   "type": "current_account",
+   "balance": 3420800,
+   "estate_fraction": "1/2",
+   "iban": "RO43 RZBR 0000 0000 0031 0701"
+  },
+  {
+   "id": "P07-CRD",
+   "type": "personal_loan",
+   "outstanding": 4200000,
+   "rate_pct": 8.9,
+   "last_interest_paid": "2026-07-20",
+   "insurance_policy_id": "UQ-5520981",
+   "loan_contract": "NP-2022-018844",
+   "installment": 98500
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-08-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  },
+  {
+   "date": "2026-09-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  },
+  {
+   "date": "2026-10-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  }
+ ],
+ "contacts": {
+  "Ileana Petrescu": {
+   "email": "ileana.petrescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Cluj-Napoca, Str. Fictivă nr. 3, Jud. Cluj"
+  },
+  "Mihai Petrescu": {
+   "email": "mihai.petrescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Cluj-Napoca, Str. Fictivă nr. 17, Jud. Cluj"
+  },
+  "Ioana Petrescu": {
+   "email": "ioana.petrescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": false,
+   "address": "Florești, Str. Fictivă nr. 2, Jud. Cluj"
+  },
+  "Daniel Petrescu": {
+   "email": "daniel.petrescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": false,
+   "address": "41 Fictive Street, Toronto ON, Canada"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P07-D1",
+    "received_on": "2026-08-10",
+    "file": "P07/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1580909120612",
+     "date_of_death": "2026-08-02",
+     "document_number": "DGEP-MOCK-2026-08-10-001517"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P07-D2",
+    "received_on": "2026-08-18",
+    "file": "P07/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1580909120612",
+     "date_of_death": "2026-08-02",
+     "case_file": "176/2026",
+     "document_number": "877",
+     "hearing_date": "2026-09-15",
+     "notary_office": "Biroul Individual Notarial „Mureșan Paul”",
+     "notary_name": "Paul MUREȘAN"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-08-19",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P07-D4",
+    "received_on": "2026-08-25",
+    "file": "P07/04-certificat-asigurare-scan.pdf",
+    "expected_type": "insurance_certificate",
+    "expected_fields": {
+     "cnp": "1580909120612",
+     "policy_id": "UQ-5520981",
+     "insurer": "UNIQA Asigurări de viață S.A.",
+     "loan_contract": "NP-2022-018844",
+     "document_number": "UQ-5520981"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P07-D5",
+    "received_on": "2026-09-30",
+    "file": "P07/05-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "1580909120612",
+     "case_file": "176/2026",
+     "document_number": "70",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Ileana Petrescu",
+       "share": "1/4"
+      },
+      {
+       "id": "H2",
+       "name": "Mihai Petrescu",
+       "share": "3/16"
+      },
+      {
+       "id": "H3",
+       "name": "Ioana Petrescu",
+       "share": "3/16"
+      },
+      {
+       "id": "H4",
+       "name": "Daniel Petrescu",
+       "share": "3/16"
+      },
+      {
+       "id": "H5",
+       "name": "Sofia Petrescu",
+       "share": "3/16",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "ibans": [
+      "RO43 RZBR 0000 0000 0031 0701"
+     ],
+     "notary_office": "Biroul Individual Notarial „Mureșan Paul”",
+     "notary_name": "Paul MUREȘAN"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P07-D6",
+    "received_on": "2026-10-21",
+    "file": "P07/06-raspuns-asigurator-scan.pdf",
+    "expected_type": "insurer_response",
+    "expected_fields": {
+     "cnp": "1580909120612",
+     "policy_id": "UQ-5520981",
+     "decision": "approved",
+     "loan_contract": "NP-2022-018844",
+     "claim_number": "DV-1187/2026",
+     "document_number": "9120",
+     "amount": 4200000
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "PAYMENT_PENDING_APPROVAL",
+  "escalations": [
+   "minor_heir"
+  ],
+  "decisions": [
+   "plata",
+   "escaladare"
+  ],
+  "plan": true
+ }
+}

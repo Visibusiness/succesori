@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "2610330075341",
+  "name": "Doina Matei",
+  "birth_date": "1961-03-30",
+  "date_of_death": "2025-11-17",
+  "father": "MATEI GHEORGHE",
+  "mother": "MARIN AURELIA",
+  "document_series": null,
+  "document_number": "416536",
+  "death_record_number": "130"
+ },
+ "_fictiv": true,
+ "_model": "anexa6",
+ "_variant": "scan",
+ "id": "CD06-anexa6-scan",
+ "raw_name": "forms-real/certificat-deces/CD06-anexa6.png",
+ "received_on": "2025-11-21",
+ "_split": "train",
+ "_document_variant": "certificat_electronic_2024"
+}

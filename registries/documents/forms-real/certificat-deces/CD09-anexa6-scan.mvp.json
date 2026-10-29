@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1341119089716",
+  "name": "Tudor Șerban",
+  "birth_date": "1934-11-19",
+  "date_of_death": "2025-01-09",
+  "father": "ȘERBAN CONSTANTIN",
+  "mother": "ZAHARIA DOINA",
+  "document_series": null,
+  "document_number": "569822",
+  "death_record_number": "1799"
+ },
+ "_fictiv": true,
+ "_model": "anexa6",
+ "_variant": "scan",
+ "id": "CD09-anexa6-scan",
+ "raw_name": "forms-real/certificat-deces/CD09-anexa6.png",
+ "received_on": "2025-02-10",
+ "_split": "holdout",
+ "_document_variant": "certificat_electronic_2024"
+}

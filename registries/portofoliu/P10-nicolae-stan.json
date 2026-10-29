@@ -1,0 +1,138 @@
+{
+ "id": "P10",
+ "case_id": "SC-2026-0110",
+ "stage": "escaladare_asigurator",
+ "stage_label": "Escaladare: asigurătorul a refuzat",
+ "customer": {
+  "cif": "RC3110",
+  "name": "Nicolae Stan",
+  "cnp": "1610606290773",
+  "birth_date": "1961-06-06",
+  "spouse": "Camelia Stan",
+  "cards": [
+   "C-3110"
+  ]
+ },
+ "products": [
+  {
+   "id": "P10-CC",
+   "type": "current_account",
+   "balance": 412000,
+   "estate_fraction": "1/2",
+   "iban": "RO91 RZBR 0000 0000 0031 1001"
+  },
+  {
+   "id": "P10-CRD",
+   "type": "personal_loan",
+   "outstanding": 5600000,
+   "rate_pct": 10.2,
+   "last_interest_paid": "2026-07-10",
+   "insurance_policy_id": "UQ-6610334",
+   "loan_contract": "NP-2023-027215",
+   "installment": 121400
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-08-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  },
+  {
+   "date": "2026-09-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P10-D1",
+    "received_on": "2026-08-01",
+    "file": "P10/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1610606290773",
+     "date_of_death": "2026-07-25",
+     "document_number": "DGEP-MOCK-2026-08-01-001488"
+    }
+   }
+  },
+  {
+   "op": "notifier",
+   "on": "2026-08-01",
+   "person": {
+    "name": "Camelia Stan",
+    "email": "camelia.stan@example.invalid",
+    "phone": "+40 700 000 310",
+    "address": "Ploiești, Str. Fictivă nr. 6, Jud. Prahova"
+   }
+  },
+  {
+   "doc": {
+    "id": "P10-D3",
+    "received_on": "2026-08-07",
+    "file": "P10/03-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1610606290773",
+     "date_of_death": "2026-07-25",
+     "case_file": "188/2026",
+     "document_number": "655",
+     "hearing_date": "2026-09-08",
+     "notary_office": "Biroul Individual Notarial „Enache Dan”",
+     "notary_name": "Dan ENACHE"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-08-08",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P10-D5",
+    "received_on": "2026-08-12",
+    "file": "P10/05-certificat-asigurare-scan.pdf",
+    "expected_type": "insurance_certificate",
+    "expected_fields": {
+     "cnp": "1610606290773",
+     "policy_id": "UQ-6610334",
+     "insurer": "UNIQA Asigurări de viață S.A.",
+     "loan_contract": "NP-2023-027215",
+     "document_number": "UQ-6610334"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P10-D6",
+    "received_on": "2026-10-19",
+    "file": "P10/06-raspuns-asigurator-refuz-scan.pdf",
+    "expected_type": "insurer_response",
+    "expected_fields": {
+     "cnp": "1610606290773",
+     "policy_id": "UQ-6610334",
+     "decision": "refused",
+     "loan_contract": "NP-2023-027215",
+     "claim_number": "DV-0977/2026",
+     "document_number": "8812",
+     "reason": "excludere: afecțiune preexistentă nedeclarată la aderare (art. 6.2 din condiții)"
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "INSURANCE_CLAIM_OPEN",
+  "escalations": [
+   "insurance_refused"
+  ],
+  "decisions": [
+   "escaladare"
+  ],
+  "plan": null
+ }
+}

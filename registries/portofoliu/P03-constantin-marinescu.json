@@ -1,0 +1,119 @@
+{
+ "id": "P03",
+ "case_id": "SC-2026-0103",
+ "stage": "dauna_deschisa",
+ "stage_label": "Dosar de daună deschis la UNIQA",
+ "customer": {
+  "cif": "RC3103",
+  "name": "Constantin Marinescu",
+  "cnp": "1561121133425",
+  "birth_date": "1956-11-21",
+  "spouse": "Rodica Marinescu",
+  "cards": [
+   "C-3103"
+  ]
+ },
+ "products": [
+  {
+   "id": "P03-CC",
+   "type": "current_account",
+   "balance": 1234500,
+   "estate_fraction": "1/2",
+   "iban": "RO76 RZBR 0000 0000 0031 0301"
+  },
+  {
+   "id": "P03-CRD",
+   "type": "personal_loan",
+   "outstanding": 6850000,
+   "rate_pct": 9.4,
+   "last_interest_paid": "2026-09-15",
+   "insurance_policy_id": "UQ-4471203",
+   "loan_contract": "NP-2024-033107",
+   "installment": 152300
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-10-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P03-D1",
+    "received_on": "2026-10-06",
+    "file": "P03/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1561121133425",
+     "date_of_death": "2026-09-29",
+     "document_number": "DGEP-MOCK-2026-10-06-000512"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P03-D2",
+    "received_on": "2026-10-12",
+    "file": "P03/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1561121133425",
+     "date_of_death": "2026-09-29",
+     "case_file": "305/2026",
+     "document_number": "1203",
+     "hearing_date": "2026-12-08",
+     "notary_office": "Societatea Profesională Notarială „Dobre & Asociații”",
+     "notary_name": "Mircea DOBRE"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-10-13",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P03-D4",
+    "received_on": "2026-10-20",
+    "file": "P03/04-certificat-asigurare-scan.pdf",
+    "expected_type": "insurance_certificate",
+    "expected_fields": {
+     "cnp": "1561121133425",
+     "policy_id": "UQ-4471203",
+     "insurer": "UNIQA Asigurări de viață S.A.",
+     "loan_contract": "NP-2024-033107",
+     "document_number": "UQ-4471203"
+    }
+   }
+  },
+  {
+   "pending": true,
+   "doc": {
+    "id": "P03-D5",
+    "received_on": "2026-10-28",
+    "file": "P03/05-raspuns-asigurator.md",
+    "expected_type": "insurer_response",
+    "expected_fields": {
+     "cnp": "1561121133425",
+     "policy_id": "UQ-4471203",
+     "decision": "approved",
+     "loan_contract": "NP-2024-033107",
+     "claim_number": "DV-1302/2026",
+     "document_number": "9342",
+     "amount": 6850000
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "INSURANCE_CLAIM_OPEN",
+  "escalations": [],
+  "decisions": [],
+  "plan": null
+ }
+}

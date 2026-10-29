@@ -1,0 +1,42 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "07",
+  "doc_type": "certificat_deces",
+  "received_at": "2026-11-12",
+  "client_id": null,
+  "source_text": "07-certificat-deces-ilizibil.md",
+  "degradation": {
+    "rotation_deg": 7,
+    "ink_blot_over": [
+      "cnp",
+      "data_decesului",
+      "data_nasterii"
+    ],
+    "torn_corner": "bottom_right"
+  },
+  "fields": {
+    "format": "fizic_2024",
+    "legibility": "illegible",
+    "cnp": null,
+    "nume_familie": null,
+    "prenume": null,
+    "nume_familie_partial": "POP",
+    "prenume_partial": "GHEOR",
+    "sex": "M",
+    "data_nasterii": null,
+    "data_decesului": null,
+    "certificat_serie": "XX",
+    "certificat_nr": null,
+    "sir_unic": null,
+    "confidence_global_max": 0.5
+  },
+  "expected_agent": {
+    "escalation": true,
+    "escalation_reason": "illegible_cnp",
+    "freeze": false,
+    "case_opened": false,
+    "fuzzy_name_match": false,
+    "case_RC1001_unchanged": true
+  }
+}

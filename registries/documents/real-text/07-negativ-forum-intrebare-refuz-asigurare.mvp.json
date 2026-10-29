@@ -1,0 +1,14 @@
+{
+  "id": "real-07",
+  "raw_name": "real-text/07-negativ-forum-intrebare-refuz-asigurare.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "date_of_death": null
+  },
+  "_source": "forum/avocatnet-asigurare-de-viata-pentru-credit.txt (primul mesaj)"
+}

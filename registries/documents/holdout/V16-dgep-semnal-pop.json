@@ -1,0 +1,29 @@
+{
+  "schema": "mosteniri.dgep.death_signal/v0",
+  "_generated_by_us": true,
+  "message_id": "DGEP-MOCK-2026-08-23-000388",
+  "channel": "periodic_sftp",
+  "batch_week": "2026-W34",
+  "bank_code": "RZBR",
+  "cnp": "1XXXXXXXXXXX7",
+  "last_name": "POP",
+  "first_name": "VASILE",
+  "date_of_death": "2026-08-14",
+  "place_of_death": "Municipiul Exemplu",
+  "death_certificate": {
+    "series": "DX",
+    "number": "0004521",
+    "issuer": "SPCLEP Exemplu"
+  },
+  "communicated_at": "2026-08-23T06:00:00+03:00",
+  "changed_fields": [
+    "date_of_death",
+    "place_of_death"
+  ],
+  "id_document": {
+    "type": "CI",
+    "series": "XX",
+    "number": "000001",
+    "expiry_date": "2031-06-01"
+  }
+}

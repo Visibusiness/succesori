@@ -1,0 +1,47 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "2410702220870",
+  "date_of_death": "2026-10-08",
+  "document_number": "DGEP-MOCK-2026-10-15-000377",
+  "name": "DUMITRESCU ELISABETA"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "date_of_death": 0.95,
+  "document_number": 0.93,
+  "name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP: 2410702220870",
+  "date_of_death": "Data decesului: 08.10.2026",
+  "document_number": "Mesaj: DGEP-MOCK-2026-10-15-000377",
+  "name": "Numele de familie: DUMITRESCU Prenumele: ELISABETA"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.053545100000000005,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P02/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "2410702220870"
+ }
+}

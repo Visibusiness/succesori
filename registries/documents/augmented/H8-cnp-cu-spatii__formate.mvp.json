@@ -1,0 +1,20 @@
+{
+  "id": "hard-H8-formate",
+  "raw_name": "H8-cnp-cu-spatii__formate.md",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-09-30",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000000-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "NP-2023-001001",
+    "reference": "UQ-0000000-FICTIV",
+    "document_number": "UQ-0000000-FICTIV"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "hard/H8-cnp-cu-spatii.md",
+  "_variant": "formate"
+}

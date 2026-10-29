@@ -1,0 +1,16 @@
+{
+  "id": "hard-H2",
+  "raw_name": "hard/H2-dgep-semnal-duplicat.json",
+  "document_type": "dgep_signal",
+  "received_on": "2026-09-27",
+  "confidence": 0.97,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "reference": "DGEP-MOCK-2026-09-27-000141",
+    "document_number": "DGEP-MOCK-2026-09-27-000141"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ]
+}

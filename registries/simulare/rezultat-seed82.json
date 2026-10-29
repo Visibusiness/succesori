@@ -1,0 +1,1786 @@
+{
+ "generat": "2026-10-28T22:48:55+00:00",
+ "seed": 82,
+ "dosare": 200,
+ "documente": 877,
+ "generator": "registries/simulare/generator.py",
+ "referinta": "registries/simulare/referinta.py",
+ "secunde_total": 0.13,
+ "secunde_generare": 0.03,
+ "ms_pe_dosar": {
+  "medie": 0.65,
+  "max": 0.96
+ },
+ "dosare_corecte_complet": 200,
+ "dosare_cu_plan": 200,
+ "dosare_plan_corect": 200,
+ "linii_plata_exacte": 1080,
+ "linii_plata_total": 1080,
+ "plati_fara_aprobare": 0,
+ "escaladari_asteptate": 211,
+ "escaladari_in_dosare_corecte": 211,
+ "dosare_cu_escaladari_exacte": 200,
+ "capcane": [
+  {
+   "cheie": "fee_after_death",
+   "eticheta": "comision după deces stornat",
+   "dosare": 84,
+   "prinse": 84
+  },
+  {
+   "cheie": "pension_return",
+   "eticheta": "pensie de returnat la CNPP",
+   "dosare": 32,
+   "prinse": 32
+  },
+  {
+   "cheie": "omitted_product",
+   "eticheta": "produs omis ⇒ supliment",
+   "dosare": 45,
+   "prinse": 45
+  },
+  {
+   "cheie": "minor_blocked",
+   "eticheta": "minor: parte blocată",
+   "dosare": 110,
+   "prinse": 110
+  },
+  {
+   "cheie": "mandate_withdrawal",
+   "eticheta": "retragere a împuternicitului după deces",
+   "dosare": 25,
+   "prinse": 25
+  },
+  {
+   "cheie": "insurance_refused",
+   "eticheta": "asigurare refuzată",
+   "dosare": 10,
+   "prinse": 10
+  },
+  {
+   "cheie": "bad_document",
+   "eticheta": "document ilizibil / suspect",
+   "dosare": 33,
+   "prinse": 33
+  }
+ ],
+ "nepotriviri_pe_cauza": {},
+ "dosare_pe_cauza": {},
+ "exemple_din_set": {},
+ "exemple_minime": {
+  "sot_identificat_dupa_pozitie": {
+   "titlu": "Soțul e identificat după poziție (H1), nu după calitate",
+   "cauza": "`_try_payment_plan` (agent/pipeline.py) ia ca soț supraviețuitor primul moștenitor major din certificat. Când certificatul îl trece întâi pe un copil, jumătatea de proprietar a soțului din bunurile comune ajunge la copil.",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 100000,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      37500,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      62500,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 100000,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      37500,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      62500,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000,
+      "estate_fraction": "1/2"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "3/4",
+      "relationship": "fiu"
+     },
+     {
+      "id": "H2",
+      "name": "Ion Minim",
+      "share": "1/4",
+      "relationship": "soț supraviețuitor"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  },
+  "exceptie": {
+   "titlu": "Excepție (AssertionError) când primul moștenitor e minor și bunurile sunt comune",
+   "cauza": "Același cod: dacă H1 e minor, nu e ales nimeni ca soț, fracțiile dau 1/2 în loc de 1 și `split_by_shares` oprește procesarea certificatului cu `assert` (prin API: HTTP 500, dosarul rămâne fără plan).",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 100000,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      37500,
+      true
+     ],
+     [
+      "H2",
+      "CC-1",
+      62500,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 100000,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      37500,
+      true
+     ],
+     [
+      "H2",
+      "CC-1",
+      62500,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000,
+      "estate_fraction": "1/2"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "3/4",
+      "relationship": "fiu",
+      "minor": true,
+      "legal_representative": "H2"
+     },
+     {
+      "id": "H2",
+      "name": "Ion Minim",
+      "share": "1/4",
+      "relationship": "soț supraviețuitor"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  },
+  "datorie_peste_cont": {
+   "titlu": "Datoria mai mare decât contul curent dă un net și linii de plată negative",
+   "cauza": "`net_of_debts` scade toată datoria din contul curent, fără plafon la 0 și fără să treacă la depozit (C.civ. art. 1114: moștenitorii răspund în limita activului). Apare la credit fără asigurare sau cu asigurare refuzată.",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 0,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      0,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      0,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 0,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      0,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      0,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000
+     },
+     {
+      "id": "CRD-1",
+      "type": "personal_loan",
+      "outstanding": 500000,
+      "rate_pct": 10.0,
+      "last_interest_paid": "2026-03-10",
+      "loan_contract": "NP-MIN"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "1/2",
+      "relationship": "fiu"
+     },
+     {
+      "id": "H2",
+      "name": "Ana Fiică",
+      "share": "1/2",
+      "relationship": "fiică"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  },
+  "depozit_scadent_blocat": {
+   "titlu": "Depozitul ajuns la scadență înainte de plan rămâne blocat „până la scadență”",
+   "cauza": "`_try_payment_plan` pune `blocked_reason` pe orice depozit, fără să compare scadența cu data planului.",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 100000,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      100000,
+      false
+     ],
+     [
+      "H1",
+      "DEP-1",
+      1024932,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 100000,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      100000,
+      false
+     ],
+     [
+      "H1",
+      "DEP-1",
+      1024932,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000
+     },
+     {
+      "id": "DEP-1",
+      "type": "term_deposit",
+      "principal": 1000000,
+      "rate_pct": 5.0,
+      "start": "2025-10-01",
+      "maturity": "2026-04-01"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "1",
+      "relationship": "fiu"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  },
+  "comision_alt_cod": {
+   "titlu": "Se stornează doar comisionul cu codul PREMIUM",
+   "cauza": "`rules.fees_to_reverse(..., fee_codes=(\"PREMIUM\",))`: un comision de administrare cu alt cod (ex. pachet standard) debitat după deces rămâne încasat (exact tiparul cazului Bragadiru).",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 100000,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      100000,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 100000,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      100000,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "1",
+      "relationship": "fiu"
+     }
+    ],
+    "miscari": [
+     {
+      "date": "2026-04-05",
+      "amount": -900,
+      "kind": "fee",
+      "fee_code": "ADMIN_CONT"
+     }
+    ],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  },
+  "refuz_asigurare_fara_plan": {
+   "titlu": "Refuzul asigurătorului, sosit după un certificat complet, lasă dosarul fără plan",
+   "cauza": "`_on_insurer_response` nu mai cheamă `_try_payment_plan` pe ramura de refuz; planul fusese amânat „așteptăm răspunsul asigurătorului”, deci nu se mai face niciodată (stare INSURANCE_CLAIM_OPEN). În ordinea inversă (refuz înainte de certificat) planul se face: rezultatul depinde de ordinea documentelor.",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 600000,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      600000,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 600000,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      600000,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 900000
+     },
+     {
+      "id": "CRD-1",
+      "type": "personal_loan",
+      "outstanding": 300000,
+      "rate_pct": 10.0,
+      "last_interest_paid": "2026-03-10",
+      "insurance_policy_id": "UQ-MIN",
+      "loan_contract": "NP-MIN"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "1",
+      "relationship": "fiu"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "insurance_certificate",
+     "heir_certificate",
+     "insurer_response"
+    ]
+   }
+  },
+  "suma_negativa": {
+   "titlu": "Datoria mai mare decât contul curent dă un net și linii de plată negative",
+   "cauza": "`net_of_debts` scade toată datoria din contul curent, fără plafon la 0 și fără să treacă la depozit (C.civ. art. 1114: moștenitorii răspund în limita activului). Apare la credit fără asigurare sau cu asigurare refuzată.",
+   "reprodus": false,
+   "probleme": [],
+   "erori": [],
+   "asteptat": {
+    "net": 0,
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      0,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      0,
+      false
+     ]
+    ]
+   },
+   "obtinut": {
+    "net": 0,
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "linii": [
+     [
+      "H1",
+      "CC-1",
+      0,
+      false
+     ],
+     [
+      "H2",
+      "CC-1",
+      0,
+      false
+     ]
+    ]
+   },
+   "intrare": {
+    "produse": [
+     {
+      "id": "CC-1",
+      "type": "current_account",
+      "balance": 100000
+     },
+     {
+      "id": "CRD-1",
+      "type": "personal_loan",
+      "outstanding": 500000,
+      "rate_pct": 10.0,
+      "last_interest_paid": "2026-03-10",
+      "loan_contract": "NP-MIN"
+     }
+    ],
+    "mostenitori": [
+     {
+      "id": "H1",
+      "name": "Dan Minim",
+      "share": "1/2",
+      "relationship": "fiu"
+     },
+     {
+      "id": "H2",
+      "name": "Ana Fiică",
+      "share": "1/2",
+      "relationship": "fiică"
+     }
+    ],
+    "miscari": [],
+    "ordine": [
+     "dgep_signal",
+     "notary_request",
+     "heir_certificate"
+    ]
+   }
+  }
+ },
+ "variante": {
+  "testament": 61,
+  "bunuri_comune": 101,
+  "depozit": 113,
+  "credit": 96,
+  "credit_asigurat": 64,
+  "soț_nu_e_primul": 24,
+  "dgep_nu_e_primul": 69,
+  "comision_alt_cod": 49,
+  "cu_minori": 110
+ },
+ "pe_dosar": [
+  {
+   "id": "SIM-001",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.96
+  },
+  {
+   "id": "SIM-002",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-003",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.46
+  },
+  {
+   "id": "SIM-004",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-005",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-006",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-007",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.56
+  },
+  {
+   "id": "SIM-008",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-009",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-010",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.58
+  },
+  {
+   "id": "SIM-011",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-012",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.58
+  },
+  {
+   "id": "SIM-013",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.69
+  },
+  {
+   "id": "SIM-014",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.46
+  },
+  {
+   "id": "SIM-015",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-016",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.61
+  },
+  {
+   "id": "SIM-017",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-018",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-019",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-020",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.65
+  },
+  {
+   "id": "SIM-021",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.61
+  },
+  {
+   "id": "SIM-022",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.49
+  },
+  {
+   "id": "SIM-023",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-024",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.75
+  },
+  {
+   "id": "SIM-025",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-026",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.33
+  },
+  {
+   "id": "SIM-027",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-028",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-029",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.64
+  },
+  {
+   "id": "SIM-030",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-031",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-032",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.51
+  },
+  {
+   "id": "SIM-033",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.83
+  },
+  {
+   "id": "SIM-034",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.57
+  },
+  {
+   "id": "SIM-035",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-036",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.5
+  },
+  {
+   "id": "SIM-037",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.34
+  },
+  {
+   "id": "SIM-038",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.75
+  },
+  {
+   "id": "SIM-039",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.61
+  },
+  {
+   "id": "SIM-040",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.49
+  },
+  {
+   "id": "SIM-041",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-042",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.35
+  },
+  {
+   "id": "SIM-043",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-044",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.7
+  },
+  {
+   "id": "SIM-045",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-046",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.57
+  },
+  {
+   "id": "SIM-047",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-048",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-049",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.51
+  },
+  {
+   "id": "SIM-050",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-051",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.35
+  },
+  {
+   "id": "SIM-052",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.38
+  },
+  {
+   "id": "SIM-053",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-054",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-055",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-056",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-057",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-058",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-059",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.55
+  },
+  {
+   "id": "SIM-060",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-061",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.65
+  },
+  {
+   "id": "SIM-062",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.59
+  },
+  {
+   "id": "SIM-063",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.38
+  },
+  {
+   "id": "SIM-064",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.68
+  },
+  {
+   "id": "SIM-065",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-066",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.57
+  },
+  {
+   "id": "SIM-067",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-068",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-069",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.68
+  },
+  {
+   "id": "SIM-070",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.56
+  },
+  {
+   "id": "SIM-071",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-072",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.64
+  },
+  {
+   "id": "SIM-073",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.35
+  },
+  {
+   "id": "SIM-074",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.62
+  },
+  {
+   "id": "SIM-075",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-076",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.4
+  },
+  {
+   "id": "SIM-077",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.6
+  },
+  {
+   "id": "SIM-078",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.56
+  },
+  {
+   "id": "SIM-079",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-080",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-081",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.57
+  },
+  {
+   "id": "SIM-082",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.6
+  },
+  {
+   "id": "SIM-083",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-084",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-085",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.62
+  },
+  {
+   "id": "SIM-086",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-087",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.5
+  },
+  {
+   "id": "SIM-088",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.37
+  },
+  {
+   "id": "SIM-089",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.51
+  },
+  {
+   "id": "SIM-090",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-091",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-092",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-093",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-094",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.68
+  },
+  {
+   "id": "SIM-095",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-096",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-097",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-098",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-099",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.4
+  },
+  {
+   "id": "SIM-100",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.67
+  },
+  {
+   "id": "SIM-101",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-102",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-103",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-104",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-105",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.81
+  },
+  {
+   "id": "SIM-106",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.68
+  },
+  {
+   "id": "SIM-107",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-108",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-109",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.71
+  },
+  {
+   "id": "SIM-110",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.67
+  },
+  {
+   "id": "SIM-111",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-112",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.67
+  },
+  {
+   "id": "SIM-113",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-114",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.38
+  },
+  {
+   "id": "SIM-115",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.56
+  },
+  {
+   "id": "SIM-116",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.57
+  },
+  {
+   "id": "SIM-117",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-118",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.33
+  },
+  {
+   "id": "SIM-119",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.49
+  },
+  {
+   "id": "SIM-120",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.34
+  },
+  {
+   "id": "SIM-121",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.4
+  },
+  {
+   "id": "SIM-122",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-123",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-124",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-125",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.31
+  },
+  {
+   "id": "SIM-126",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.92
+  },
+  {
+   "id": "SIM-127",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.4
+  },
+  {
+   "id": "SIM-128",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.33
+  },
+  {
+   "id": "SIM-129",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-130",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.51
+  },
+  {
+   "id": "SIM-131",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.66
+  },
+  {
+   "id": "SIM-132",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-133",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.55
+  },
+  {
+   "id": "SIM-134",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-135",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.32
+  },
+  {
+   "id": "SIM-136",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-137",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-138",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-139",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.56
+  },
+  {
+   "id": "SIM-140",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-141",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-142",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.36
+  },
+  {
+   "id": "SIM-143",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-144",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.38
+  },
+  {
+   "id": "SIM-145",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.64
+  },
+  {
+   "id": "SIM-146",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-147",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-148",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-149",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-150",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.52
+  },
+  {
+   "id": "SIM-151",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.46
+  },
+  {
+   "id": "SIM-152",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.5
+  },
+  {
+   "id": "SIM-153",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.47
+  },
+  {
+   "id": "SIM-154",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.65
+  },
+  {
+   "id": "SIM-155",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.35
+  },
+  {
+   "id": "SIM-156",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.34
+  },
+  {
+   "id": "SIM-157",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.7
+  },
+  {
+   "id": "SIM-158",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.59
+  },
+  {
+   "id": "SIM-159",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.58
+  },
+  {
+   "id": "SIM-160",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-161",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.34
+  },
+  {
+   "id": "SIM-162",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-163",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-164",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.51
+  },
+  {
+   "id": "SIM-165",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.46
+  },
+  {
+   "id": "SIM-166",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-167",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.7
+  },
+  {
+   "id": "SIM-168",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.54
+  },
+  {
+   "id": "SIM-169",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-170",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.46
+  },
+  {
+   "id": "SIM-171",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.48
+  },
+  {
+   "id": "SIM-172",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-173",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-174",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.71
+  },
+  {
+   "id": "SIM-175",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-176",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.37
+  },
+  {
+   "id": "SIM-177",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-178",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.39
+  },
+  {
+   "id": "SIM-179",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.49
+  },
+  {
+   "id": "SIM-180",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.55
+  },
+  {
+   "id": "SIM-181",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.73
+  },
+  {
+   "id": "SIM-182",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.42
+  },
+  {
+   "id": "SIM-183",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.45
+  },
+  {
+   "id": "SIM-184",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-185",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.68
+  },
+  {
+   "id": "SIM-186",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.61
+  },
+  {
+   "id": "SIM-187",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.41
+  },
+  {
+   "id": "SIM-188",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-189",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.73
+  },
+  {
+   "id": "SIM-190",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.59
+  },
+  {
+   "id": "SIM-191",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.33
+  },
+  {
+   "id": "SIM-192",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.69
+  },
+  {
+   "id": "SIM-193",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.53
+  },
+  {
+   "id": "SIM-194",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.38
+  },
+  {
+   "id": "SIM-195",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.76
+  },
+  {
+   "id": "SIM-196",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.33
+  },
+  {
+   "id": "SIM-197",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.43
+  },
+  {
+   "id": "SIM-198",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-199",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.44
+  },
+  {
+   "id": "SIM-200",
+   "ok": true,
+   "cauze": [],
+   "ms": 0.49
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1500530404557",
+  "case_file": "98/2026",
+  "document_number": "61",
+  "heirs": [
+   {
+    "name": "GEORGESCU MARIA",
+    "share": "1/4"
+   },
+   {
+    "name": "GEORGESCU CRISTIAN",
+    "share": "3/8"
+   },
+   {
+    "name": "PAVEL LAURA",
+    "share": "3/8"
+   }
+  ],
+  "testament": false,
+  "ibans": [
+   "RO11 RZBR 0000 0000 0031 0501",
+   "RO81 RZBR 0000 0000 0031 0502"
+  ],
+  "unidentified_products": [],
+  "notary_office": "Biroul Individual Notarial „Stan Corina”",
+  "notary_name": "Corina STAN",
+  "date_of_death": "2026-07-12"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "case_file": 0.97,
+  "document_number": 0.95,
+  "heirs": 0.95,
+  "testament": 0.95,
+  "ibans": 0.93,
+  "unidentified_products": 0.95,
+  "notary_office": 0.95,
+  "notary_name": 0.95,
+  "date_of_death": 0.97
+ },
+ "evidence": {
+  "cnp": "GEORGESCU IOAN, CNP 1500530404557",
+  "case_file": "Dosar succesoral nr. 98/2026",
+  "document_number": "CERTIFICAT DE MOȘTENITOR Nr. 61",
+  "heirs": "GEORGESCU MARIA, CNP 2530214403382, domiciliată în Mun. București, Str. Fictivă nr. 21, Sector 3, în calitate de soție supraviețuitoare, cu o cotă de 1/4 (un sfert) din masa succesorală.",
+  "testament": "nu rezultă că defunctul ar fi lăsat testament",
+  "ibans": "IBAN RO11 RZBR 0000 0000 0031 0501",
+  "notary_office": "Birou notarial: Birou Individual Notarial „Stan Corina”",
+  "notary_name": "Corina STAN, notar public",
+  "date_of_death": "decedat la data de 12.07.2026"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.06284529999999999,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P05/04-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:10+00:00",
+  "read": "04-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

@@ -1,0 +1,53 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H7",
+  "doc_type": "certificat_mostenitor",
+  "received_at": "2026-10-22",
+  "client_id": "RC1001",
+  "source_text": "H7-cote-in-cuvinte.md",
+  "fields": {
+    "nr_certificat": "87",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "masa_activ": [
+      {
+        "tip": "cont_curent",
+        "iban": "RO00 RZBR 0000 0000 0000 01",
+        "cota_defunct": "1/2",
+        "valoare_bani": 530000
+      }
+    ],
+    "mostenitori": [
+      {
+        "prenume": "ION",
+        "cota": "1/4",
+        "cota_text": "o pătrime"
+      },
+      {
+        "prenume": "ANDREI",
+        "cota": "3/8",
+        "cota_text": "trei optimi"
+      },
+      {
+        "prenume": "ELENA",
+        "cota": "3/8",
+        "cota_text": "trei optimi"
+      }
+    ]
+  },
+  "expected_agent": {
+    "state_after": "SUPPLEMENT_REQUESTED",
+    "sum_cote": "1/1",
+    "escalation": false,
+    "coverage_gaps": [
+      "DEP-1"
+    ],
+    "flags": [
+      "MINOR_HEIR",
+      "CONFLICT_INTERESE_PARINTE_MINOR"
+    ],
+    "same_as": "04-certificat-mostenitor-A",
+    "note": "„o doime”=1/2, „o pătrime”=„un sfert”=1/4, „trei optimi”=3/8; fracție exactă, nu float"
+  }
+}

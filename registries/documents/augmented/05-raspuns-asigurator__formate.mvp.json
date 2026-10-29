@@ -1,0 +1,22 @@
+{
+  "id": "doc-05-formate",
+  "raw_name": "05-raspuns-asigurator__formate.md",
+  "document_type": "insurer_response",
+  "received_on": "2026-10-27",
+  "confidence": 0.95,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000000-FICTIV",
+    "decision": "approved",
+    "amount": 900000,
+    "reference": "DV-0451/2026",
+    "document_number": "7781",
+    "claim_number": "DV-0451/2026",
+    "loan_contract": "NP-2023-001001"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "05-raspuns-asigurator.md",
+  "_variant": "formate"
+}

@@ -1,0 +1,56 @@
+{
+ "document_type": "insurer_response",
+ "confidence": 0.92,
+ "fields": {
+  "cnp": "1610606290773",
+  "policy_id": "UQ-6610334",
+  "decision": "refused",
+  "claim_number": "DV-0977/2026",
+  "document_number": "8812",
+  "loan_contract": "NP-2023-027215",
+  "reason": "excludere — afecțiune preexistentă nedeclarată la aderare"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "policy_id": 0.95,
+  "decision": 0.98,
+  "claim_number": 0.93,
+  "document_number": 0.93,
+  "loan_contract": 0.95,
+  "reason": 0.95
+ },
+ "evidence": {
+  "cnp": "1610606290773",
+  "policy_id": "UQ-6610334",
+  "decision": "cererea de despăgubire a fost RESPINSĂ",
+  "claim_number": "DV-0977/2026",
+  "document_number": "Nr. 8812 / 16.10.2026",
+  "loan_contract": "nr. NP-2023-027215 din 10.02.2023",
+  "reason": "excludere — afecțiune preexistentă nedeclarată la aderare"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.055440699999999996,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P10/06-raspuns-asigurator-refuz-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:25+00:00",
+  "read": "06-raspuns-asigurator-refuz-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

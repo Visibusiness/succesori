@@ -1,0 +1,339 @@
+{
+ "generat": "2026-10-28",
+ "sursa": "scripts/scala_report.py din runs/scala/*.json (sarcina 083)",
+ "masina": "1 VM, 6 vCPU, 16 GB RAM (aceeași cu MVP-ul și sesiunile echipei)",
+ "tinta": {
+  "ipoteze": {
+   "decese_an": 240000,
+   "luna_varf_INS": 23600,
+   "cota_clienti": {
+    "prudent": 0.07,
+    "central": 0.1,
+    "optimist": 0.14
+   },
+   "documente_dosar": 7,
+   "documente_cu_llm_dosar": 6,
+   "ore_lucru_an": 2000,
+   "factor_varf": 5,
+   "sursa": "kb/data/estimare-volum-cost.md, kb/data/ins-decese.md, kb/bank-procedures/dgep-arb-acord.md"
+  },
+  "scenarii": {
+   "prudent": {
+    "dosare_an": 16800,
+    "documente_an": 117600,
+    "documente_zi_lucratoare": 470,
+    "documente_ora_medie": 59,
+    "documente_ora_varf_x5": 294,
+    "documente_llm_ora_varf_x5": 252,
+    "semnale_dgep_saptamana_medie": 323,
+    "semnale_dgep_lot_varf": 380,
+    "semnale_dgep_lot_varf_x5": 1902
+   },
+   "central": {
+    "dosare_an": 24000,
+    "documente_an": 168000,
+    "documente_zi_lucratoare": 672,
+    "documente_ora_medie": 84,
+    "documente_ora_varf_x5": 420,
+    "documente_llm_ora_varf_x5": 360,
+    "semnale_dgep_saptamana_medie": 462,
+    "semnale_dgep_lot_varf": 543,
+    "semnale_dgep_lot_varf_x5": 2717
+   },
+   "optimist": {
+    "dosare_an": 33600,
+    "documente_an": 235200,
+    "documente_zi_lucratoare": 941,
+    "documente_ora_medie": 118,
+    "documente_ora_varf_x5": 588,
+    "documente_llm_ora_varf_x5": 504,
+    "semnale_dgep_saptamana_medie": 646,
+    "semnale_dgep_lot_varf": 761,
+    "semnale_dgep_lot_varf_x5": 3804
+   }
+  }
+ },
+ "logica": {
+  "1000": {
+   "level": "logic",
+   "date": "2026-10-28T20:45:50+00:00",
+   "source": "scripts/scala_logic.py (Pipeline.receive în proces, core_mock cu N clienți, documente pre-extrase)",
+   "cases": 1000,
+   "documents": 7000,
+   "errors": 0,
+   "outcomes": {
+    "ok": 5000,
+    "escalation": 1000,
+    "orphan": 1000
+   },
+   "cases_opened": 1001,
+   "cases_with_payment_milestone": 1000,
+   "setup_s": 0.11,
+   "total_s": 0.757,
+   "cases_per_s": 1321.4,
+   "docs_per_s": 9249.5,
+   "us_per_doc_avg": 108.1,
+   "us_per_doc_first_bucket": 105.0,
+   "us_per_doc_last_bucket": 11.5,
+   "rss_mb_start": 19.0,
+   "rss_mb_after_setup": 28.0,
+   "rss_mb_end": 58.3,
+   "rss_mb_peak": 58.3,
+   "kb_per_case": 40.3
+  },
+  "10000": {
+   "level": "logic",
+   "date": "2026-10-28T20:46:37+00:00",
+   "source": "scripts/scala_logic.py (Pipeline.receive în proces, core_mock cu N clienți, documente pre-extrase)",
+   "cases": 10000,
+   "documents": 70000,
+   "errors": 0,
+   "outcomes": {
+    "ok": 50000,
+    "escalation": 10000,
+    "orphan": 10000
+   },
+   "cases_opened": 10001,
+   "cases_with_payment_milestone": 10000,
+   "setup_s": 1.21,
+   "total_s": 46.049,
+   "cases_per_s": 217.2,
+   "docs_per_s": 1520.1,
+   "us_per_doc_avg": 657.8,
+   "us_per_doc_first_bucket": 489.9,
+   "us_per_doc_last_bucket": 11.5,
+   "rss_mb_start": 18.9,
+   "rss_mb_after_setup": 107.7,
+   "rss_mb_end": 408.9,
+   "rss_mb_peak": 408.9,
+   "kb_per_case": 39.9
+  }
+ },
+ "api": {
+  "loturi_resetate_la_70": [
+   {
+    "concurrency": 1,
+    "requests": 1400,
+    "reset_every": 70,
+    "ok": 1400,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 6.82,
+    "req_per_s": 205.2,
+    "p50_ms": 4.5,
+    "p95_ms": 7.9,
+    "p99_ms": 9.0,
+    "max_ms": 194.6,
+    "first10pct_median_ms": 4.7,
+    "last10pct_median_ms": 4.6
+   },
+   {
+    "concurrency": 10,
+    "requests": 1400,
+    "reset_every": 70,
+    "ok": 1400,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 9.23,
+    "req_per_s": 151.6,
+    "p50_ms": 52.9,
+    "p95_ms": 145.6,
+    "p99_ms": 281.6,
+    "max_ms": 364.0,
+    "first10pct_median_ms": 49.2,
+    "last10pct_median_ms": 64.3
+   },
+   {
+    "concurrency": 50,
+    "requests": 1400,
+    "reset_every": 70,
+    "ok": 1400,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 10.02,
+    "req_per_s": 139.7,
+    "p50_ms": 270.5,
+    "p95_ms": 615.6,
+    "p99_ms": 708.7,
+    "max_ms": 749.6,
+    "first10pct_median_ms": 188.8,
+    "last10pct_median_ms": 383.2
+   }
+  ],
+  "un_singur_dosar_700_documente": [
+   {
+    "concurrency": 1,
+    "requests": 700,
+    "reset_every": 700,
+    "ok": 700,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 22.22,
+    "req_per_s": 31.5,
+    "p50_ms": 30.0,
+    "p95_ms": 64.2,
+    "p99_ms": 82.5,
+    "max_ms": 219.9,
+    "first10pct_median_ms": 4.9,
+    "last10pct_median_ms": 62.3
+   },
+   {
+    "concurrency": 10,
+    "requests": 700,
+    "reset_every": 700,
+    "ok": 700,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 26.91,
+    "req_per_s": 26.0,
+    "p50_ms": 344.0,
+    "p95_ms": 902.0,
+    "p99_ms": 1095.6,
+    "max_ms": 1297.3,
+    "first10pct_median_ms": 60.1,
+    "last10pct_median_ms": 623.4
+   },
+   {
+    "concurrency": 50,
+    "requests": 700,
+    "reset_every": 700,
+    "ok": 700,
+    "errors": 0,
+    "error_kinds": {},
+    "wall_s": 29.66,
+    "req_per_s": 23.6,
+    "p50_ms": 1937.5,
+    "p95_ms": 4115.6,
+    "p99_ms": 4707.2,
+    "max_ms": 5717.7,
+    "first10pct_median_ms": 156.6,
+    "last10pct_median_ms": 2791.4
+   }
+  ],
+  "date": "2026-10-28T20:49:46+00:00",
+  "sursa": "scripts/scala_api.py (POST /documents, documente pre-extrase, uvicorn 1 proces, instanță de test)"
+ },
+ "concurenta_fara_lock": {
+  "level": "race",
+  "date": "2026-10-28T20:51:00+00:00",
+  "source": "scripts/scala_race.py (2 fire, Pipeline.receive fără lock, ca endpoint-ul sync din API)",
+  "documents_sent": 20000,
+  "documents_in_cases": 18581,
+  "documents_lost": 1419,
+  "cases": 10000,
+  "customers_with_2_cases": 0,
+  "exceptions": 1409,
+  "exception_examples": [
+   "RuntimeError('dictionary changed size during iteration')"
+  ]
+ },
+ "ai": {
+  "levels": [
+   {
+    "concurrency": 1,
+    "documents": 20,
+    "ok": 20,
+    "errors": 0,
+    "error_kinds": {},
+    "type_correct": 20,
+    "wall_s": 152.8,
+    "docs_per_hour": 471,
+    "latency_p50_s": 7.05,
+    "latency_max_s": 10.9,
+    "latency_min_s": 4.9,
+    "cost_usd_total": 1.005,
+    "cost_usd_per_doc": 0.0503,
+    "mem_available_mb_before": 6678
+   },
+   {
+    "concurrency": 5,
+    "documents": 20,
+    "ok": 20,
+    "errors": 0,
+    "error_kinds": {},
+    "type_correct": 20,
+    "wall_s": 31.5,
+    "docs_per_hour": 2284,
+    "latency_p50_s": 6.95,
+    "latency_max_s": 13.7,
+    "latency_min_s": 4.6,
+    "cost_usd_total": 0.924,
+    "cost_usd_per_doc": 0.0462,
+    "mem_available_mb_before": 6710
+   },
+   {
+    "concurrency": 10,
+    "documents": 20,
+    "ok": 20,
+    "errors": 0,
+    "error_kinds": {},
+    "type_correct": 20,
+    "wall_s": 24.6,
+    "docs_per_hour": 2928,
+    "latency_p50_s": 9.05,
+    "latency_max_s": 17.0,
+    "latency_min_s": 5.7,
+    "cost_usd_total": 1.015,
+    "cost_usd_per_doc": 0.0507,
+    "mem_available_mb_before": 6702
+   },
+   {
+    "concurrency": 20,
+    "documents": 20,
+    "ok": 20,
+    "errors": 0,
+    "error_kinds": {},
+    "type_correct": 20,
+    "wall_s": 16.5,
+    "docs_per_hour": 4357,
+    "latency_p50_s": 11.0,
+    "latency_max_s": 16.5,
+    "latency_min_s": 8.3,
+    "cost_usd_total": 1.007,
+    "cost_usd_per_doc": 0.0503,
+    "mem_available_mb_before": 6937
+   }
+  ],
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "retries": 0,
+  "date": "2026-10-28T20:51:52+00:00",
+  "sursa": "scripts/scala_ai.py (agent.extract / extract_file, claude -p pe Bedrock us-west-2)"
+ },
+ "concluzie": {
+  "logica_dosare_pe_s_10000": 217.2,
+  "logica_dosare_pe_s_1000": 1321.4,
+  "api_cereri_pe_s_max": 205.2,
+  "ai_documente_ora_max": 4357,
+  "ai_concurenta_la_max": 20,
+  "tinta_documente_llm_ora_varf_x5_optimist": 504,
+  "rezerva_ai_x": 8.6
+ },
+ "cost": {
+  "prudent": {
+   "dosare_an": 16800,
+   "usd_an_masurat": 39480,
+   "usd_an_interval_min": 23520,
+   "usd_an_interval_max": 40320,
+   "usd_an_optimizat": 16800,
+   "lei_an_masurat": 177660
+  },
+  "central": {
+   "dosare_an": 24000,
+   "usd_an_masurat": 56400,
+   "usd_an_interval_min": 33600,
+   "usd_an_interval_max": 57600,
+   "usd_an_optimizat": 24000,
+   "lei_an_masurat": 253800
+  },
+  "optimist": {
+   "dosare_an": 33600,
+   "usd_an_masurat": 78960,
+   "usd_an_interval_min": 47040,
+   "usd_an_interval_max": 80640,
+   "usd_an_optimizat": 33600,
+   "lei_an_masurat": 355320
+  },
+  "sursa": "docs/pitch/cost-per-dosar.md",
+  "curs_lei_usd": 4.5
+ }
+}

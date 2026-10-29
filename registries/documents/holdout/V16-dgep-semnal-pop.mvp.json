@@ -1,0 +1,12 @@
+{
+  "id": "holdout-V16",
+  "raw_name": "holdout/V16-dgep-semnal-pop",
+  "document_type": "dgep_signal",
+  "received_on": "2026-08-23",
+  "confidence": 0.97,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "date_of_death": "2026-08-14",
+    "document_number": "DGEP-MOCK-2026-08-23-000388"
+  }
+}

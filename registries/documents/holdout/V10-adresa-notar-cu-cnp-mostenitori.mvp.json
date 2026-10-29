@@ -1,0 +1,16 @@
+{
+  "id": "holdout-V10",
+  "raw_name": "holdout/V10-adresa-notar-cu-cnp-mostenitori",
+  "document_type": "notary_request",
+  "received_on": "2026-10-02",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "case_file": "130/2026",
+    "document_number": "77",
+    "hearing_date": "2026-11-12",
+    "notary_office": "Cabinet Notarial „Fictiv Gheorghe”",
+    "notary_name": "Gheorghe FICTIV"
+  }
+}

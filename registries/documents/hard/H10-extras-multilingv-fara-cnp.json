@@ -1,0 +1,53 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H10",
+  "doc_type": "extras_multilingv_deces",
+  "received_at": "2026-10-01",
+  "client_id": "RC1001",
+  "source_text": "H10-extras-multilingv-fara-cnp.md",
+  "fields": {
+    "format": "fizic_2024",
+    "cnp": null,
+    "nume_familie": "IONESCU",
+    "prenume": "MARIA",
+    "sex": "F",
+    "data_nasterii": "1958-05-12",
+    "locul_nasterii": "Municipiul Exemplu, Jud. Exemplu",
+    "data_decesului": "2026-09-03",
+    "locul_decesului": "Municipiul Exemplu, Jud. Exemplu",
+    "ultim_sot": "IONESCU ION",
+    "tata_nume": "POPESCU ION",
+    "mama_nume": "POPESCU ANA",
+    "act_deces_nr": "000",
+    "inregistrat_la": "SPCLEP Exemplu",
+    "data_eliberarii": "2026-09-04",
+    "certificat_serie": "EMD",
+    "certificat_nr": "0000000",
+    "sir_unic": "XXX0000000"
+  },
+  "expected_agent": {
+    "identity_match": {
+      "method": "nume+prenume+data_nasterii",
+      "candidates": [
+        "RC1001"
+      ],
+      "unique": true,
+      "corroborated_by": [
+        "data_decesului == DGEP 2026-09-03",
+        "ultim_sot == soț din dosar (IONESCU ION)"
+      ],
+      "parents_used": false
+    },
+    "escalation": false,
+    "attached_to_case": "RC1001",
+    "freeze_becomes_definitive": true,
+    "state_after": "unchanged (FROZEN → confirmare deces; freeze definitiv conform D-DGEP)",
+    "if_not_unique": {
+      "escalation": true,
+      "escalation_reason": "identity_unconfirmed",
+      "note": "≥2 clienți cu același nume + dată a nașterii și părinți indisponibili în core → nicio acțiune automată"
+    },
+    "note": "fără CNP nu se deschide dosar nou din acest document; aici dosarul există deja (DGEP 20.09) și extrasul doar confirmă decesul"
+  }
+}

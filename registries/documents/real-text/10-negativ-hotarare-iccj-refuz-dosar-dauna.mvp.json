@@ -1,0 +1,14 @@
+{
+  "id": "real-10",
+  "raw_name": "real-text/10-negativ-hotarare-iccj-refuz-dosar-dauna.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "document_number": null
+  },
+  "_source": "jurisprudenta/ICCJ-dec853-2015-asigurare-viata-credit-mostenitori.txt (paragraf din considerente)"
+}

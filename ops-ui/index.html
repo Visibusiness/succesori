@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Succesiuni — operațiuni</title>
+<link rel="icon" href="raiffeisen-mark.svg" type="image/svg+xml">
+<script>/* tema înainte de prima randare: aleasă de om, altfel cea a sistemului */
+document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="dosar.css">
+<link rel="stylesheet" href="rezultate-view.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="doc-actions.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#acasa" title="Acasă: ce face aplicația și toate ecranele"><img class="brand-logo" src="raiffeisen-mark.svg" alt="" aria-hidden="true">Raiffeisen Bank <span class="sep">·</span> <b>Succesiuni</b></a>
+  <nav class="nav" aria-label="Ecrane">
+    <button type="button" class="nav-btn active" data-view="cases">Dosare</button>
+    <button type="button" class="nav-btn" data-view="agents">Agenți</button>
+    <button type="button" class="nav-btn" data-view="impact">Impact</button>
+    <button type="button" class="nav-btn" data-view="results">Rezultate</button>
+  </nav>
+  <div class="mode">
+    <button id="decisions-pill" type="button" class="pill" title="Deciziile umane din toată banca: deschide lista de lucru" hidden>…</button>
+    <button id="agent-pill" type="button" class="pill" onclick="showView('agents')">…</button>
+    <span id="mode-badge" hidden></span>
+    <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Comută între tema deschisă și cea întunecată" title="Temă deschisă / întunecată"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+  </div>
+</header>
+
+<main id="view-home" class="home" hidden></main>
+<main id="view-demo" class="demo" hidden></main>
+
+<main id="view-cases" class="layout list-mode">
+  <aside class="queue card">
+    <div class="queue-head"><h2>Lista de lucru</h2><span id="queue-count" class="muted small"></span></div>
+    <div class="wl-tools">
+      <div id="todo" class="todo"></div>
+      <input id="wl-search" type="search" placeholder="Caută: nume, CNP sau dosar" aria-label="Caută după nume, CNP sau număr de dosar" autocomplete="off">
+    </div>
+    <div id="queue" class="table-wrap"></div>
+    <h2>Escaladări fără dosar</h2>
+    <div id="unmatched"></div>
+  </aside>
+  <div class="case-nav"><button id="back-to-list" type="button">← Lista de lucru</button></div>
+  <section id="detail" class="detail">
+    <div class="card empty">Alege un dosar din listă.</div>
+  </section>
+</main>
+
+<main id="view-agents" class="intake" hidden></main>
+<main id="view-impact" class="impact" hidden></main>
+
+<main id="view-results" class="page" hidden>
+  <section class="intro">
+    <h1>Rezultate măsurate</h1>
+    <p>Fiecare cifră vine dintr-un fișier al proiectului: treci cu mouse-ul peste ea (sau citește rândul de sub ea) pentru
+      sursă și dată. Ce nu e măsurat apare ca <span class="tag est">estimare proprie</span>; ce lipsește apare gol, cu motivul.</p>
+    <p id="res-meta" class="muted small"></p>
+    <nav class="res-nav" role="tablist" aria-label="Secțiuni"><button type="button" data-sec="toate">Toate</button><button type="button" data-sec="citire">Citire</button><button type="button" data-sec="cost">Cost și timp</button><button type="button" data-sec="stabilitate">Stabilitate</button><button type="button" data-sec="siguranta">Siguranță</button><button type="button" data-sec="date">Date reale</button><button type="button" data-sec="invatare">Învățare</button><button type="button" data-sec="impact">Impact</button></nav>
+  </section>
+  <div id="res-content"><p class="muted">Se încarcă results.json…</p></div>
+  <div id="res-tip" class="tip" role="tooltip" hidden></div>
+</main>
+<main id="view-offline" class="intake" hidden></main>
+
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="live.js"></script>
+<script src="app.js"></script>
+<script src="doc-actions.js"></script>
+<script src="demo.js"></script>
+<script src="demo-manual.js"></script>
+<script src="demo-look.js"></script>
+<script src="demo-dosare.js"></script>
+<script src="results-data.js" onerror="window.RESULTS_DATA = window.RESULTS_DATA || null"></script>
+<script src="rezultate.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

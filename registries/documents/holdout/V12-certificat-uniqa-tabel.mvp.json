@@ -1,0 +1,14 @@
+{
+  "id": "holdout-V12",
+  "raw_name": "holdout/V12-certificat-uniqa-tabel",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-09-25",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000771-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "FC-2024-0042",
+    "document_number": "UQ-0000771-FICTIV"
+  }
+}

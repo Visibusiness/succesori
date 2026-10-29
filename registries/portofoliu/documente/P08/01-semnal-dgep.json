@@ -1,0 +1,27 @@
+{
+  "schema": "mosteniri.dgep.death_signal/v0",
+  "_generated_by_us": true,
+  "_fictiv": true,
+  "_fields_source": "Nota de informare Raiffeisen Bank–DGEP, „Categoriile de date”, lit. b) actualizarea periodică: numele de familie și prenumele, CNP, tipul, seria și numărul actului de identitate, data emiterii și data expirării, adresa de domiciliu, adresa de reședință (după caz), data decesului (după caz). Locul decesului și certificatul de deces nu se transmit pe acest canal.",
+  "message_id": "DGEP-MOCK-2026-05-21-000640",
+  "channel": "periodic_sftp",
+  "batch_week": "2026-W21",
+  "bank_code": "RZBR",
+  "last_name": "RADU",
+  "first_name": "ELENA",
+  "cnp": "2520418351188",
+  "id_document": {
+    "type": "CI",
+    "series": "TM",
+    "number": "380188",
+    "issue_date": "2014-04-18",
+    "expiry_date": "2024-04-18"
+  },
+  "domicile_address": "Mun. Timișoara, Str. Fictivă nr. 11, Jud. Timiș",
+  "residence_address": null,
+  "date_of_death": "2026-05-14",
+  "communicated_at": "2026-05-21T06:00:00+03:00",
+  "changed_fields": [
+    "date_of_death"
+  ]
+}

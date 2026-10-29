@@ -1,0 +1,14 @@
+{
+  "id": "real-03",
+  "raw_name": "real-text/03-formular-groupama-anunt-eveniment.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "date_of_death": null,
+    "policy_id": null,
+    "decision": null
+  },
+  "_source": "forme/Groupama-formular-anuntare-eveniment-funeral.pdf"
+}

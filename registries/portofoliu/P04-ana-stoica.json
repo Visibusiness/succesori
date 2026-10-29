@@ -1,0 +1,145 @@
+{
+ "id": "P04",
+ "case_id": "SC-2026-0104",
+ "stage": "supliment",
+ "stage_label": "Supliment cerut notarului",
+ "customer": {
+  "cif": "RC3104",
+  "name": "Ana Stoica",
+  "cnp": "2380211320192",
+  "birth_date": "1938-02-11",
+  "cards": [
+   "C-3104"
+  ]
+ },
+ "products": [
+  {
+   "id": "P04-CC",
+   "type": "current_account",
+   "balance": 2215600,
+   "estate_fraction": "1",
+   "iban": "RO92 RZBR 0000 0000 0031 0401"
+  },
+  {
+   "id": "P04-DEP",
+   "type": "term_deposit",
+   "principal": 12000000,
+   "rate_pct": 5.1,
+   "start": "2025-12-01",
+   "maturity": "2026-12-01",
+   "estate_fraction": "1",
+   "iban": "RO65 RZBR 0000 0000 0031 0402"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-08-15",
+   "amount": 198000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-09-15",
+   "amount": 198000,
+   "kind": "pension_credit"
+  }
+ ],
+ "contacts": {
+  "Radu Stoica": {
+   "email": "radu.stoica@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": false,
+   "address": "Hauptstraße 12, 80331 München, Germania"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P04-D1",
+    "received_on": "2026-08-24",
+    "file": "P04/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "2380211320192",
+     "date_of_death": "2026-08-17",
+     "document_number": "DGEP-MOCK-2026-08-24-000088"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P04-D2",
+    "received_on": "2026-09-01",
+    "file": "P04/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "2380211320192",
+     "date_of_death": "2026-08-17",
+     "case_file": "144/2026",
+     "document_number": "611",
+     "hearing_date": "2026-09-22",
+     "notary_office": "Biroul Individual Notarial „Kovacs Erika”",
+     "notary_name": "Erika KOVACS"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-09-02",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P04-D4",
+    "received_on": "2026-10-16",
+    "file": "P04/04-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "2380211320192",
+     "case_file": "144/2026",
+     "document_number": "52",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Radu Stoica",
+       "share": "1"
+      }
+     ],
+     "ibans": [
+      "RO92 RZBR 0000 0000 0031 0401"
+     ],
+     "notary_office": "Biroul Individual Notarial „Kovacs Erika”",
+     "notary_name": "Erika KOVACS"
+    }
+   }
+  },
+  {
+   "pending": true,
+   "doc": {
+    "id": "P04-D5",
+    "received_on": "2026-10-28",
+    "file": "P04/05-certificat-suplimentar.md",
+    "expected_type": "supplementary_certificate",
+    "expected_fields": {
+     "cnp": "2380211320192",
+     "case_file": "144/2026",
+     "document_number": "61",
+     "initial_certificate": "52",
+     "ibans": [
+      "RO65 RZBR 0000 0000 0031 0402"
+     ],
+     "notary_office": "Biroul Individual Notarial „Kovacs Erika”",
+     "notary_name": "Erika KOVACS"
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "SUPPLEMENT_REQUESTED",
+  "escalations": [],
+  "decisions": [],
+  "plan": null
+ }
+}

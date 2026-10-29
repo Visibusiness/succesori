@@ -1,0 +1,116 @@
+{
+ "id": "P09",
+ "case_id": "SC-2026-0109",
+ "stage": "escaladare_suspect",
+ "stage_label": "Escaladare: document suspect în carantină",
+ "customer": {
+  "cif": "RC3109",
+  "name": "Doina Ilie",
+  "cnp": "2470125050011",
+  "birth_date": "1947-01-25",
+  "cards": [
+   "C-3109"
+  ]
+ },
+ "products": [
+  {
+   "id": "P09-CC",
+   "type": "current_account",
+   "balance": 645300,
+   "estate_fraction": "1",
+   "iban": "RO75 RZBR 0000 0000 0031 0901"
+  },
+  {
+   "id": "P09-DEP",
+   "type": "term_deposit",
+   "principal": 2500000,
+   "rate_pct": 5.0,
+   "start": "2026-03-01",
+   "maturity": "2027-03-01",
+   "estate_fraction": "1",
+   "iban": "RO48 RZBR 0000 0000 0031 0902"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-09-15",
+   "amount": 154000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-10-15",
+   "amount": 154000,
+   "kind": "pension_credit"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P09-D1",
+    "received_on": "2026-09-18",
+    "file": "P09/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "2470125050011",
+     "date_of_death": "2026-09-11",
+     "document_number": "DGEP-MOCK-2026-09-18-002210"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P09-D2",
+    "received_on": "2026-09-25",
+    "file": "P09/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "2470125050011",
+     "date_of_death": "2026-09-11",
+     "case_file": "233/2026",
+     "document_number": "1044",
+     "hearing_date": "2026-11-20",
+     "notary_office": "Biroul Individual Notarial „Szabo Ildiko”",
+     "notary_name": "Ildiko SZABO"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-09-26",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P09-D4",
+    "received_on": "2026-10-24",
+    "file": "P09/04-certificat-mostenitor-email.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "2470125050011",
+     "case_file": "233/2026",
+     "document_number": "301",
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Marius Ilie",
+       "share": "1"
+      }
+     ],
+     "ibans": [
+      "RO49 BTRL 0000 0000 1234 5678"
+     ]
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "NOTARY_ANSWERED",
+  "escalations": [
+   "suspicious_document"
+  ],
+  "decisions": [
+   "escaladare"
+  ],
+  "plan": null
+ }
+}

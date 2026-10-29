@@ -1,0 +1,14 @@
+{
+  "id": "real-20",
+  "raw_name": "real-text/20-bcr-cerere-transfer-actiuni-succesiune.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "case_file": null,
+    "document_number": null
+  },
+  "_source": "banci/bcr-cerere-transfer-actiuni-succesiune.txt"
+}

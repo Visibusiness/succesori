@@ -1,0 +1,14 @@
+{
+  "id": "real-18",
+  "raw_name": "real-text/18-nn-formular-anunt-deces.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "date_of_death": null
+  },
+  "_source": "forme/NN-formular-anunt-deces.pdf"
+}

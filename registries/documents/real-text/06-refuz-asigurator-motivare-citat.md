@@ -1,0 +1,1 @@
+datorită faptului că nu au fost respectate obligații hotărâtoare la încheierea contractului de asigurare ... nici reclamanta (care este succesoare în drepturi și obligații a asiguratului) și nici pârâta nu pot pretinde ca subscrisa să executăm contractul în condițiile în care nu au respectat și nu și-au îndeplinit propriile obligații

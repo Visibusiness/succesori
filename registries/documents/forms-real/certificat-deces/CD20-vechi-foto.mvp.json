@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.85,
+ "fields": {
+  "cnp": "1530102224721",
+  "name": "Nicolae Lupu",
+  "birth_date": "1953-01-02",
+  "date_of_death": "2025-08-28",
+  "father": "LUPU NICOLAE",
+  "mother": "OPREA MIHAELA",
+  "document_series": "KM",
+  "document_number": "402454",
+  "death_record_number": "293"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "foto",
+ "id": "CD20-vechi-foto",
+ "raw_name": "forms-real/certificat-deces/CD20-vechi-foto.jpg",
+ "received_on": "2025-09-01",
+ "_split": "holdout",
+ "_document_variant": "certificat_model_vechi_2011"
+}

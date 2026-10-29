@@ -1,0 +1,25 @@
+{
+  "id": "B-07",
+  "raw_name": "B-neagu-cristian/scan/07-certificat-mostenitor.pdf",
+  "document_type": "heir_certificate",
+  "received_on": "2026-10-06",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "1750914013511",
+    "testament": false,
+    "heirs": [
+      {"id": "H1", "name": "Mirela Neagu", "share": "1/4", "relationship": "soție"},
+      {"id": "H2", "name": "Darius Neagu", "share": "3/8", "relationship": "fiu", "minor": true,
+       "legal_representative": "Liviu Toma"},
+      {"id": "H3", "name": "Andrei Vlad", "share": "3/8", "relationship": "fiu", "minor": true,
+       "legal_representative": "Simona Vlad"}
+    ],
+    "case_file": "154/2026",
+    "document_number": "41",
+    "notary_office": "Biroul Individual Notarial „Model Carmen”",
+    "notary_name": "Carmen MODEL",
+    "ibans": ["RO00 RZBR 0000 0000 8502 0001", "RO00 RZBR 0000 0000 8502 0009"]
+  },
+  "_nota": "ibans: ambele IBAN-uri Raiffeisen din text (contul curent din activ, contul cardului din pasiv); CARD-B1 e datorie, deci nu intră în verificarea de acoperire. legal_representative: Liviu Toma e curatorul special (nu e moștenitor), Simona Vlad e mama minorului (nu e moștenitoare).",
+  "_fictiv": true
+}

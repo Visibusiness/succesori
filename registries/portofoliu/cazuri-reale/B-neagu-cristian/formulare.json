@@ -1,0 +1,37 @@
+{
+  "_ce_e": "valorile cu care genereaza.py completează formularele oficiale (PDF MAI Anexa 3, UNIQA CD_UAV_V8_04.2024); aceleași ca în .md și .mvp.json",
+  "certificat_deces": {
+    "sex": "M", "surname": "NEAGU", "first": "CRISTIAN", "born": "1975-09-14", "died": "2026-07-02",
+    "cnp": "1750914013511",
+    "birth_place": ["Mun. Alba Iulia", "Alba"], "death_place": ["Com. Șugag", "Alba"],
+    "domicile": ["Mun. Sebeș, Str. Fictivă nr. 46", "Alba"],
+    "father": ["NEAGU", "VASILE"], "mother": ["POPA", "FLOAREA"],
+    "act_no": "36", "act_date": "2026-07-03",
+    "registered": ["Primăria Com. Șugag", "Alba"], "issued_by": "SPCLEP Sebeș", "issued": "2026-07-03",
+    "series": "DA", "number": "502714"
+  },
+  "cerere_uniqa": {
+    "nume_asigurat": "NEAGU CRISTIAN",
+    "cnp": "1750914013511",
+    "certificat": "UQ-8502001-FICTIV",
+    "adresa_domiciliu": "Mun. Sebeș, Str. Fictivă nr. 46, Jud. Alba",
+    "adresa_corespondenta": "NEAGU MIRELA, Mun. Sebeș, Str. Fictivă nr. 8",
+    "data_intrarii": "20.03.2024",
+    "telefon": "0700 000 853",
+    "email": "mirela.neagu@example.invalid",
+    "risc": "Deces din orice cauza",
+    "data_eveniment": "02072026",
+    "cauza": ["Accident rutier pe DN 67C, pe raza com. Șugag, jud. Alba,", "la 02.07.2026; Asiguratul, conducătorul autoturismului,", "a decedat la locul accidentului."],
+    "accident": true,
+    "data_accident": "02.07.2026",
+    "loc_accident": "DN 67C, com. Șugag, jud. Alba",
+    "politie": "Da: Poliția Municipiului Sebeș, Biroul Rutier (dosar nr. 0000/P/2026, fictiv)",
+    "medic_familie": ["—"],
+    "declarant": "NEAGU MIRELA",
+    "calitate": "soție, moștenitor",
+    "adresa_contact": "Mun. Sebeș, Str. Fictivă nr. 8",
+    "telefon_declarant": "0700 000 853",
+    "email_declarant": "mirela.neagu@example.invalid",
+    "data_completarii": "20.07.2026"
+  }
+}

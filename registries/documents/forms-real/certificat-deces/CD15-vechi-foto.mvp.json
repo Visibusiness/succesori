@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.85,
+ "fields": {
+  "cnp": "1560618296876",
+  "name": "Grigore Lupu",
+  "birth_date": "1956-06-18",
+  "date_of_death": "2026-02-10",
+  "father": "LUPU TUDOR",
+  "mother": "LUPU MIHAELA",
+  "document_series": "ZG",
+  "document_number": "189916",
+  "death_record_number": "84"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "foto",
+ "id": "CD15-vechi-foto",
+ "raw_name": "forms-real/certificat-deces/CD15-vechi-foto.jpg",
+ "received_on": "2026-02-14",
+ "_split": "train",
+ "_document_variant": "certificat_model_vechi_2011"
+}

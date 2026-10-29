@@ -1,0 +1,9 @@
+{
+ "file": "A08-png-ca-pdf.pdf",
+ "attack": "Imagine PNG cu extensia .pdf (tipul real din magic bytes ≠ extensie).",
+ "risk": "high",
+ "flags_include": [
+  "type_mismatch"
+ ],
+ "pipeline": "quarantine"
+}

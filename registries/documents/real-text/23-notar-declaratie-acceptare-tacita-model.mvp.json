@@ -1,0 +1,14 @@
+{
+  "id": "real-23",
+  "raw_name": "real-text/23-notar-declaratie-acceptare-tacita-model.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "case_file": null,
+    "testament": null
+  },
+  "_source": "notari/notaripro-art-acceptare-tacita-termen.txt"
+}

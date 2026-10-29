@@ -1,0 +1,17 @@
+{
+  "id": "A-05",
+  "raw_name": "A-petrescu-marin/scan/05-adresa-notar.pdf",
+  "document_type": "notary_request",
+  "received_on": "2026-09-15",
+  "confidence": 0.93,
+  "fields": {
+    "cnp": "1640318184124",
+    "date_of_death": "2026-08-11",
+    "case_file": "211/2026",
+    "document_number": "318",
+    "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+    "notary_name": "Adrian FICTIV"
+  },
+  "_nota": "Corpul adresei e formularea reală a Notariatului Professio (notari.pro, răspuns oficial din 07-06-2014, kb/_downloads/realsurse/forum/notaripro-supliment-mostenire.txt), completată. Ca în original, nu are termen de dezbatere: hearing_date lipsește.",
+  "_fictiv": true
+}

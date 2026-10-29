@@ -1,0 +1,15 @@
+{
+  "id": "A-03",
+  "raw_name": "A-petrescu-marin/scan/03-certificat-asigurare.pdf",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-08-27",
+  "confidence": 0.91,
+  "fields": {
+    "cnp": "1640318184124",
+    "policy_id": "UQ-8501001-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "NP-2026-085011",
+    "document_number": "UQ-8501001-FICTIV"
+  },
+  "_fictiv": true
+}

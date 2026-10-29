@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1451030031456",
+  "name": "VLAD PETRE",
+  "case_file": "241/2026",
+  "hearing_date": "2026-12-15",
+  "date_of_death": "2026-09-14",
+  "document_number": "1102",
+  "notary_office": "Biroul Individual Notarial „Ghiță Elena”",
+  "notary_name": "Elena GHIȚĂ"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "name": 0.95,
+  "case_file": 0.95,
+  "hearing_date": 0.95,
+  "date_of_death": 0.95,
+  "document_number": 0.93,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1451030031456",
+  "name": "pe defunctul VLAD PETRE",
+  "case_file": "Dosar succesoral nr. 241/2026",
+  "hearing_date": "fixat pentru data de 15.12.2026",
+  "date_of_death": "decedat la data de 14.09.2026",
+  "document_number": "Nr. 1102 / 25.09.2026",
+  "notary_office": "Biroul Individual Notarial „Ghiță Elena”",
+  "notary_name": "Notar public Elena GHIȚĂ"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.055037499999999996,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P11/03-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:29+00:00",
+  "read": "03-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

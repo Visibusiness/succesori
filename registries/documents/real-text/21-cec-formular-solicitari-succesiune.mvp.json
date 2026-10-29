@@ -1,0 +1,14 @@
+{
+  "id": "real-21",
+  "raw_name": "real-text/21-cec-formular-solicitari-succesiune.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "notary_office": null,
+    "date_of_death": null
+  },
+  "_source": "banci/cec-succesiune.txt"
+}

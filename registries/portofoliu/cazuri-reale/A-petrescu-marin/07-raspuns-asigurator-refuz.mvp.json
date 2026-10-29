@@ -1,0 +1,17 @@
+{
+  "id": "A-07",
+  "raw_name": "A-petrescu-marin/scan/07-raspuns-asigurator-refuz.pdf",
+  "document_type": "insurer_response",
+  "received_on": "2026-10-27",
+  "confidence": 0.95,
+  "fields": {
+    "cnp": "1640318184124",
+    "policy_id": "UQ-8501001-FICTIV",
+    "decision": "refused",
+    "reason": "condiție medicală preexistentă (pancreatită cronică, ciroză hepatică, diagnosticate din 02.2025): deces în primele 12 luni de asigurare, din afecțiuni diagnosticate în ultimele 24 de luni anterior datei de început a asigurării",
+    "document_number": "8517",
+    "claim_number": "DV-0702/2026",
+    "loan_contract": "NP-2026-085011"
+  },
+  "_fictiv": true
+}

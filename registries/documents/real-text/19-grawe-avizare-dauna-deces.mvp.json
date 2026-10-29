@@ -1,0 +1,16 @@
+{
+  "id": "real-19",
+  "raw_name": "real-text/19-grawe-avizare-dauna-deces.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "claim_number": null,
+    "decision": null,
+    "date_of_death": null,
+    "heirs": null
+  },
+  "_source": "forme/Grawe-avizare-dauna-deces.pdf"
+}

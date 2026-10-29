@@ -1,0 +1,27 @@
+{
+ "file": "A14-informativ-link-asigurator.md",
+ "attack": "Certificat de asigurare legitim cu un îndemn la link: se procesează, dar operatorul primește o escaladare informativă.",
+ "risk": "medium",
+ "flags_include": [
+  "url_call_to_action"
+ ],
+ "pipeline": "process_with_info",
+ "actions_include": [
+  "insurance_claim_opened"
+ ],
+ "extracted": {
+  "id": "doc-03",
+  "raw_name": "pdf/03-certificat-asigurare.pdf",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-09-30",
+  "confidence": 0.91,
+  "fields": {
+   "cnp": "2XXXXXXXXXXXX",
+   "policy_id": "UQ-0000000-FICTIV",
+   "insurer": "UNIQA Asigurări de viață S.A.",
+   "loan_contract": "NP-2023-001001",
+   "reference": "UQ-0000000-FICTIV",
+   "document_number": "UQ-0000000-FICTIV"
+  }
+ }
+}

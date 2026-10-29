@@ -1,0 +1,23 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H8",
+  "doc_type": "polita_asigurare",
+  "received_at": "2026-09-30",
+  "client_id": "RC1001",
+  "source_text": "H8-cnp-cu-spatii.md",
+  "fields": {
+    "certificate_number": "UQ-0000000-FICTIV",
+    "insured_name": "IONESCU MARIA",
+    "insured_cnp": "2XXXXXXXXXXXX",
+    "insured_cnp_raw": "2 XX XX XX XX XXX X",
+    "loan_contract_number": "NP-2023-001001",
+    "start_date": "2023-05-10"
+  },
+  "expected_agent": {
+    "same_as": "03-certificat-asigurare",
+    "state_after": "INSURANCE_CLAIM_OPEN",
+    "escalation": false,
+    "note": "CNP-ul se normalizează eliminând spații, puncte și cratime; după normalizare trebuie să aibă exact 13 caractere"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "hard-H11-ocr",
+  "raw_name": "H11-extras-multilingv-ambiguu__ocr.md",
+  "document_type": "death_certificate",
+  "received_on": "2026-10-12",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": null,
+    "date_of_death": "2026-10-05",
+    "name": "Maria Ionescu",
+    "birth_date": "1958-05-12",
+    "father": "GHEORGHE NICOLAE",
+    "mother": "GHEORGHE ELISABETA",
+    "spouse": "IONESCU VASILE",
+    "document_variant": "multilingual_extract",
+    "reference": "EMD 0000001",
+    "document_number": "0000001",
+    "document_series": "EMD"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "hard/H11-extras-multilingv-ambiguu.md",
+  "_variant": "ocr"
+}

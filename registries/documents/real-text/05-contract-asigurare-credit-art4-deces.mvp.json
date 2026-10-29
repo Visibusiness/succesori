@@ -1,0 +1,15 @@
+{
+  "id": "real-05",
+  "raw_name": "real-text/05-contract-asigurare-credit-art4-deces.md",
+  "document_type": "insurance_certificate",
+  "received_on": null,
+  "confidence": 0.5,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "insurer": "A.",
+    "loan_contract": null,
+    "document_number": null
+  },
+  "_source": "jurisprudenta/CACluj-sent1739-2013-refuz-plata-asigurare-deces-credit.txt (citat: art. 4 din contractul de asigurare)"
+}

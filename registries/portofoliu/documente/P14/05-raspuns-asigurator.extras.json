@@ -1,0 +1,56 @@
+{
+ "document_type": "insurer_response",
+ "confidence": 0.92,
+ "fields": {
+  "policy_id": "UQ-8502001-FICTIV",
+  "decision": "approved",
+  "amount": 2418170,
+  "claim_number": "DV-0588/2026",
+  "document_number": "6120",
+  "loan_contract": "NP-2024-085021",
+  "cnp": "1750914013511"
+ },
+ "field_confidence": {
+  "policy_id": 0.95,
+  "decision": 0.97,
+  "amount": 0.95,
+  "claim_number": 0.93,
+  "document_number": 0.93,
+  "loan_contract": 0.95,
+  "cnp": 0.9
+ },
+ "evidence": {
+  "policy_id": "UQ-8502001-FICTIV",
+  "decision": "cererea de despăgubire a fost APROBATĂ",
+  "amount": "24.181,70 lei",
+  "claim_number": "DV-0588/2026",
+  "document_number": "Nr. 6120 / 14.09.2026",
+  "loan_contract": "nr. NP-2024-085021",
+  "cnp": "1750914013511"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.053153900000000004,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P14/05-raspuns-asigurator-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:41+00:00",
+  "read": "05-raspuns-asigurator-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

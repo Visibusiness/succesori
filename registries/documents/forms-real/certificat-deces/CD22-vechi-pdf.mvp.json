@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1660802138558",
+  "name": "Mihai Radu",
+  "birth_date": "1966-08-02",
+  "date_of_death": "2024-10-12",
+  "father": "RADU GHEORGHE",
+  "mother": "TUDOR RODICA",
+  "document_series": "DU",
+  "document_number": "938419",
+  "death_record_number": "2244"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "pdf",
+ "id": "CD22-vechi-pdf",
+ "raw_name": "forms-real/certificat-deces/CD22-vechi.pdf",
+ "received_on": "2024-10-13",
+ "_split": "holdout",
+ "_document_variant": "certificat_model_vechi_2011"
+}

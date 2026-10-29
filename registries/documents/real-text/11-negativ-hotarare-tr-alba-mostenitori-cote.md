@@ -1,0 +1,2 @@
+A constatat că au calitate de moștenitori acceptanți ai defunctului H. V.: reclamanta H. R., în cotă de ¼ parte din moștenire, în calitate de soție supraviețuitoare și pârâții, H. N. B., reprezentat prin curator B. A., și V. D. Ș., reprezentat de V. C. I., sub beneficiu de inventar, în calitate de fii, în cotă de 3/8 parte fiecare.
+A constatat că ACTIVUL NET al moștenirii rămase după defunctul H. V. este în valoare de_,78 lei.

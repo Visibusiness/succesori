@@ -1,0 +1,41 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H5",
+  "doc_type": "certificat_mostenitor",
+  "received_at": "2026-10-22",
+  "client_id": "RC1001",
+  "source_text": "H5-certificat-fara-iban.md",
+  "fields": {
+    "nr_certificat": "87",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "masa_activ": [
+      {
+        "tip": "cont_curent",
+        "iban": null,
+        "cota_defunct": "1/2",
+        "valoare_bani": 530000
+      }
+    ]
+  },
+  "expected_agent": {
+    "product_match": {
+      "method": "tip+suma",
+      "matched": "CC-1",
+      "candidates": [
+        "CC-1"
+      ],
+      "ambiguous": false
+    },
+    "flags": [
+      "matched_without_iban"
+    ],
+    "escalation": false,
+    "coverage_gaps": [
+      "DEP-1"
+    ],
+    "state_after": "SUPPLEMENT_REQUESTED",
+    "note": "potrivire unică: singurul cont curent, 3.200 + 2.100 = 5.300 lei; dacă ar fi două conturi curente → escaladare"
+  }
+}

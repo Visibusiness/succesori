@@ -1,0 +1,14 @@
+{
+  "id": "real-32",
+  "raw_name": "real-text/32-clauza-raiffeisen-cgb-3-2-5.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "ibans": null,
+    "case_file": null
+  },
+  "_source": "banci/rbro-cgb-pf.txt (art. 3.2.5)"
+}

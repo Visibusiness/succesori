@@ -1,0 +1,16 @@
+{
+  "id": "holdout-V18",
+  "raw_name": "holdout/V18-adresa-notar-antet-derutant",
+  "document_type": "notary_request",
+  "received_on": "2026-11-02",
+  "confidence": 0.88,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "date_of_death": "2026-08-14",
+    "case_file": "88/2026",
+    "document_number": "233",
+    "hearing_date": "2026-12-01",
+    "notary_office": "Societatea Profesională Notarială „Exemplu și Asociații”",
+    "notary_name": "Radu EXEMPLU"
+  }
+}

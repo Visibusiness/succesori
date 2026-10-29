@@ -1,0 +1,82 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.92,
+ "fields": {
+  "cnp": "1750914013511",
+  "date_of_death": "2026-07-02",
+  "case_file": "154/2026",
+  "document_number": "41",
+  "testament": false,
+  "notary_office": "Biroul Individual Notarial „Model Carmen”",
+  "notary_name": "Carmen MODEL",
+  "ibans": [
+   "RO12 RZBR 0000 0000 8502 0001"
+  ],
+  "heirs": [
+   {
+    "name": "NEAGU MIRELA",
+    "share": "1/4"
+   },
+   {
+    "name": "NEAGU DARIUS",
+    "share": "3/8",
+    "minor": true,
+    "legal_representative": "TOMA LIVIU"
+   },
+   {
+    "name": "VLAD ANDREI",
+    "share": "3/8",
+    "minor": true,
+    "legal_representative": "VLAD SIMONA"
+   }
+  ]
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "date_of_death": 0.95,
+  "case_file": 0.97,
+  "document_number": 0.95,
+  "testament": 0.93,
+  "notary_office": 0.95,
+  "notary_name": 0.95,
+  "ibans": 0.92,
+  "heirs": 0.93
+ },
+ "evidence": {
+  "cnp": "NEAGU CRISTIAN, CNP 1750914013511",
+  "date_of_death": "decedat la data de 02.07.2026",
+  "case_file": "Dosar succesoral nr. 154/2026",
+  "document_number": "CERTIFICAT DE MOȘTENITOR Nr. 41",
+  "testament": "nu rezultă că defunctul ar fi lăsat testament",
+  "notary_office": "Biroul Individual Notarial „Model Carmen”",
+  "notary_name": "Carmen MODEL",
+  "ibans": "IBAN RO12 RZBR 0000 0000 8502 0001",
+  "heirs": "NEAGU MIRELA, CNP 2770421012945"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0616389,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P14/06-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:41+00:00",
+  "read": "06-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

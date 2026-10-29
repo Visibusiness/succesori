@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1370901158958",
+  "name": "Traian Stan",
+  "birth_date": "1937-09-01",
+  "date_of_death": "2024-09-21",
+  "father": "STAN COSTICĂ",
+  "mother": "DUMITRU LUCREȚIA",
+  "document_series": "DE",
+  "document_number": "752490",
+  "death_record_number": "181"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "scan",
+ "id": "CD17-vechi-scan",
+ "raw_name": "forms-real/certificat-deces/CD17-vechi.png",
+ "received_on": "2024-10-22",
+ "_split": "train",
+ "_document_variant": "certificat_model_vechi_2011"
+}

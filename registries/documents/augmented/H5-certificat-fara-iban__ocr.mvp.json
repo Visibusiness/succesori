@@ -1,0 +1,51 @@
+{
+  "id": "hard-H5-ocr",
+  "raw_name": "H5-certificat-fara-iban__ocr.md",
+  "document_type": "heir_certificate",
+  "received_on": "2026-10-22",
+  "confidence": 0.88,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "reference": "87/2026",
+    "testament": false,
+    "products": [],
+    "heirs": [
+      {
+        "id": "H1",
+        "name": "Ion Ionescu",
+        "share": "1/4"
+      },
+      {
+        "id": "H2",
+        "name": "Andrei Ionescu",
+        "share": "3/8"
+      },
+      {
+        "id": "H3",
+        "name": "Elena Ionescu",
+        "share": "3/8",
+        "minor": true,
+        "legal_representative": "H1"
+      }
+    ],
+    "case_file": "123/2026",
+    "document_number": "87",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU",
+    "ibans": [],
+    "unidentified_products": [
+      {
+        "type": "current_account",
+        "amount": 530000,
+        "estate_share": "1/2",
+        "iban": null
+      }
+    ]
+  },
+  "_deprecated_fields": [
+    "reference",
+    "products"
+  ],
+  "_augmented_from": "hard/H5-certificat-fara-iban.md",
+  "_variant": "ocr"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "P01",
+ "case_id": "SC-2026-0101",
+ "stage": "dgep",
+ "stage_label": "Doar semnal DGEP",
+ "customer": {
+  "cif": "RC3101",
+  "name": "Gheorghe Popescu",
+  "cnp": "1490314082141",
+  "birth_date": "1949-03-14",
+  "spouse": "Victoria Popescu",
+  "cards": [
+   "C-3101",
+   "CC-3101"
+  ]
+ },
+ "products": [
+  {
+   "id": "P01-CC",
+   "type": "current_account",
+   "balance": 412350,
+   "estate_fraction": "1/2",
+   "iban": "RO44 RZBR 0000 0000 0031 0101"
+  },
+  {
+   "id": "P01-CARD",
+   "type": "credit_card",
+   "outstanding": 186420,
+   "rate_pct": 22.9,
+   "last_interest_paid": "2026-10-05"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-09-15",
+   "amount": 185000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-10-15",
+   "amount": 185000,
+   "kind": "pension_credit"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P01-D1",
+    "received_on": "2026-10-26",
+    "file": "P01/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1490314082141",
+     "date_of_death": "2026-10-19",
+     "document_number": "DGEP-MOCK-2026-10-26-000141"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P01-D2",
+    "received_on": "2026-10-27",
+    "file": "P01/02-certificat-deces-foto-scan.pdf",
+    "expected_type": "death_certificate",
+    "expected_fields": {
+     "cnp": null,
+     "cnp_raw": "1490314######",
+     "date_of_death": null,
+     "document_number": null
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "FROZEN",
+  "escalations": [],
+  "orphan_escalations": [
+   "document_illegible"
+  ],
+  "plan": null
+ }
+}

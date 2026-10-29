@@ -1,0 +1,15 @@
+{
+  "id": "A-04",
+  "raw_name": "A-petrescu-marin/scan/04-cerere-despagubire-uniqa.pdf",
+  "document_type": "unknown",
+  "received_on": "2026-08-27",
+  "confidence": 0.5,
+  "fields": {
+    "cnp": "1640318184124",
+    "policy_id": "UQ-8501001-FICTIV",
+    "date_of_death": "2026-08-11"
+  },
+  "_pipeline": false,
+  "_nota": "Cererea de despăgubire (avizarea daunei către asigurător) nu are tip în vocabularul pipeline-ului (la fel ca real-text/14, 03). Document-suport: banca îl primește în agenție și îl atașează dosarului de daună; nu se trimite pipeline-ului, care ar face din el o escaladare document_illegible.",
+  "_fictiv": true
+}

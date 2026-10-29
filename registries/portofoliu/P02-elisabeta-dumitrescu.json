@@ -1,0 +1,81 @@
+{
+ "id": "P02",
+ "case_id": "SC-2026-0102",
+ "stage": "notar_de_semnat",
+ "stage_label": "Răspunsul la notar așteaptă semnătura",
+ "customer": {
+  "cif": "RC3102",
+  "name": "Elisabeta Dumitrescu",
+  "cnp": "2410702220870",
+  "birth_date": "1941-07-02",
+  "cards": [
+   "C-3102"
+  ]
+ },
+ "products": [
+  {
+   "id": "P02-CC",
+   "type": "current_account",
+   "balance": 86740,
+   "estate_fraction": "1",
+   "iban": "RO60 RZBR 0000 0000 0031 0201"
+  },
+  {
+   "id": "P02-DEP",
+   "type": "term_deposit",
+   "principal": 4500000,
+   "rate_pct": 4.75,
+   "start": "2026-04-10",
+   "maturity": "2027-04-10",
+   "estate_fraction": "1",
+   "iban": "RO33 RZBR 0000 0000 0031 0202"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-09-15",
+   "amount": 162000,
+   "kind": "pension_credit"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P02-D1",
+    "received_on": "2026-10-15",
+    "file": "P02/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "2410702220870",
+     "date_of_death": "2026-10-08",
+     "document_number": "DGEP-MOCK-2026-10-15-000377"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P02-D2",
+    "received_on": "2026-10-23",
+    "file": "P02/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "2410702220870",
+     "date_of_death": "2026-10-08",
+     "case_file": "211/2026",
+     "document_number": "958",
+     "hearing_date": "2026-11-03",
+     "notary_office": "Biroul Individual Notarial „Popa Ioana”",
+     "notary_name": "Ioana POPA"
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "NOTARY_ANSWERED",
+  "escalations": [],
+  "decisions": [
+   "semnatura"
+  ],
+  "plan": null
+ }
+}

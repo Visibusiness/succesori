@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1320412130229",
+  "name": "Traian Popescu",
+  "birth_date": "1932-04-12",
+  "date_of_death": "2025-08-26",
+  "father": "POPESCU AUREL",
+  "mother": "ȚURCANU ECATERINA",
+  "document_series": "KU",
+  "document_number": "858559",
+  "death_record_number": "1636"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "pdf",
+ "id": "CD13-vechi-pdf",
+ "raw_name": "forms-real/certificat-deces/CD13-vechi.pdf",
+ "received_on": "2026-03-18",
+ "_split": "train",
+ "_document_variant": "certificat_model_vechi_2011"
+}

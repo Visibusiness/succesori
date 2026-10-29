@@ -1,0 +1,15 @@
+{
+  "id": "real-04",
+  "raw_name": "real-text/04-certificat-persoana-asigurata-citat.md",
+  "document_type": "insurance_certificate",
+  "received_on": null,
+  "confidence": 0.5,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "insurer": "A. –Ț. Asigurări S.A.",
+    "loan_contract": null,
+    "document_number": null
+  },
+  "_source": "visi/jurisprudenta/cab-1252-2014-anon.txt (citat din „Certificatul pentru persoana asigurată”)"
+}

@@ -1,0 +1,58 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.5,
+ "fields": {
+  "cnp": "1750914013511",
+  "name": "NEAGU CRISTIAN",
+  "date_of_death": "2026-07-02",
+  "case_file": "154/2026",
+  "hearing_date": null,
+  "document_number": "227",
+  "notary_office": "Biroul Individual Notarial „Model Carmen”",
+  "notary_name": "Carmen MODEL"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "name": 0.95,
+  "date_of_death": 0.95,
+  "case_file": 0.95,
+  "hearing_date": 0.0,
+  "document_number": 0.9,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1750914013511",
+  "name": "defunctul NEAGU CRISTIAN",
+  "date_of_death": "decedat la data de 02.07.2026",
+  "case_file": "Dosar succesoral nr. 154/2026",
+  "document_number": "Nr. 227 / 24.08.2026",
+  "notary_office": "Biroul Individual Notarial „Model Carmen”",
+  "notary_name": "Notar public Carmen MODEL"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0557411,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P14/04-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:40+00:00",
+  "read": "04-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

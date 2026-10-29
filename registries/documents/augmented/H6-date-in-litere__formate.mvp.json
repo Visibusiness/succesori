@@ -1,0 +1,22 @@
+{
+  "id": "hard-H6-formate",
+  "raw_name": "H6-date-in-litere__formate.md",
+  "document_type": "notary_request",
+  "received_on": "2026-09-28",
+  "confidence": 0.88,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "reference": "123/2026",
+    "hearing_date": "2026-10-20",
+    "case_file": "123/2026",
+    "document_number": "412",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "hard/H6-date-in-litere.md",
+  "_variant": "formate"
+}

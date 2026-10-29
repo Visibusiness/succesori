@@ -1,0 +1,15 @@
+{
+  "id": "holdout-V13",
+  "raw_name": "holdout/V13-raspuns-asigurator-refuz",
+  "document_type": "insurer_response",
+  "received_on": "2026-10-30",
+  "confidence": 0.93,
+  "fields": {
+    "cnp": "1XXXXXXXXXXX7",
+    "policy_id": "EV-2022-778899",
+    "decision": "refused",
+    "claim_number": "D-2026-3310",
+    "loan_contract": "CR-2022-445566",
+    "document_number": "9054"
+  }
+}

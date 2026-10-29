@@ -1,0 +1,202 @@
+/* Detaliul dosarului (tabul Dosare), lista de lucru, CTA-ul „Deschide dosarul complet” și lista deciziilor din antet.
+   Variabilele temei (deschisă / întunecată) vin din style.css. */
+/* ---------- CTA „Deschide dosarul complet” (Demo ghidat) ---------- */
+.case-cta { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; text-align: left;
+  min-width: 290px; max-width: 380px; padding: 14px 16px 14px 14px; border: 0; border-radius: 14px; background: var(--yellow); color: #000;
+  box-shadow: 0 0 0 1px rgba(255,238,0,.35), 0 10px 28px rgba(0,0,0,.35); transition: transform .15s, box-shadow .15s, background .15s; }
+.case-cta:hover { background: #fff35c; transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(255,238,0,.5), 0 14px 32px rgba(0,0,0,.4); }
+.case-cta:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.case-cta .cta-ico { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: #000; color: var(--yellow); }
+.case-cta .cta-ico svg { width: 24px; height: 24px; display: block; }
+.case-cta .cta-main { display: grid; gap: 2px; min-width: 0; }
+.case-cta .cta-k { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .65; }
+.case-cta b { font-size: 16px; line-height: 1.2; }
+.case-cta .cta-sum { font-size: 12.5px; color: #333; }
+.case-cta .cta-arrow { font-size: 22px; font-weight: 700; transition: transform .15s; }
+.case-cta:hover .cta-arrow { transform: translateX(3px); }
+.case-cta.has-dec .cta-ico { position: relative; }
+.case-cta.has-dec .cta-ico::after { content: ""; position: absolute; top: -3px; right: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--bad); border: 2px solid var(--yellow); }
+
+/* ---------- Detaliul dosarului: antet compact, „Ce ai de făcut”, filtre, secțiuni restrânse ---------- */
+.case-top { display: flex; gap: 14px 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 20px 22px; }
+.case-top-main { min-width: 0; flex: 1 1 420px; }
+.case-kicker { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.case-name { margin: 4px 0 8px; font-size: 24px; color: var(--ink); text-transform: none; letter-spacing: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.case-name .badge { font-size: 12px; }
+.case-facts { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 0; font-size: 14px; }
+.case-facts .soon b { color: var(--warn); } .case-facts .late b { color: var(--bad); }
+.case-figs { display: flex; flex-wrap: wrap; gap: 4px 8px; margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.case-figs .dot-sep { color: var(--muted); }
+.case-top-demo { display: inline-flex; align-items: center; gap: 8px; border-color: var(--line); white-space: nowrap; }
+.case-top-demo:hover { border-color: var(--black); }
+.detail > .roadmap { margin: 0; }
+.esc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.esc-item { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--panel-2); }
+.esc-item.open { border-color: var(--line-strong); background: var(--bad-bg); }
+.esc-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.esc-item p { margin: 6px 0 8px; }
+.esc-item .esc-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.esc-item .esc-actions input { flex: 1 1 260px; }
+/* lista de lucru: rânduri curate */
+.wl-head, .wl-row { display: grid; grid-template-columns: 250px 150px minmax(0, 1fr) 170px 56px 200px; gap: 14px; align-items: center; }
+.wl-head span:nth-child(6) { text-align: right; }
+.wl-head { padding: 10px 14px 6px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.wl-head span:last-child { text-align: center; }
+.wl-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.wl-row { padding: 12px 14px; border: 1px solid var(--line); border-left-width: 4px; border-radius: 10px; background: var(--panel); cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .05s; }
+.wl-row:hover, .wl-row:focus-visible { border-color: var(--black); box-shadow: var(--shadow); outline: none; }
+.wl-row.has-dec { border-left-color: var(--yellow); }
+.wl-row.active { background: var(--partial-bg); }
+.wl-who { display: flex; gap: 10px; align-items: center; min-width: 0; }
+.wl-who b { display: block; }
+.wl-av { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--brand); color: var(--on-brand); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.wl-stage { display: flex; flex-wrap: wrap; gap: 4px; }
+.wl-term .rel.soon { color: var(--warn); font-weight: 700; } .wl-term .rel.late { color: var(--bad); font-weight: 700; }
+.wl-dec { text-align: center; }
+.wl-dec-n { display: inline-grid; place-items: center; min-width: 30px; height: 30px; padding: 0 8px; border-radius: 15px; background: var(--yellow); color: #000; font-weight: 700; box-shadow: 0 0 0 1.5px var(--brand) inset; }
+.wl-dec-0 { color: var(--ok); font-weight: 700; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 1150px) {
+  .wl-head { display: none; }
+  .wl-row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "who dec" "stage stage" "next next" "term term" "act act"; gap: 6px 10px; }
+  .wl-who { grid-area: who; } .wl-dec { grid-area: dec; } .wl-stage { grid-area: stage; } .wl-next { grid-area: next; } .wl-term { grid-area: term; } .wl-act { grid-area: act; }
+  .wl-go { width: 100%; text-align: center; }
+  .wl-term .muted { display: inline; margin-left: 6px; }
+}
+.todo-panel { border-left: 5px solid var(--yellow); }
+.todo-panel.empty-todo { border-left-color: var(--ok); }
+.tp-head { display: flex; gap: 12px; align-items: center; }
+.tp-head h3 { margin: 2px 0 0; font-size: 18px; }
+.tp-kicker { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tp-ok { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--ok-bg); color: var(--ok); }
+.tp-ok svg { width: 22px; height: 22px; }
+.tp-list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.tp-item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--panel-2); }
+.tp-item.warn { background: var(--warn-bg); border-color: var(--line-strong); }
+.tp-item.bad { background: var(--bad-bg); border-color: var(--line-strong); }
+.tp-item.info { background: var(--info-bg); border-color: var(--line-strong); }
+.tp-ico { position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--brand); color: var(--on-brand); }
+.tp-ico svg { width: 20px; height: 20px; display: block; }
+.tp-n { position: absolute; top: -6px; left: -6px; min-width: 18px; height: 18px; border-radius: 9px; background: var(--yellow); color: #000;
+  font-size: 11px; font-weight: 700; display: grid; place-items: center; border: 1.5px solid var(--brand); }
+.tp-text { min-width: 0; }
+.tp-text b { display: block; }
+.tp-where { color: var(--muted); margin-top: 2px; }
+.tp-where span { font-weight: 700; color: var(--ink); }
+.tp-acts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.tp-go { background: var(--brand); color: var(--on-brand); border-color: var(--brand); font-weight: 700; white-space: nowrap; }
+.tp-go:hover { background: var(--brand-hover); }
+.tp-auto { margin: 12px 0 0; color: var(--muted); }
+.tp-auto b { color: var(--ink); }
+@media (max-width: 640px) { .tp-item { grid-template-columns: auto minmax(0, 1fr); } .tp-acts { grid-column: 1 / -1; justify-content: stretch; } .tp-acts button { flex: 1; } }
+.dchips { align-items: center; }
+.dchips-l { margin-right: 2px; }
+.dsecs { display: grid; gap: 8px; }
+.dsec { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); min-width: 0; }
+.dsec > summary { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 16px; cursor: pointer; list-style: none; font-weight: 700; }
+.dsec > summary::-webkit-details-marker { display: none; }
+.dsec > summary::after { content: "▸"; margin-left: auto; color: var(--muted); transition: transform .15s; }
+.dsec[open] > summary::after { transform: rotate(90deg); }
+.dsec > summary:hover { background: var(--panel-2); border-radius: var(--radius); }
+.dsec-ico svg { width: 18px; height: 18px; display: block; color: var(--muted); }
+.dsec-hint { font-weight: 400; }
+.dsec-body { padding: 0 16px 14px; display: grid; gap: 12px; min-width: 0; }
+.dsec-body > * { min-width: 0; }
+.dsec-body > .card, .dsec-body > .grid2 > .card { border: 0; box-shadow: none; padding: 0; background: none; }
+.dsec-body > .card > h3:first-child { font-size: 14px; color: var(--muted); }
+.flash { animation: flash 2.4s ease-out; border-radius: 8px; }
+@keyframes flash { 0%, 30% { box-shadow: 0 0 0 4px var(--yellow), 0 0 0 9px rgba(255,238,0,.35); background-color: var(--partial-bg); }
+  100% { box-shadow: 0 0 0 0 rgba(255,238,0,0); } }
+tr.flash { outline: 3px solid var(--yellow); outline-offset: -3px; }
+@media (prefers-reduced-motion: reduce) { .flash { animation: none; outline: 3px solid var(--yellow); } }
+
+/* ---------- Antet: lista deciziilor (din contorul „X decizii te așteaptă”) ---------- */
+#decisions-pill { cursor: pointer; }
+.dec-menu { position: fixed; z-index: 30; width: min(420px, calc(100vw - 16px)); max-height: 70vh; overflow: auto; padding: 10px; }
+.dec-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 4px 6px 8px; border-bottom: 1px solid var(--line); }
+.dec-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.dec-item { width: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; text-align: left; border: 0; padding: 8px; border-radius: 8px; background: none; }
+.dec-item:hover, .dec-item:focus-visible { background: var(--hover); }
+.dec-item .ico svg { width: 18px; height: 18px; display: block; }
+.dec-item.plata .ico, .dec-item.semnatura .ico { color: var(--warn); }
+.dec-item.escaladare .ico { color: var(--bad); }
+.dec-go { font-weight: 700; color: var(--muted); }
+.dp-cta { grid-column: span 2; display: flex; min-width: 0; }
+.dp-cta .case-cta { width: 100%; max-width: none; min-width: 0; padding: 10px 14px 10px 10px; }
+@media (max-width: 560px) { .dp-cta { grid-column: 1 / -1; } }
+/* parcursul pe etape în detaliul dosarului: N etape (nu 7, ca în Demo ghidat) */
+.case-roadmap .rm-line { left: calc(100% / (2 * var(--n, 6))); right: calc(100% / (2 * var(--n, 6))); }
+.case-roadmap .rm-nodes { grid-template-columns: repeat(var(--n, 6), minmax(0, 1fr)); }
+@media (max-width: 760px) { .case-roadmap .rm-line { width: calc(640px - 640px / var(--n, 6)); left: calc(640px / (2 * var(--n, 6))); } }
+/* documentele dosarului: lista și vizualizatorul */
+.doc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.doc-row { width: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 12px; align-items: center; text-align: left;
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--panel); }
+.doc-row:hover, .doc-row:focus-visible { border-color: var(--ink); background: var(--hover); }
+.doc-ico svg { width: 22px; height: 22px; display: block; color: var(--muted); }
+.doc-main { display: grid; gap: 2px; min-width: 0; }
+.doc-badges { display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+.doc-open { font-weight: 700; white-space: nowrap; }
+@media (max-width: 640px) { .doc-row { grid-template-columns: auto minmax(0, 1fr); } .doc-badges { grid-column: 1 / -1; justify-content: flex-start; } .doc-open { display: none; } }
+.dv-modal { padding: 12px; }
+.dv-card { width: min(1400px, 100%); height: 92vh; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 10px; padding: 12px 14px; }
+.dv-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; }
+.dv-title h3 { display: inline; margin: 0; }
+.dv-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.dv-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); gap: 14px; min-height: 0; }
+.dv-file { min-height: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); overflow: auto; display: grid; }
+.dv-file iframe { width: 100%; height: 100%; border: 0; min-height: 60vh; }
+.dv-file img { max-width: 100%; margin: auto; }
+.dv-file pre { margin: 0; padding: 12px; white-space: pre-wrap; font-size: 12.5px; }
+.dv-nofile { align-self: center; justify-self: center; text-align: center; max-width: 420px; padding: 24px; }
+.dv-nofile-ico svg { width: 48px; height: 48px; color: var(--muted); }
+.dv-side { min-height: 0; overflow: auto; padding-right: 4px; }
+.dv-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.dv-h { margin: 12px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.dv-fields { margin: 0; display: grid; gap: 0; }
+.dv-fields dt { display: flex; justify-content: space-between; gap: 8px; align-items: center; color: var(--muted); font-size: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+.dv-fields dt:first-child { border-top: 0; padding-top: 0; }
+.dv-fields dd { margin: 2px 0 8px; }
+.dv-val { font-weight: 700; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .dv-modal { padding: 0; }
+  .dv-card { width: 100vw; height: 100vh; max-height: none; border-radius: 0; overflow: auto; grid-template-rows: auto auto; }
+  .dv-body { grid-template-columns: 1fr; }
+  .dv-file { min-height: 55vh; }
+  .dv-side { overflow: visible; }
+}
+.wl-act { display: flex; justify-content: flex-end; }
+.wl-go { display: inline-block; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line-strong); font-weight: 700; font-size: 13px; white-space: nowrap; }
+.wl-row:hover .wl-go, .wl-row:focus-visible .wl-go { border-color: var(--ink); }
+.wl-go.dec { background: var(--yellow); border-color: var(--yellow); color: #000; }
+.case-top-demo .ico svg { width: 16px; height: 16px; display: block; }
+/* contorul deciziilor din antet: un buton rotund ca tema (nu o pastilă), cu numărul; clic = lista „dosar · acțiune” */
+.topbar #decisions-pill.dec-counter { display: inline-grid !important; grid-auto-flow: column; align-items: center; gap: 6px; height: 38px; min-width: 38px;
+  padding: 0 12px 0 10px; border-radius: 19px; border: 1px solid #555; background: transparent; color: #fff; font-weight: 700; }
+.topbar #decisions-pill.dec-counter:hover { background: #1a1a1a; }
+.topbar #decisions-pill.dec-counter .ico svg { width: 18px; height: 18px; display: block; color: var(--yellow); }
+.topbar #decisions-pill.dec-counter .dc-n { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: var(--yellow); color: #000; font-size: 12px;
+  display: grid; place-items: center; }
+.topbar #decisions-pill.dec-counter.zero .dc-n { background: #2e7d46; color: #fff; }
+@media (max-width: 700px) { .topbar #decisions-pill.dec-counter .dc-l { display: none; } }
+/* tema întunecată: cipul activ rămâne vizibil (galben pe negru) */
+html[data-theme="dark"] .wl-chip.on, html[data-theme="dark"] .wl-chip.on:hover { background: var(--yellow); border-color: var(--yellow); color: #000; }
+html[data-theme="dark"] .wl-chip.on .n { color: #000; }
+/* antetul pe mobil: brand scurt, contorul și tema în dreapta sus, ecranele dedesubt pe un rând care derulează */
+@media (max-width: 700px) {
+  .topbar { gap: 6px 10px; padding: 8px 12px; }
+  .topbar .brand { font-size: 15px; }
+  .topbar .brand .sep, .topbar .brand b { display: none; }
+  .topbar .mode { margin-left: 0; gap: 6px; flex-wrap: nowrap; position: absolute; top: 6px; right: 10px; }
+  .topbar .nav { order: 3; width: 100%; }
+}
+/* fluxul dosarului: ecran peste lista de lucru, cu „Înapoi la dosare” sus; intră din dreapta; rândurile listei apar în cascadă */
+.flow-back { margin: 0 0 14px; }
+button.flow-back-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.06); color: #fff; border: 1px solid #555;
+  border-radius: 999px; padding: 6px 14px; font-weight: 700; transition: background .2s, border-color .2s, transform .2s; }
+button.flow-back-btn:hover { background: rgba(255,238,0,.12); border-color: var(--yellow); color: var(--yellow); transform: translateX(-3px); }
+#view-demo.view-enter { animation: flow-over .4s cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes flow-over { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+.view-enter .wl-row { animation: view-in .4s ease-out both; animation-delay: calc(.02s * var(--i, 0)); }
+@media (prefers-reduced-motion: reduce) { #view-demo.view-enter, .view-enter .wl-row { animation: none !important; } }

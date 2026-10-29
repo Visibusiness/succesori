@@ -1,0 +1,47 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "2470125050011",
+  "date_of_death": "2026-09-11",
+  "document_number": "DGEP-MOCK-2026-09-18-002210",
+  "name": "ILIE DOINA"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "date_of_death": 0.95,
+  "document_number": 0.95,
+  "name": 0.97
+ },
+ "evidence": {
+  "cnp": "CNP: 2470125050011",
+  "date_of_death": "Data decesului: 11.09.2026",
+  "document_number": "Mesaj: DGEP-MOCK-2026-09-18-002210",
+  "name": "Numele de familie: ILIE Prenumele: DOINA"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.058377200000000004,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P09/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:21+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "2470125050011"
+ }
+}

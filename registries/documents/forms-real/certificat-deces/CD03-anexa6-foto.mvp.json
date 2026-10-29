@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.85,
+ "fields": {
+  "cnp": "2850708051300",
+  "name": "Viorica Lupu",
+  "birth_date": "1985-07-08",
+  "date_of_death": "2025-11-04",
+  "father": "LUPU PETRU",
+  "mother": "LUPU DOINA",
+  "document_series": null,
+  "document_number": "932820",
+  "death_record_number": "1725"
+ },
+ "_fictiv": true,
+ "_model": "anexa6",
+ "_variant": "foto",
+ "id": "CD03-anexa6-foto",
+ "raw_name": "forms-real/certificat-deces/CD03-anexa6-foto.jpg",
+ "received_on": "2025-11-06",
+ "_split": "train",
+ "_document_variant": "certificat_electronic_2024"
+}

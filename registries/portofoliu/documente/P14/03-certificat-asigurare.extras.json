@@ -1,0 +1,50 @@
+{
+ "document_type": "insurance_certificate",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1750914013511",
+  "policy_id": "UQ-8502001-FICTIV",
+  "insurer": "UNIQA Asigurări de viață S.A.",
+  "loan_contract": "NP-2024-085021",
+  "document_number": "UQ-8502001-FICTIV"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "policy_id": 0.97,
+  "insurer": 0.95,
+  "loan_contract": 0.93,
+  "document_number": 0.95
+ },
+ "evidence": {
+  "cnp": "1750914013511",
+  "policy_id": "CERTIFICAT DE ASIGURARE nr. UQ-8502001-FICTIV",
+  "insurer": "UNIQA Asigurări de viață S.A.",
+  "loan_contract": "nr. NP-2024-085021 din 20.03.2024",
+  "document_number": "CERTIFICAT DE ASIGURARE nr. UQ-8502001-FICTIV"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0531963,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P14/03-certificat-asigurare-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:38+00:00",
+  "read": "03-certificat-asigurare-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

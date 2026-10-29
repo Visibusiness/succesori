@@ -1,0 +1,62 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.4,
+ "fields": {
+  "cnp": null,
+  "name": "POPESCU GHEORGHE",
+  "birth_date": null,
+  "date_of_death": null,
+  "document_series": null,
+  "document_number": null,
+  "death_record_number": null,
+  "father": "POPESCU NICOLAE",
+  "mother": "ENE MARIA"
+ },
+ "field_confidence": {
+  "cnp": 0.0,
+  "name": 0.9,
+  "birth_date": 0.0,
+  "date_of_death": 0.0,
+  "document_series": 0.0,
+  "document_number": 0.0,
+  "death_record_number": 0.0,
+  "father": 0.85,
+  "mother": 0.5
+ },
+ "evidence": {
+  "name": "POPESCU GHEORGHE",
+  "father": "POPESCU NICOLAE",
+  "mother": "ENE MARIA"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.054202799999999995,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P01/02-certificat-deces-foto-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "02-certificat-deces-foto-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V3"
+  ],
+  "failed": [
+   {
+    "code": "cnp_missing",
+    "field": "cnp",
+    "severity": "block",
+    "detail": "CNP lipsă și nicio identitate alternativă (nume + data nașterii)"
+   }
+  ],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "id": "P11",
+ "case_id": "SC-2026-0111",
+ "stage": "scara_30_zile",
+ "stage_label": "Scara de contact: 30 de zile fără răspuns",
+ "customer": {
+  "cif": "RC3111",
+  "name": "Petre Vlad",
+  "cnp": "1451030031456",
+  "birth_date": "1945-10-30",
+  "cards": [
+   "C-3111",
+   "CC-3111"
+  ]
+ },
+ "products": [
+  {
+   "id": "P11-CC",
+   "type": "current_account",
+   "balance": 975400,
+   "estate_fraction": "1",
+   "iban": "RO10 RZBR 0000 0000 0031 1101"
+  },
+  {
+   "id": "P11-CARD",
+   "type": "credit_card",
+   "outstanding": 58900,
+   "rate_pct": 21.5,
+   "last_interest_paid": "2026-09-01"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-09-15",
+   "amount": 171000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-10-15",
+   "amount": 171000,
+   "kind": "pension_credit"
+  }
+ ],
+ "steps": [
+  {
+   "doc": {
+    "id": "P11-D1",
+    "received_on": "2026-09-21",
+    "file": "P11/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1451030031456",
+     "date_of_death": "2026-09-14",
+     "document_number": "DGEP-MOCK-2026-09-21-002391"
+    }
+   }
+  },
+  {
+   "op": "notifier",
+   "on": "2026-09-21",
+   "person": {
+    "name": "Mirela Vlad",
+    "email": "mirela.vlad@example.invalid",
+    "phone": "+40 700 000 311",
+    "address": "Pitești, Str. Fictivă nr. 9, Jud. Argeș"
+   }
+  },
+  {
+   "doc": {
+    "id": "P11-D3",
+    "received_on": "2026-09-26",
+    "file": "P11/03-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1451030031456",
+     "date_of_death": "2026-09-14",
+     "case_file": "241/2026",
+     "document_number": "1102",
+     "hearing_date": "2026-12-15",
+     "notary_office": "Biroul Individual Notarial „Ghiță Elena”",
+     "notary_name": "Elena GHIȚĂ"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-09-28",
+   "by": "Ioana Marin (back-office succesiuni)"
+  }
+ ],
+ "expected": {
+  "state": "NOTARY_ANSWERED",
+  "escalations": [],
+  "decisions": [],
+  "plan": null,
+  "contact_done": [
+   "INITIAL",
+   "REMINDER",
+   "REGISTERED_LETTER"
+  ],
+  "contact_next": "NOTARY"
+ }
+}

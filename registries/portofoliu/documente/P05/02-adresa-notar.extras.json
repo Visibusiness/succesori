@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1500530404557",
+  "name": "GEORGESCU IOAN",
+  "date_of_death": "2026-07-12",
+  "case_file": "98/2026",
+  "hearing_date": "2026-08-25",
+  "document_number": "740",
+  "notary_office": "Biroul Individual Notarial „Stan Corina”",
+  "notary_name": "Corina STAN"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "name": 0.97,
+  "date_of_death": 0.97,
+  "case_file": 0.97,
+  "hearing_date": 0.95,
+  "document_number": 0.95,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1500530404557",
+  "name": "defunctul GEORGESCU IOAN",
+  "date_of_death": "decedat la data de 12.07.2026",
+  "case_file": "Dosar succesoral nr. 98/2026",
+  "hearing_date": "fixat pentru data de 25.08.2026",
+  "document_number": "Nr. 740 / 27.07.2026",
+  "notary_office": "Biroul Individual Notarial „Stan Corina”",
+  "notary_name": "Notar public Corina STAN"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0108243,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P05/02-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:09+00:00",
+  "read": "02-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

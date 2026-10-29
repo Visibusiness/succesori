@@ -1,0 +1,56 @@
+{
+ "document_type": "insurer_response",
+ "confidence": 0.92,
+ "fields": {
+  "policy_id": "UQ-5520981",
+  "decision": "approved",
+  "amount": 4200000,
+  "claim_number": "DV-1187/2026",
+  "document_number": "9120",
+  "loan_contract": "NP-2022-018844",
+  "cnp": "1580909120612"
+ },
+ "field_confidence": {
+  "policy_id": 0.97,
+  "decision": 0.97,
+  "amount": 0.95,
+  "claim_number": 0.93,
+  "document_number": 0.93,
+  "loan_contract": 0.95,
+  "cnp": 0.95
+ },
+ "evidence": {
+  "policy_id": "Număr Certificat de asigurare UQ-5520981",
+  "decision": "cererea de despăgubire a fost APROBATĂ",
+  "amount": "Indemnizația de asigurare este de 42.000,00 lei",
+  "claim_number": "Dosar de daună nr. DV-1187/2026",
+  "document_number": "Nr. 9120 / 20.10.2026",
+  "loan_contract": "nr. NP-2022-018844 din 12.04.2022",
+  "cnp": "1580909120612"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.053390299999999995,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P07/06-raspuns-asigurator-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:16+00:00",
+  "read": "06-raspuns-asigurator-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

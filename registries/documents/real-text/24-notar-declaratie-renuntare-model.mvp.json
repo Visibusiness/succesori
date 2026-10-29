@@ -1,0 +1,14 @@
+{
+  "id": "real-24",
+  "raw_name": "real-text/24-notar-declaratie-renuntare-model.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "case_file": null,
+    "testament": null
+  },
+  "_source": "notari/notaripro-model-declaratie-renuntare.txt"
+}

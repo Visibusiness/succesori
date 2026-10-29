@@ -1,0 +1,135 @@
+{
+ "generat": "2026-10-28T20:53:42+00:00",
+ "cheie": "docs/studiu-timp/cheie.json",
+ "stare": "în așteptare",
+ "participanti": [],
+ "agent": {
+  "rulare": "registries/simulare/e2e/test-8060-203754",
+  "raspunsuri": {
+   "T1": {
+    "sold_cc": "3200.00",
+    "dep_principal": "20000.00",
+    "dep_dobanda": "692.38",
+    "credit_principal": "9000.00",
+    "credit_dobanda": "26.63"
+   },
+   "T2": {
+    "scrisoare": "letters/SC-2026-0001-notary_answer_drafted.md",
+    "v_solduri": "da",
+    "v_iban_valuta": "nu",
+    "v_credit_asigurare": "da",
+    "v_pensie_sept": "da",
+    "v_cutii": "nu",
+    "v_imputerniciti": "nu"
+   },
+   "T3": {
+    "comision_stornat": "60.00",
+    "comision_data": "2026-09-05"
+   },
+   "T4": {
+    "pensie_retur": "2100.00",
+    "pensie_retur_data": "2026-10-15",
+    "pensie_pastrata": "2100.00"
+   },
+   "T5": {
+    "net_cc": "5273.37",
+    "cota_ion": "5/8",
+    "cota_andrei": "3/16",
+    "cota_elena": "3/16",
+    "cc_ion": "3295.85",
+    "cc_andrei": "988.76",
+    "cc_elena": "988.76",
+    "elena_blocat": "da",
+    "dep_ion": "13150.00",
+    "dep_andrei": "3945.00",
+    "dep_elena": "3945.00",
+    "depozit_plata_data": "2027-01-03",
+    "platibil_acum": "4284.61"
+   },
+   "T6": {
+    "lipseste": "acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)",
+    "mesaj": "messages/SC-2026-0001-02.md",
+    "doc7": "Document „07-certificat-deces-ilizibil.md” ilizibil sau incomplet (tip=death_certificate, încredere=0.40, CNP=lipsă). Ni",
+    "v_lipseste_acord_elena": "da",
+    "v_mesaj_cere_acord": "da",
+    "v_mesaj_fara_solduri": "da",
+    "v_doc7_escaladat": "da"
+   }
+  },
+  "scor": {
+   "T1": {
+    "campuri": 5,
+    "corecte": 5,
+    "greseli": 0,
+    "detalii": []
+   },
+   "T2": {
+    "campuri": 6,
+    "corecte": 3,
+    "greseli": 3,
+    "detalii": [
+     {
+      "camp": "v_iban_valuta",
+      "scris": "nu",
+      "corect": "IBAN-ul și valuta fiecărui cont/depozit (punctul 1 din adresă)"
+     },
+     {
+      "camp": "v_cutii",
+      "scris": "nu",
+      "corect": "mențiunea despre cutiile de valori: nu există (punctul 4)"
+     },
+     {
+      "camp": "v_imputerniciti",
+      "scris": "nu",
+      "corect": "împuternicitul numit (IONESCU ANDREI), cu încetarea mandatului la deces (punctul 5)"
+     }
+    ]
+   },
+   "T3": {
+    "campuri": 2,
+    "corecte": 2,
+    "greseli": 0,
+    "detalii": []
+   },
+   "T4": {
+    "campuri": 3,
+    "corecte": 3,
+    "greseli": 0,
+    "detalii": []
+   },
+   "T5": {
+    "campuri": 13,
+    "corecte": 13,
+    "greseli": 0,
+    "detalii": []
+   },
+   "T6": {
+    "campuri": 4,
+    "corecte": 4,
+    "greseli": 0,
+    "detalii": []
+   }
+  },
+  "greseli_total": 3,
+  "campuri_total": 33,
+  "secunde_pe_sarcina": {
+   "T1": 9.7,
+   "T2": 23.7,
+   "T3": 8.7,
+   "T4": 8.7,
+   "T5": 9.4,
+   "T6": 23.4
+  },
+  "dovezi": {
+   "T1": "SC-2026-0001:E8",
+   "T2": "letters/SC-2026-0001-notary_answer_drafted.md",
+   "T3": "SC-2026-0001:E5",
+   "T4": "SC-2026-0001:E6",
+   "T5": "SC-2026-0001:E23",
+   "T6": "messages/SC-2026-0001-02.md"
+  },
+  "secunde_total": 189.6,
+  "nota": "timpul pe sarcină = de la sosirea documentului care o declanșează în inbox până la rezultat (include extracția LLM); total = timpul de lucru pe cele 7 documente, fără pauzele dintre ele"
+ },
+ "motiv": "niciun tabel completat în docs/studiu-timp/date/"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "real-33",
+  "raw_name": "real-text/33-clauza-allianz-my-credit-protect-art27-29.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "loan_contract": null
+  },
+  "_source": "asiguratori/allianz-my-credit-protect-conditii-contractuale.pdf (art. 27–29)"
+}

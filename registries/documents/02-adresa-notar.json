@@ -1,0 +1,101 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "02",
+  "doc_type": "adresa_notar",
+  "received_at": "2026-09-28",
+  "client_id": "RC1001",
+  "source_text": "02-adresa-notar.md",
+  "fields": {
+    "birou_notarial": "Biroul Individual Notarial „Exemplu Ana”",
+    "notar": "Ana EXEMPLU",
+    "notar_adresa": "Municipiul Exemplu, Str. Fictivă nr. 10, Jud. Exemplu",
+    "notar_email": "notar.exemplu@example.invalid",
+    "notar_telefon": "0000 000 000",
+    "nr_inregistrare_adresa": "412",
+    "data_adresa": "2026-09-28",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_nume": "IONESCU",
+    "defunct_prenume": "MARIA",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "defunct_data_nasterii": "1958-05-12",
+    "defunct_data_decesului": "2026-09-03",
+    "defunct_ultim_domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1, Jud. Exemplu",
+    "informatii_solicitate": [
+      "conturi",
+      "depozite",
+      "sold_la_deces",
+      "dobanda",
+      "credite",
+      "cutii_valori",
+      "imputerniciti"
+    ],
+    "data_referinta_sold": "2026-09-03",
+    "termen_dezbatere": "2026-10-20",
+    "temei_invocat": "art. 81 alin. (2) din Legea nr. 36/1995",
+    "semnatura_stampila_prezente": true
+  },
+  "expected_agent": {
+    "state_after": "NOTARY_ANSWERED",
+    "termen_intern_raspuns": "2026-10-13",
+    "requires_human_signature": true,
+    "raspuns_catre_notar": {
+      "activ": [
+        {
+          "product_id": "CC-1",
+          "tip": "cont_curent",
+          "iban": "RO00 RZBR 0000 0000 0000 01",
+          "valuta": "RON",
+          "sold_la_deces_bani": 320000,
+          "dobanda_acumulata_bani": 0,
+          "total_bani": 320000
+        },
+        {
+          "product_id": "DEP-1",
+          "tip": "depozit_termen",
+          "iban": "RO00 RZBR 0000 0000 0000 02",
+          "valuta": "RON",
+          "sold_la_deces_bani": 2000000,
+          "dobanda_acumulata_bani": 69238,
+          "total_bani": 2069238,
+          "scadenta": "2027-01-03"
+        }
+      ],
+      "pasiv": [
+        {
+          "product_id": "CRD-1",
+          "tip": "credit_nevoi_personale",
+          "nr_contract": "NP-2023-001001",
+          "sold_principal_bani": 900000,
+          "dobanzi_comisioane_bani": 2663,
+          "total_bani": 902663,
+          "asigurare": {
+            "asigurator": "UNIQA Asigurări de viață S.A.",
+            "nr_polita": "UQ-0000000-FICTIV",
+            "stare": "dosar_dauna_in_curs"
+          }
+        }
+      ],
+      "cutii_valori": [],
+      "mentiuni": [
+        {
+          "tip": "incasare_post_deces",
+          "data": "2026-09-15",
+          "suma_bani": 210000,
+          "descriere": "pensie septembrie"
+        },
+        {
+          "tip": "comision_stornat",
+          "data": "2026-09-05",
+          "suma_bani": 6000
+        },
+        {
+          "tip": "mandat_incetat",
+          "imputernicit": "IONESCU ANDREI",
+          "data": "2026-09-03",
+          "temei": "art. 2030 C.civ."
+        }
+      ]
+    }
+  }
+}

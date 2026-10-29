@@ -1,0 +1,15 @@
+{
+  "id": "real-17",
+  "raw_name": "real-text/17-generali-declaratie-eveniment.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "date_of_death": null,
+    "amount": null
+  },
+  "_source": "asiguratori/generali-declaratie-eveniment-life-pf-2025-09.pdf"
+}

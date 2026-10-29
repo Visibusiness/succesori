@@ -1,0 +1,225 @@
+{
+ "id": "P13",
+ "case_id": "SC-2026-0113",
+ "stage": "refuz_datorie_peste_activ",
+ "stage_label": "Asigurătorul a refuzat, datoria depășește activul: plan de 0 lei de aprobat (caz real: Jud. Târgu Jiu, sent. civ. 825/2013)",
+ "real_case": "Judecătoria Târgu Jiu, Sentința civilă nr. 825 din 31.01.2013, dosar 14781/318/2012 (vezi README.md)",
+ "source": "registries/portofoliu/cazuri-reale/A-petrescu-marin/README.md",
+ "customer": {
+  "cif": "RC8501",
+  "name": "Marin Petrescu",
+  "cnp": "1640318184124",
+  "birth_date": "1964-03-18",
+  "spouse": "Doina Petrescu",
+  "cards": [
+   "C-A1"
+  ]
+ },
+ "products": [
+  {
+   "id": "P13-CC",
+   "type": "current_account",
+   "balance": 284630,
+   "estate_fraction": "1/2",
+   "iban": "RO61 RZBR 0000 0000 8501 0001"
+  },
+  {
+   "id": "P13-CRD",
+   "type": "personal_loan",
+   "outstanding": 5717563,
+   "rate_pct": 9.95,
+   "last_interest_paid": "2026-07-15",
+   "insurance_policy_id": "UQ-8501001-FICTIV",
+   "loan_contract": "NP-2026-085011",
+   "installment": 124576
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-07-05",
+   "amount": -2000,
+   "kind": "fee",
+   "fee_code": "ZERO_TOT",
+   "by_mandate_holder": false
+  },
+  {
+   "date": "2026-07-10",
+   "amount": 395000,
+   "kind": "salary_credit",
+   "fee_code": null,
+   "by_mandate_holder": false
+  },
+  {
+   "date": "2026-08-05",
+   "amount": -2000,
+   "kind": "fee",
+   "fee_code": "ZERO_TOT",
+   "by_mandate_holder": false
+  },
+  {
+   "date": "2026-08-10",
+   "amount": 395000,
+   "kind": "salary_credit",
+   "fee_code": null,
+   "by_mandate_holder": false
+  }
+ ],
+ "contacts": {
+  "Doina Petrescu": {
+   "email": "doina.petrescu@example.invalid",
+   "sms": "+40 700 000 851",
+   "preferred": "sms",
+   "verified": true,
+   "is_client": true,
+   "address": "Mun. Târgu Jiu, Str. Fictivă nr. 14, Jud. Gorj"
+  },
+  "Radu Petrescu": {
+   "email": "radu.petrescu@example.invalid",
+   "sms": "+40 700 000 852",
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Mun. Târgu Jiu, Str. Fictivă nr. 20, Jud. Gorj"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P13-D1",
+    "received_on": "2026-08-24",
+    "file": "P13/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "date_of_death": "2026-08-11",
+     "document_number": "DGEP-MOCK-2026-08-24-008501"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P13-D2",
+    "received_on": "2026-08-27",
+    "file": "P13/02-certificat-deces-scan.pdf",
+    "expected_type": "death_certificate",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "name": "Marin Petrescu",
+     "birth_date": "1964-03-18",
+     "date_of_death": "2026-08-11",
+     "father": "PETRESCU ION",
+     "mother": "STANCIU ELENA",
+     "document_series": "DH",
+     "document_number": "408512",
+     "death_record_number": "1187"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P13-D3",
+    "received_on": "2026-08-27",
+    "file": "P13/03-certificat-asigurare-scan.pdf",
+    "expected_type": "insurance_certificate",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "policy_id": "UQ-8501001-FICTIV",
+     "insurer": "UNIQA Asigurări de viață S.A.",
+     "loan_contract": "NP-2026-085011",
+     "document_number": "UQ-8501001-FICTIV"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P13-D4",
+    "received_on": "2026-09-15",
+    "file": "P13/04-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "date_of_death": "2026-08-11",
+     "case_file": "211/2026",
+     "document_number": "318",
+     "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+     "notary_name": "Adrian FICTIV"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P13-D5",
+    "received_on": "2026-10-14",
+    "file": "P13/05-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Doina Petrescu",
+       "share": "1/4",
+       "relationship": "soție"
+      },
+      {
+       "id": "H2",
+       "name": "Radu Petrescu",
+       "share": "1/4",
+       "relationship": "fiu"
+      },
+      {
+       "id": "H3",
+       "name": "Ioana Petrescu",
+       "share": "1/4",
+       "relationship": "fiică"
+      },
+      {
+       "id": "H4",
+       "name": "Sorin Petrescu",
+       "share": "1/4",
+       "relationship": "fiu"
+      }
+     ],
+     "case_file": "211/2026",
+     "document_number": "64",
+     "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+     "notary_name": "Adrian FICTIV",
+     "ibans": [
+      "RO61 RZBR 0000 0000 8501 0001"
+     ]
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P13-D6",
+    "received_on": "2026-10-27",
+    "file": "P13/06-raspuns-asigurator-refuz-scan.pdf",
+    "expected_type": "insurer_response",
+    "expected_fields": {
+     "cnp": "1640318184124",
+     "policy_id": "UQ-8501001-FICTIV",
+     "decision": "refused",
+     "reason": "condiție medicală preexistentă (pancreatită cronică, ciroză hepatică, diagnosticate din 02.2025): deces în primele 12 luni de asigurare, din afecțiuni diagnosticate în ultimele 24 de luni anterior datei de început a asigurării",
+     "document_number": "8517",
+     "claim_number": "DV-0702/2026",
+     "loan_contract": "NP-2026-085011"
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "PAYMENT_PENDING_APPROVAL",
+  "escalations": [
+   "debt_exceeds_estate",
+   "insurance_refused"
+  ],
+  "decisions": [
+   "plata",
+   "escaladare",
+   "escaladare"
+  ],
+  "plan": true
+ }
+}

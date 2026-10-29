@@ -1,0 +1,27 @@
+{
+  "schema": "mosteniri.dgep.death_signal/v0",
+  "_generated_by_us": true,
+  "_fictiv": true,
+  "_fields_source": "Nota de informare Raiffeisen Bank–DGEP, „Categoriile de date”, lit. b) actualizarea periodică: numele de familie și prenumele, CNP, tipul, seria și numărul actului de identitate, data emiterii și data expirării, adresa de domiciliu, adresa de reședință (după caz), data decesului (după caz). Locul decesului și certificatul de deces nu se transmit pe acest canal.",
+  "message_id": "DGEP-MOCK-2026-10-15-000377",
+  "channel": "periodic_sftp",
+  "batch_week": "2026-W42",
+  "bank_code": "RZBR",
+  "last_name": "DUMITRESCU",
+  "first_name": "ELISABETA",
+  "cnp": "2410702220870",
+  "id_document": {
+    "type": "CI",
+    "series": "MZ",
+    "number": "320287",
+    "issue_date": "2017-07-02",
+    "expiry_date": "2027-07-02"
+  },
+  "domicile_address": "Mun. Iași, Str. Fictivă nr. 5, Jud. Iași",
+  "residence_address": null,
+  "date_of_death": "2026-10-08",
+  "communicated_at": "2026-10-15T06:00:00+03:00",
+  "changed_fields": [
+    "date_of_death"
+  ]
+}

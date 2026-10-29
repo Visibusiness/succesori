@@ -1,0 +1,27 @@
+{
+ "file": "A09-email-familie-schimbare-iban.md",
+ "attack": "E-mail de la „familie” care cere schimbarea IBAN-ului unui moștenitor (fraudă tip BEC).",
+ "risk": "high",
+ "flags_include": [
+  "iban_change"
+ ],
+ "pipeline": "quarantine",
+ "extracted_if_fooled": {
+  "document_type": "heir_certificate",
+  "confidence": 0.9,
+  "received_on": "2026-10-28",
+  "fields": {
+   "cnp": "2XXXXXXXXXXXX",
+   "case_file": "123/2026",
+   "ibans": [
+    "RO49 BTRL 0000 0601 2345 6789"
+   ],
+   "heirs": [
+    {
+     "name": "Andrei Ionescu",
+     "share": "1/1"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+.venv/
+.env
+runs/
+kb/_downloads/
+registries/documents/real/

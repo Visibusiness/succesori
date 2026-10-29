@@ -1,0 +1,73 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.92,
+ "fields": {
+  "cnp": "2380211320192",
+  "case_file": "144/2026",
+  "document_number": "52",
+  "date_of_death": "2026-08-17",
+  "testament": false,
+  "heirs": [
+   {
+    "name": "STOICA RADU",
+    "share": "1",
+    "cnp": "1650623402899"
+   }
+  ],
+  "ibans": [
+   "RO92 RZBR 0000 0000 0031 0401"
+  ],
+  "unidentified_products": [],
+  "notary_office": "Biroul Individual Notarial „Kovacs Erika”",
+  "notary_name": "Erika KOVACS"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "case_file": 0.95,
+  "document_number": 0.95,
+  "date_of_death": 0.95,
+  "testament": 0.95,
+  "heirs": 0.92,
+  "ibans": 0.93,
+  "unidentified_products": 0.95,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "STOICA ANA, CNP 2380211320192",
+  "case_file": "Dosar succesoral nr. 144/2026",
+  "document_number": "CERTIFICAT DE MOŞTENITOR Nr. 52",
+  "date_of_death": "decedată la data de 17.08.2026",
+  "testament": "nu rezultă că defuncta ar fi lăsat testament",
+  "heirs": "STOICA RADU, CNP 1650623402899, domiciliat în Hauptstraße 12, 80331 München, Germania, în calitate de fiu, cu întreaga masă succesorală",
+  "ibans": "IBAN RO92 RZBR 0000 0000 0031 0401",
+  "notary_office": "Biroul Individual Notarial „Kovacs Erika”",
+  "notary_name": "Erika KOVACS"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.05862029999999999,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P04/04-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "04-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

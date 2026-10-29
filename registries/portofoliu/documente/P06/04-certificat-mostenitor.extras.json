@@ -1,0 +1,76 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.92,
+ "fields": {
+  "cnp": "2441203162301",
+  "case_file": "77/2026",
+  "document_number": "44",
+  "date_of_death": "2026-06-20",
+  "testament": true,
+  "heirs": [
+   {
+    "name": "RADU SIMONA",
+    "share": "2/3"
+   },
+   {
+    "name": "NICULESCU GABRIEL",
+    "share": "1/3"
+   }
+  ],
+  "ibans": [
+   "RO27 RZBR 0000 0000 0031 0601"
+  ],
+  "unidentified_products": [],
+  "notary_office": "Biroul Individual Notarial „Ilinca Teodora”",
+  "notary_name": "Teodora Ilinca"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "case_file": 0.95,
+  "document_number": 0.95,
+  "date_of_death": 0.95,
+  "testament": 0.97,
+  "heirs": 0.95,
+  "ibans": 0.93,
+  "unidentified_products": 0.9,
+  "notary_office": 0.95,
+  "notary_name": 0.9
+ },
+ "evidence": {
+  "cnp": "CNP 2441203162301",
+  "case_file": "Dosar succesoral nr. 77/2026",
+  "document_number": "CERTIFICAT DE MOŞTENITOR TESTAMENTAR Nr. 44",
+  "date_of_death": "decedată la data de 20.06.2026",
+  "testament": "CERTIFICAT DE MOŞTENITOR TESTAMENTAR",
+  "heirs": "cu o cotă de 2/3 (două treimi) din masa succesorală",
+  "ibans": "IBAN RO27 RZBR 0000 0000 0031 0601",
+  "notary_office": "Biroul Individual Notarial „Ilinca Teodora”",
+  "notary_name": "Teodora ILINCA"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.055465299999999995,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P06/04-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:12+00:00",
+  "read": "04-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

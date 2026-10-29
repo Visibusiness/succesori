@@ -1,0 +1,50 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H11",
+  "doc_type": "extras_multilingv_deces",
+  "received_at": "2026-10-12",
+  "client_id": null,
+  "source_text": "H11-extras-multilingv-ambiguu.md",
+  "fields": {
+    "format": "fizic_2024",
+    "cnp": null,
+    "nume_familie": "IONESCU",
+    "prenume": "MARIA",
+    "sex": "F",
+    "data_nasterii": "1958-05-12",
+    "locul_nasterii": "Comuna Altsat, Jud. Altjudeț",
+    "data_decesului": "2026-10-05",
+    "locul_decesului": "Orașul Altoraș, Jud. Altjudeț",
+    "ultim_sot": "IONESCU VASILE",
+    "tata_nume": "GHEORGHE NICOLAE",
+    "mama_nume": "GHEORGHE ELISABETA",
+    "act_deces_nr": "217",
+    "inregistrat_la": "SPCLEP Altoraș",
+    "data_eliberarii": "2026-10-06",
+    "certificat_serie": "EMD",
+    "certificat_nr": "0000001",
+    "sir_unic": "XXX0000001"
+  },
+  "expected_agent": {
+    "identity_match": {
+      "method": "nume+prenume+data_nasterii",
+      "candidates": [
+        "RC1001"
+      ],
+      "unique": false,
+      "conflicts": [
+        "data_decesului 2026-10-05 ≠ DGEP 2026-09-03",
+        "ultim_sot IONESCU VASILE ≠ IONESCU ION din dosar"
+      ],
+      "parents_available_in_core": false
+    },
+    "escalation": true,
+    "escalation_reason": "identity_unconfirmed",
+    "attached_to_case": null,
+    "freeze": false,
+    "case_opened": false,
+    "case_RC1001_unchanged": true,
+    "note": "omonim: același nume și aceeași dată a nașterii, dar date contradictorii; fără CNP, agentul nu atașează documentul și nu schimbă data decesului din dosar"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "B-05",
+  "raw_name": "B-neagu-cristian/scan/05-adresa-notar.pdf",
+  "document_type": "notary_request",
+  "received_on": "2026-08-25",
+  "confidence": 0.93,
+  "fields": {
+    "cnp": "1750914013511",
+    "date_of_death": "2026-07-02",
+    "case_file": "154/2026",
+    "document_number": "227",
+    "notary_office": "Biroul Individual Notarial „Model Carmen”",
+    "notary_name": "Carmen MODEL"
+  },
+  "_nota": "Corpul adresei e formularea reală a Notariatului Professio (notari.pro, răspuns oficial din 07-06-2014, kb/_downloads/realsurse/forum/notaripro-supliment-mostenire.txt), completată. Ca în original, nu are termen de dezbatere: hearing_date lipsește.",
+  "_fictiv": true
+}

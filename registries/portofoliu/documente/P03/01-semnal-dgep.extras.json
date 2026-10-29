@@ -1,0 +1,47 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.95,
+ "fields": {
+  "cnp": "1561121133425",
+  "date_of_death": "2026-09-29",
+  "document_number": "DGEP-MOCK-2026-10-06-000512",
+  "name": "MARINESCU CONSTANTIN"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "date_of_death": 0.97,
+  "document_number": 0.95,
+  "name": 0.97
+ },
+ "evidence": {
+  "cnp": "CNP: 1561121133425",
+  "date_of_death": "Data decesului: 29.09.2026",
+  "document_number": "Mesaj: DGEP-MOCK-2026-10-06-000512",
+  "name": "Numele de familie: MARINESCU Prenumele: CONSTANTIN"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0587847,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P03/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "1561121133425"
+ }
+}

@@ -1,0 +1,107 @@
+instanță de test pe :8060 · inbox /tmp/mvp-test-8060/inbox · runs /tmp/mvp-test-8060/runs
+smoke e2e pe http://127.0.0.1:8060 · run /tmp/mvp-test-8060/runs/test-8060-203754
+  PASS  start curat: POST /demo/reset?inbox=true  
+  PASS  start curat: inbox gol, niciun dosar, nimic în outbox  
+  PASS  autopilotul a preluat run-ul nou (epoch, stare goală)  
+  PASS  01: POST /inbox  
+  PASS  01: procesat de autopilot (10 s)  
+  PASS  01: stare dosar FROZEN  
+  PASS  02: POST /inbox  
+  PASS  02: procesat de autopilot (26 s)  
+  PASS  02: stare dosar NOTARY_ANSWERED  
+  PASS  03: POST /inbox  
+  PASS  03: procesat de autopilot (26 s)  
+  PASS  03: stare dosar INSURANCE_CLAIM_OPEN  
+  PASS  04: POST /inbox  
+  PASS  04: procesat de autopilot (98 s)  
+  PASS  04: stare dosar SUPPLEMENT_REQUESTED  
+  PASS  05: POST /inbox  
+  PASS  05: procesat de autopilot (24 s)  
+  PASS  05: stare dosar INSURANCE_SETTLED  
+  PASS  06: POST /inbox  
+  PASS  06: procesat de autopilot (84 s)  
+  PASS  06: stare dosar PAYMENT_PENDING_APPROVAL  
+  PASS  07: POST /inbox  
+  PASS  07: procesat de autopilot (100 s)  
+  PASS  07: stare dosar PAYMENT_PENDING_APPROVAL  
+  PASS  net cont curent = 527.337 bani  
+  PASS  linie Ion CC-1 = 329585  
+  PASS  linie Andrei CC-1 = 98876  
+  PASS  linie Elena CC-1 = 98876 blocată  
+  PASS  linie Ion DEP-1 = 1315000 blocată  
+  PASS  linie Andrei DEP-1 = 394500 blocată  
+  PASS  linie Elena DEP-1 = 394500 blocată  
+  PASS  linii plan = exact cele 6 din scenariu  
+  PASS  depozit: plata la scadență 2027-01-03  
+  PASS  pensia din octombrie reținută (retur CNPP 210.000)  
+  PASS  plata nu pleacă fără aprobare (pending_approval)  
+  PASS  doc 07: escaladat, fără dosar nou  
+  PASS  doc 07: o singură escaladare deschisă, fără CNP citit  
+  PASS  doc 07: dosarul Mariei neatins (6 documente)  
+  PASS  mesaje către moștenitor = 2  
+  PASS  scrisoare notary_answer_drafted  
+  PASS  scrisoare insurance_claim_opened  
+  PASS  scrisoare supplement_requested  
+  PASS  investigație doc 07 (case-investigator)  
+  PASS  audit scris în run-ul serverului  
+  PASS  autopilot: fără erori, scrie în run-ul serverului  
+  PASS  inbox: 7 în processed, nimic în failed sau în așteptare  
+  PASS  aprobare plată  
+  PASS  stare PAID  
+  PASS  core: o plată de 428.461 bani (Ion + Andrei, cont curent)  
+
+verificare                                                 rezultat  detaliu (la FAIL)
+---------------------------------------------------------------------------------------
+start curat: POST /demo/reset?inbox=true                   PASS      
+start curat: inbox gol, niciun dosar, nimic în outbox      PASS      
+autopilotul a preluat run-ul nou (epoch, stare goală)      PASS      
+01: POST /inbox                                            PASS      
+01: procesat de autopilot (10 s)                           PASS      
+01: stare dosar FROZEN                                     PASS      
+02: POST /inbox                                            PASS      
+02: procesat de autopilot (26 s)                           PASS      
+02: stare dosar NOTARY_ANSWERED                            PASS      
+03: POST /inbox                                            PASS      
+03: procesat de autopilot (26 s)                           PASS      
+03: stare dosar INSURANCE_CLAIM_OPEN                       PASS      
+04: POST /inbox                                            PASS      
+04: procesat de autopilot (98 s)                           PASS      
+04: stare dosar SUPPLEMENT_REQUESTED                       PASS      
+05: POST /inbox                                            PASS      
+05: procesat de autopilot (24 s)                           PASS      
+05: stare dosar INSURANCE_SETTLED                          PASS      
+06: POST /inbox                                            PASS      
+06: procesat de autopilot (84 s)                           PASS      
+06: stare dosar PAYMENT_PENDING_APPROVAL                   PASS      
+07: POST /inbox                                            PASS      
+07: procesat de autopilot (100 s)                          PASS      
+07: stare dosar PAYMENT_PENDING_APPROVAL                   PASS      
+net cont curent = 527.337 bani                             PASS      
+linie Ion CC-1 = 329585                                    PASS      
+linie Andrei CC-1 = 98876                                  PASS      
+linie Elena CC-1 = 98876 blocată                           PASS      
+linie Ion DEP-1 = 1315000 blocată                          PASS      
+linie Andrei DEP-1 = 394500 blocată                        PASS      
+linie Elena DEP-1 = 394500 blocată                         PASS      
+linii plan = exact cele 6 din scenariu                     PASS      
+depozit: plata la scadență 2027-01-03                      PASS      
+pensia din octombrie reținută (retur CNPP 210.000)         PASS      
+plata nu pleacă fără aprobare (pending_approval)           PASS      
+doc 07: escaladat, fără dosar nou                          PASS      
+doc 07: o singură escaladare deschisă, fără CNP citit      PASS      
+doc 07: dosarul Mariei neatins (6 documente)               PASS      
+mesaje către moștenitor = 2                                PASS      
+scrisoare notary_answer_drafted                            PASS      
+scrisoare insurance_claim_opened                           PASS      
+scrisoare supplement_requested                             PASS      
+investigație doc 07 (case-investigator)                    PASS      
+audit scris în run-ul serverului                           PASS      
+autopilot: fără erori, scrie în run-ul serverului          PASS      
+inbox: 7 în processed, nimic în failed sau în așteptare    PASS      
+aprobare plată                                             PASS      
+stare PAID                                                 PASS      
+core: o plată de 428.461 bani (Ion + Andrei, cont curent)  PASS      
+
+49/49 PASS
+durată: 373 s
+exit 0

@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1740629292099",
+  "name": "Grigore Rotaru",
+  "birth_date": "1974-06-29",
+  "date_of_death": "2024-12-21",
+  "father": "ROTARU VASILE",
+  "mother": "ROTARU ANA",
+  "document_series": "ZB",
+  "document_number": "990725",
+  "death_record_number": "174"
+ },
+ "_fictiv": true,
+ "_model": "anexa3",
+ "_variant": "scan",
+ "id": "CD07-anexa3-scan",
+ "raw_name": "forms-real/certificat-deces/CD07-anexa3.png",
+ "received_on": "2024-12-22",
+ "_split": "train",
+ "_document_variant": "certificat_fizic_2024"
+}

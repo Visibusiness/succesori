@@ -1,0 +1,20 @@
+{
+  "id": "doc-03-fara-diacritice",
+  "raw_name": "03-certificat-asigurare__fara-diacritice.md",
+  "document_type": "insurance_certificate",
+  "received_on": "2026-09-30",
+  "confidence": 0.91,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "policy_id": "UQ-0000000-FICTIV",
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "loan_contract": "NP-2023-001001",
+    "reference": "UQ-0000000-FICTIV",
+    "document_number": "UQ-0000000-FICTIV"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "03-certificat-asigurare.md",
+  "_variant": "fara-diacritice"
+}

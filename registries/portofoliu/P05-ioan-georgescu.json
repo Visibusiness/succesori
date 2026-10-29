@@ -1,0 +1,167 @@
+{
+ "id": "P05",
+ "case_id": "SC-2026-0105",
+ "stage": "plan_de_aprobat",
+ "stage_label": "Plan de plată de aprobat",
+ "customer": {
+  "cif": "RC3105",
+  "name": "Ioan Georgescu",
+  "cnp": "1500530404557",
+  "birth_date": "1950-05-30",
+  "spouse": "Maria Georgescu",
+  "cards": [
+   "C-3105"
+  ]
+ },
+ "products": [
+  {
+   "id": "P05-CC",
+   "type": "current_account",
+   "balance": 2840000,
+   "estate_fraction": "1/2",
+   "iban": "RO11 RZBR 0000 0000 0031 0501"
+  },
+  {
+   "id": "P05-DEP",
+   "type": "term_deposit",
+   "principal": 3000000,
+   "rate_pct": 4.5,
+   "start": "2026-02-01",
+   "maturity": "2027-02-01",
+   "estate_fraction": "1/2",
+   "iban": "RO81 RZBR 0000 0000 0031 0502"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-07-15",
+   "amount": 245000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-08-15",
+   "amount": 245000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-08-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  },
+  {
+   "date": "2026-09-05",
+   "amount": -1500,
+   "kind": "fee",
+   "fee_code": "PREMIUM"
+  }
+ ],
+ "contacts": {
+  "Maria Georgescu": {
+   "email": "maria.georgescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "București, Str. Fictivă nr. 21, Sector 3"
+  },
+  "Cristian Georgescu": {
+   "email": "cristian.georgescu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": false,
+   "address": "București, Str. Fictivă nr. 4, Sector 6"
+  },
+  "Laura Pavel": {
+   "email": "laura.pavel@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Ploiești, Str. Fictivă nr. 15, Jud. Prahova"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P05-D1",
+    "received_on": "2026-07-20",
+    "file": "P05/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "1500530404557",
+     "date_of_death": "2026-07-12",
+     "document_number": "DGEP-MOCK-2026-07-20-001203"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P05-D2",
+    "received_on": "2026-07-28",
+    "file": "P05/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "1500530404557",
+     "date_of_death": "2026-07-12",
+     "case_file": "98/2026",
+     "document_number": "740",
+     "hearing_date": "2026-08-25",
+     "notary_office": "Biroul Individual Notarial „Stan Corina”",
+     "notary_name": "Corina STAN"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-07-29",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P05-D4",
+    "received_on": "2026-10-20",
+    "file": "P05/04-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "1500530404557",
+     "case_file": "98/2026",
+     "document_number": "61",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Maria Georgescu",
+       "share": "1/4"
+      },
+      {
+       "id": "H2",
+       "name": "Cristian Georgescu",
+       "share": "3/8"
+      },
+      {
+       "id": "H3",
+       "name": "Laura Pavel",
+       "share": "3/8"
+      }
+     ],
+     "ibans": [
+      "RO11 RZBR 0000 0000 0031 0501",
+      "RO81 RZBR 0000 0000 0031 0502"
+     ],
+     "notary_office": "Biroul Individual Notarial „Stan Corina”",
+     "notary_name": "Corina STAN"
+    }
+   }
+  }
+ ],
+ "expected": {
+  "state": "PAYMENT_PENDING_APPROVAL",
+  "escalations": [],
+  "decisions": [
+   "plata"
+  ],
+  "plan": true
+ }
+}

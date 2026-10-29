@@ -1,0 +1,4268 @@
+{
+ "_sursa": "generat de ops-ui/mock/gen_mock.py din kb/scenariu-demo/maria-ionescu.md v1.1 + documente-demo.md",
+ "confidence_threshold": 0.8,
+ "variants": {
+  "A": {
+   "label": "4A — moștenire legală (C.civ. art. 972, 975)",
+   "cases": [
+    {
+     "case_id": "SC-2026-0001~1",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 1,
+     "demo_label": "Pasul 1/7 — după semnal_dgep",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "FROZEN",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-20",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      }
+     ],
+     "open_tasks": [],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~2",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 2,
+     "demo_label": "Pasul 2/7 — după adresa_notar",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "NOTARY_ANSWERED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-28",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "deschis"
+      }
+     ],
+     "open_tasks": [
+      "Semnare umană a răspunsului către notar"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~3",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 3,
+     "demo_label": "Pasul 3/7 — după polita_asigurare",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "INSURANCE_CLAIM_OPEN",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-30",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      }
+     ],
+     "open_tasks": [],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~4",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 4,
+     "demo_label": "Pasul 4/7 — după certificat_mostenitor",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "SUPPLEMENT_REQUESTED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-10-22",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "A",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "legală",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/4; Andrei Ionescu – 3/8; Elena Ionescu – 3/8",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4A — moștenire legală (C.civ. art. 972, 975): Ion Ionescu 1/4, Andrei Ionescu 3/8, Elena Ionescu 3/8",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Așteaptă certificatul suplimentar pentru DEP-1"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~5",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 5,
+     "demo_label": "Pasul 5/7 — după raspuns_asigurator",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "INSURANCE_SETTLED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-10-27",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      },
+      {
+       "state": "INSURANCE_SETTLED",
+       "at": "2026-10-27",
+       "by_document": "doc-005"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV",
+       "insurance_settled": 900000
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "A",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "legală",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/4; Andrei Ionescu – 3/8; Elena Ionescu – 3/8",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      },
+      {
+       "document_id": "doc-005",
+       "document_type": "raspuns_asigurator",
+       "received_at": "2026-10-27",
+       "source": "UNIQA (e-mail)",
+       "legibility": "ok",
+       "confidence": 0.96,
+       "fields": [
+        {
+         "name": "nr_dosar_dauna",
+         "value": "DV-000/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "decizie",
+         "value": "aprobat",
+         "confidence": 0.98
+        },
+        {
+         "name": "indemnizatie",
+         "value": 900000,
+         "confidence": 0.97
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.94
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4A — moștenire legală (C.civ. art. 972, 975): Ion Ionescu 1/4, Andrei Ionescu 3/8, Elena Ionescu 3/8",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-27T10:20:00Z",
+       "action": "Credit stins de asigurător",
+       "rule": "Răspuns UNIQA: indemnizație = principal la D",
+       "detail": "CRD-1 principal 9.000,00 lei acoperit",
+       "document_id": "doc-005",
+       "amount": 900000,
+       "audit_id": "A-0003"
+      },
+      {
+       "at": "2026-10-27T10:20:05Z",
+       "action": "Datorie reziduală a masei",
+       "rule": "net_of_debts — C.civ. art. 1114 (limita activului)",
+       "detail": "Dobânda curentă neacoperită de asigurare",
+       "document_id": "doc-005",
+       "amount": -2663
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Așteaptă certificatul suplimentar pentru DEP-1"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~6",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 6,
+     "demo_label": "Pasul 6/7 — după certificat_suplimentar",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "PAYMENT_PENDING_APPROVAL",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-11-10",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      },
+      {
+       "state": "INSURANCE_SETTLED",
+       "at": "2026-10-27",
+       "by_document": "doc-005"
+      },
+      {
+       "state": "PAYMENT_PENDING_APPROVAL",
+       "at": "2026-11-10",
+       "by_document": "doc-006"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV",
+       "insurance_settled": 900000
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "A",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "legală",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/4; Andrei Ionescu – 3/8; Elena Ionescu – 3/8",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      },
+      {
+       "document_id": "doc-005",
+       "document_type": "raspuns_asigurator",
+       "received_at": "2026-10-27",
+       "source": "UNIQA (e-mail)",
+       "legibility": "ok",
+       "confidence": 0.96,
+       "fields": [
+        {
+         "name": "nr_dosar_dauna",
+         "value": "DV-000/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "decizie",
+         "value": "aprobat",
+         "confidence": 0.98
+        },
+        {
+         "name": "indemnizatie",
+         "value": 900000,
+         "confidence": 0.97
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.94
+        }
+       ]
+      },
+      {
+       "document_id": "doc-006",
+       "document_type": "certificat_suplimentar",
+       "received_at": "2026-11-10",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "fields": [
+        {
+         "name": "completeaza",
+         "value": "certificatul din 2026-10-22, dosar 123/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "produs_adaugat",
+         "value": "1/2 din depozitul la termen RO00 RZBR …02",
+         "confidence": 0.92
+        },
+        {
+         "name": "cote",
+         "value": "neschimbate față de certificatul inițial",
+         "confidence": 0.9
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4A — moștenire legală (C.civ. art. 972, 975): Ion Ionescu 1/4, Andrei Ionescu 3/8, Elena Ionescu 3/8",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-27T10:20:00Z",
+       "action": "Credit stins de asigurător",
+       "rule": "Răspuns UNIQA: indemnizație = principal la D",
+       "detail": "CRD-1 principal 9.000,00 lei acoperit",
+       "document_id": "doc-005",
+       "amount": 900000,
+       "audit_id": "A-0003"
+      },
+      {
+       "at": "2026-10-27T10:20:05Z",
+       "action": "Datorie reziduală a masei",
+       "rule": "net_of_debts — C.civ. art. 1114 (limita activului)",
+       "detail": "Dobânda curentă neacoperită de asigurare",
+       "document_id": "doc-005",
+       "amount": -2663
+      },
+      {
+       "at": "2026-11-10T15:30:00Z",
+       "action": "Acoperire completă",
+       "rule": "coverage_gaps = []",
+       "detail": "Certificatul suplimentar adaugă DEP-1",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:05Z",
+       "action": "Masa netă calculată",
+       "rule": "net_of_debts",
+       "detail": "Cont: 3.200,00 + 2.100,00 (pensie sept.) − 26,63 = 5.273,37 lei",
+       "document_id": "doc-006",
+       "amount": 527337
+      },
+      {
+       "at": "2026-11-10T15:30:10Z",
+       "action": "Împărțire pe moștenitori",
+       "rule": "split_by_shares — fracție din bun × cotă; rotunjire determinist (cea mai mare rămășiță)",
+       "detail": "Ion Ionescu 5/8, Andrei Ionescu 3/16, Elena Ionescu 3/16",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:15Z",
+       "action": "Recomandare depozit: așteptarea scadenței",
+       "rule": "C.civ. art. 2187 — lichidarea anticipată cere acordul tuturor",
+       "detail": "Plata depozitului programată la 2027-01-03 (dobânda integrală 1.040,00 lei brut)",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:20Z",
+       "action": "Instrucțiune de plată creată",
+       "rule": "POST /payments — doar pending_approval; aprobarea e umană (ops_approver)",
+       "detail": "PAY-1 pentru contul curent, fără partea Elenei (blocată)",
+       "document_id": "doc-006"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Scadența depozitului DEP-1 (plată)",
+       "date": "2027-01-03",
+       "rule": "C.civ. art. 2187",
+       "status": "programat"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Aprobare plată PAY-1 (ops_approver)"
+     ],
+     "escalations": [],
+     "payment_plan": {
+      "plan_id": "PP-1",
+      "status": "submitted",
+      "variant": "A",
+      "variant_label": "4A — moștenire legală (C.civ. art. 972, 975)",
+      "basis_documents": [
+       "doc-004",
+       "doc-006"
+      ],
+      "lines": [
+       {
+        "line_id": "L1",
+        "heir_id": "H1",
+        "name": "Ion Ionescu",
+        "share": "5/8",
+        "product_id": "RO..CUR",
+        "amount": 329585,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": false
+       },
+       {
+        "line_id": "L2",
+        "heir_id": "H2",
+        "name": "Andrei Ionescu",
+        "share": "3/16",
+        "product_id": "RO..CUR",
+        "amount": 98876,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": false
+       },
+       {
+        "line_id": "L3",
+        "heir_id": "H3",
+        "name": "Elena Ionescu",
+        "share": "3/16",
+        "product_id": "RO..CUR",
+        "amount": 98876,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": true,
+        "minor": true,
+        "legal_representative": "H1",
+        "requires_court_authorization": true,
+        "blocked_reason": "minoră: lipsesc documentele de reprezentare legală și contul pe numele ei"
+       },
+       {
+        "line_id": "L4",
+        "heir_id": "H1",
+        "name": "Ion Ionescu",
+        "share": "5/8",
+        "product_id": "DEP-1",
+        "amount": 1315000,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "blocked_reason": "depozit nescadent: plata la scadență, 2027-01-03"
+       },
+       {
+        "line_id": "L5",
+        "heir_id": "H2",
+        "name": "Andrei Ionescu",
+        "share": "3/16",
+        "product_id": "DEP-1",
+        "amount": 394500,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "blocked_reason": "depozit nescadent: plata la scadență, 2027-01-03"
+       },
+       {
+        "line_id": "L6",
+        "heir_id": "H3",
+        "name": "Elena Ionescu",
+        "share": "3/16",
+        "product_id": "DEP-1",
+        "amount": 394500,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "minor": true,
+        "legal_representative": "H1",
+        "requires_court_authorization": true,
+        "blocked_reason": "minoră: lipsesc documentele de reprezentare legală și contul pe numele ei"
+       }
+      ],
+      "withheld": [
+       {
+        "reason": "pension_return_CNPP",
+        "label": "Pensie octombrie — retur CNPP",
+        "amount": 210000
+       }
+      ],
+      "warnings": [
+       "minor_requires_authorization",
+       "deposit_paid_at_maturity"
+      ]
+     },
+     "payments": [
+      {
+       "payment_id": "PAY-1",
+       "plan_id": "PP-1",
+       "status": "pending_approval",
+       "line_ids": [
+        "L1",
+        "L2"
+       ],
+       "total": 428461
+      }
+     ]
+    }
+   ]
+  },
+  "B": {
+   "label": "4B — testament autentic nr. 000/2024 (C.civ. art. 1055, 1088)",
+   "cases": [
+    {
+     "case_id": "SC-2026-0001~1",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 1,
+     "demo_label": "Pasul 1/7 — după semnal_dgep",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "FROZEN",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-20",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      }
+     ],
+     "open_tasks": [],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~2",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 2,
+     "demo_label": "Pasul 2/7 — după adresa_notar",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "NOTARY_ANSWERED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-28",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "deschis"
+      }
+     ],
+     "open_tasks": [
+      "Semnare umană a răspunsului către notar"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~3",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 3,
+     "demo_label": "Pasul 3/7 — după polita_asigurare",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "INSURANCE_CLAIM_OPEN",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-09-30",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      }
+     ],
+     "open_tasks": [],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~4",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 4,
+     "demo_label": "Pasul 4/7 — după certificat_mostenitor",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "SUPPLEMENT_REQUESTED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-10-22",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV"
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "B",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "testamentară (testament autentic nr. 000/2024)",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/2; Andrei Ionescu – 1/4; Elena Ionescu – 1/4",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4B — testament autentic nr. 000/2024 (C.civ. art. 1055, 1088): Ion Ionescu 1/2, Andrei Ionescu 1/4, Elena Ionescu 1/4",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Așteaptă certificatul suplimentar pentru DEP-1"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~5",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 5,
+     "demo_label": "Pasul 5/7 — după raspuns_asigurator",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "INSURANCE_SETTLED",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-10-27",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      },
+      {
+       "state": "INSURANCE_SETTLED",
+       "at": "2026-10-27",
+       "by_document": "doc-005"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV",
+       "insurance_settled": 900000
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "B",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "testamentară (testament autentic nr. 000/2024)",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/2; Andrei Ionescu – 1/4; Elena Ionescu – 1/4",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      },
+      {
+       "document_id": "doc-005",
+       "document_type": "raspuns_asigurator",
+       "received_at": "2026-10-27",
+       "source": "UNIQA (e-mail)",
+       "legibility": "ok",
+       "confidence": 0.96,
+       "fields": [
+        {
+         "name": "nr_dosar_dauna",
+         "value": "DV-000/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "decizie",
+         "value": "aprobat",
+         "confidence": 0.98
+        },
+        {
+         "name": "indemnizatie",
+         "value": 900000,
+         "confidence": 0.97
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.94
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4B — testament autentic nr. 000/2024 (C.civ. art. 1055, 1088): Ion Ionescu 1/2, Andrei Ionescu 1/4, Elena Ionescu 1/4",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-27T10:20:00Z",
+       "action": "Credit stins de asigurător",
+       "rule": "Răspuns UNIQA: indemnizație = principal la D",
+       "detail": "CRD-1 principal 9.000,00 lei acoperit",
+       "document_id": "doc-005",
+       "amount": 900000,
+       "audit_id": "A-0003"
+      },
+      {
+       "at": "2026-10-27T10:20:05Z",
+       "action": "Datorie reziduală a masei",
+       "rule": "net_of_debts — C.civ. art. 1114 (limita activului)",
+       "detail": "Dobânda curentă neacoperită de asigurare",
+       "document_id": "doc-005",
+       "amount": -2663
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Așteaptă certificatul suplimentar pentru DEP-1"
+     ],
+     "escalations": [],
+     "payment_plan": null,
+     "payments": []
+    },
+    {
+     "case_id": "SC-2026-0001~6",
+     "snapshot_of": "SC-2026-0001",
+     "demo_step": 6,
+     "demo_label": "Pasul 6/7 — după certificat_suplimentar",
+     "deceased": {
+      "name": "Maria Ionescu",
+      "cnp": "2XXXXXXXXXXXX",
+      "cif": "RC1001",
+      "date_of_death": "2026-09-03"
+     },
+     "state": "PAYMENT_PENDING_APPROVAL",
+     "opened_at": "2026-09-20",
+     "updated_at": "2026-11-10",
+     "state_history": [
+      {
+       "state": "FROZEN",
+       "at": "2026-09-20",
+       "by_document": "doc-001"
+      },
+      {
+       "state": "NOTARY_ANSWERED",
+       "at": "2026-09-28",
+       "by_document": "doc-002"
+      },
+      {
+       "state": "INSURANCE_CLAIM_OPEN",
+       "at": "2026-09-30",
+       "by_document": "doc-003"
+      },
+      {
+       "state": "SUPPLEMENT_REQUESTED",
+       "at": "2026-10-22",
+       "by_document": "doc-004"
+      },
+      {
+       "state": "INSURANCE_SETTLED",
+       "at": "2026-10-27",
+       "by_document": "doc-005"
+      },
+      {
+       "state": "PAYMENT_PENDING_APPROVAL",
+       "at": "2026-11-10",
+       "by_document": "doc-006"
+      }
+     ],
+     "products_as_of": "2026-09-03",
+     "products": [
+      {
+       "id": "RO..CUR",
+       "type": "current_account",
+       "label": "Cont curent",
+       "iban": "RO00 RZBR 0000 0000 0000 01",
+       "balance": 320000,
+       "accrued_interest": 0
+      },
+      {
+       "id": "DEP-1",
+       "type": "term_deposit",
+       "label": "Depozit la termen 12 luni, 5,20%",
+       "iban": "RO00 RZBR 0000 0000 0000 02",
+       "principal": 2000000,
+       "accrued_interest": 69238,
+       "maturity": "2027-01-03",
+       "note": "dobânda la scadență 1.040,00 lei brut; lichidare anticipată ⇒ dobânda pierdută"
+      },
+      {
+       "id": "CRD-1",
+       "type": "personal_loan",
+       "label": "Credit nevoi personale nr. 000/2024",
+       "outstanding": -900000,
+       "accrued_interest": -2663,
+       "insurance": "UNIQA, certificat UQ-0000000-FICTIV",
+       "insurance_settled": 900000
+      }
+     ],
+     "heirs": [
+      {
+       "heir_id": "H1",
+       "name": "Ion Ionescu",
+       "relation": "soț supraviețuitor"
+      },
+      {
+       "heir_id": "H2",
+       "name": "Andrei Ionescu",
+       "relation": "fiu"
+      },
+      {
+       "heir_id": "H3",
+       "name": "Elena Ionescu",
+       "relation": "fiică, minoră (15 ani)",
+       "minor": true,
+       "legal_representative": "H1"
+      }
+     ],
+     "documents": [
+      {
+       "document_id": "doc-001",
+       "document_type": "semnal_dgep",
+       "received_at": "2026-09-20",
+       "source": "DGEP (fișier săptămânal DGEP-2026-W38)",
+       "legibility": "ok",
+       "confidence": 0.99,
+       "fields": [
+        {
+         "name": "cnp",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.99
+        },
+        {
+         "name": "nume",
+         "value": "IONESCU MARIA",
+         "confidence": 0.99
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.99
+        },
+        {
+         "name": "tip_modificare",
+         "value": "deces",
+         "confidence": 0.99
+        },
+        {
+         "name": "potrivire_client",
+         "value": "RC1001",
+         "confidence": 0.99
+        }
+       ]
+      },
+      {
+       "document_id": "doc-002",
+       "document_type": "adresa_notar",
+       "received_at": "2026-09-28",
+       "source": "Notar (e-mail, PDF)",
+       "legibility": "ok",
+       "confidence": 0.95,
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "notar",
+         "value": "BIN „Notar Exemplu”",
+         "confidence": 0.93
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.98
+        },
+        {
+         "name": "data_decesului",
+         "value": "2026-09-03",
+         "confidence": 0.97
+        },
+        {
+         "name": "temei",
+         "value": "Legea 36/1995 art. 81 alin. (2)",
+         "confidence": 0.91
+        },
+        {
+         "name": "termen_dezbatere",
+         "value": "2026-10-20",
+         "confidence": 0.96
+        }
+       ]
+      },
+      {
+       "document_id": "doc-003",
+       "document_type": "polita_asigurare",
+       "received_at": "2026-09-30",
+       "source": "Familie (agenție)",
+       "legibility": "ok",
+       "confidence": 0.93,
+       "fields": [
+        {
+         "name": "asigurator",
+         "value": "UNIQA Asigurări de viață S.A.",
+         "confidence": 0.97
+        },
+        {
+         "name": "nr_certificat",
+         "value": "UQ-0000000-FICTIV",
+         "confidence": 0.92
+        },
+        {
+         "name": "cnp_asigurat",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.96
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.9
+        },
+        {
+         "name": "data_inceput",
+         "value": "2023-05-10",
+         "confidence": 0.94
+        },
+        {
+         "name": "beneficiar",
+         "value": "Raiffeisen Bank S.A.",
+         "confidence": 0.95
+        }
+       ]
+      },
+      {
+       "document_id": "doc-004",
+       "document_type": "certificat_mostenitor",
+       "received_at": "2026-10-22",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "variant": "B",
+       "fields": [
+        {
+         "name": "nr_dosar_succesoral",
+         "value": "123/2026",
+         "confidence": 0.97
+        },
+        {
+         "name": "cnp_defunct",
+         "value": "2XXXXXXXXXXXX",
+         "confidence": 0.97
+        },
+        {
+         "name": "tip_mostenire",
+         "value": "testamentară (testament autentic nr. 000/2024)",
+         "confidence": 0.93
+        },
+        {
+         "name": "regim_matrimonial",
+         "value": "comunitate legală; cont curent bun comun, 1/2 fiecare soț",
+         "confidence": 0.88
+        },
+        {
+         "name": "mostenitori_si_cote",
+         "value": "Ion Ionescu – 1/2; Andrei Ionescu – 1/4; Elena Ionescu – 1/4",
+         "confidence": 0.95
+        },
+        {
+         "name": "suma_cotelor",
+         "value": "1",
+         "confidence": 0.99
+        },
+        {
+         "name": "produse_in_masa",
+         "value": "1/2 din cont curent RO00 RZBR …01; pasiv: credit 000/2024",
+         "confidence": 0.91
+        },
+        {
+         "name": "minor",
+         "value": "Elena Ionescu, 15 ani, cu acordul reprezentantului legal",
+         "confidence": 0.86
+        }
+       ]
+      },
+      {
+       "document_id": "doc-005",
+       "document_type": "raspuns_asigurator",
+       "received_at": "2026-10-27",
+       "source": "UNIQA (e-mail)",
+       "legibility": "ok",
+       "confidence": 0.96,
+       "fields": [
+        {
+         "name": "nr_dosar_dauna",
+         "value": "DV-000/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "decizie",
+         "value": "aprobat",
+         "confidence": 0.98
+        },
+        {
+         "name": "indemnizatie",
+         "value": 900000,
+         "confidence": 0.97
+        },
+        {
+         "name": "contract_credit",
+         "value": "000/2024",
+         "confidence": 0.94
+        }
+       ]
+      },
+      {
+       "document_id": "doc-006",
+       "document_type": "certificat_suplimentar",
+       "received_at": "2026-11-10",
+       "source": "Notar",
+       "legibility": "ok",
+       "confidence": 0.94,
+       "fields": [
+        {
+         "name": "completeaza",
+         "value": "certificatul din 2026-10-22, dosar 123/2026",
+         "confidence": 0.95
+        },
+        {
+         "name": "produs_adaugat",
+         "value": "1/2 din depozitul la termen RO00 RZBR …02",
+         "confidence": 0.92
+        },
+        {
+         "name": "cote",
+         "value": "neschimbate față de certificatul inițial",
+         "confidence": 0.9
+        }
+       ]
+      }
+     ],
+     "events": [
+      {
+       "at": "2026-09-20T10:02:11Z",
+       "action": "Dosar deschis",
+       "rule": "POST /cases — un singur dosar per CIF",
+       "detail": "Semnal DGEP potrivit pe CNP ⇒ client RC1001",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-20T10:02:12Z",
+       "action": "Blocare reversibilă (freeze)",
+       "rule": "D-DGEP (DECISIONS); C.civ. art. 2030; CGB PF 3.2.5 b, 5.10.4 c",
+       "detail": "Debit blocat; mandatul lui Andrei Ionescu suspendat; carduri și debitări directe suspendate; comision Premium suspendat. Definitiv doar după certificatul de deces / confirmare operator.",
+       "document_id": "doc-001",
+       "audit_id": "A-0001"
+      },
+      {
+       "at": "2026-09-20T10:02:13Z",
+       "action": "Stornare comision",
+       "rule": "fees_to_reverse — comision perceput după data decesului",
+       "detail": "Premium 2026-09-05",
+       "document_id": "doc-001",
+       "amount": 6000,
+       "audit_id": "A-0002"
+      },
+      {
+       "at": "2026-09-20T10:02:14Z",
+       "action": "Pensie septembrie păstrată",
+       "rule": "Legea 360/2023 art. 100 alin. (1) lit. a",
+       "detail": "+2.100 lei pe 2026-09-15: pensia lunii decesului se cuvine; raportată notarului ca încasare după deces",
+       "document_id": "doc-001",
+       "amount": 210000
+      },
+      {
+       "at": "2026-09-20T10:02:15Z",
+       "action": "Termen programat",
+       "rule": "C.civ. art. 1103 — opțiune succesorală 1 an",
+       "detail": "Termen opțiune 2027-09-03",
+       "document_id": "doc-001"
+      },
+      {
+       "at": "2026-09-28T09:14:00Z",
+       "action": "Produse la data decesului",
+       "rule": "GET /customers/RC1001/products?as_of=2026-09-03 + balance_at_death",
+       "detail": "Cont 3.200,00 lei; depozit 20.000,00 + 692,38 lei dobândă; credit −9.000,00 − 26,63 lei",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-28T09:14:30Z",
+       "action": "Răspuns către notar generat",
+       "rule": "Legea 36/1995 art. 81 alin. (2)",
+       "detail": "Tabel solduri la D + pensia din septembrie ca încasare după deces + credit cu asigurare UNIQA; trimis la semnare umană",
+       "document_id": "doc-002"
+      },
+      {
+       "at": "2026-09-30T11:40:00Z",
+       "action": "Poliță validată",
+       "rule": "Potrivire CNP + nr. contract credit",
+       "detail": "CNP și credit 000/2024 coincid; poliță > 24 luni ⇒ fără excluderi",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-09-30T11:40:20Z",
+       "action": "Dosar de daună deschis",
+       "rule": "kb/bank-procedures/asigurare-viata-credit.md — avizare în 30 zile",
+       "detail": "Checklist F1 trimis către UNIQA; termen avizare 2026-10-20",
+       "document_id": "doc-003"
+      },
+      {
+       "at": "2026-10-15T06:00:00Z",
+       "action": "Pensie octombrie marcată pentru retur",
+       "rule": "Legea 360/2023 art. 156 alin. (8); post_death_credits",
+       "detail": "+2.100 lei pe 2026-10-15 necuvenită ⇒ flag pension_return_CNPP; reținută din calcul",
+       "amount": 210000
+      },
+      {
+       "at": "2026-10-22T14:05:00Z",
+       "action": "Cote extrase și verificate",
+       "rule": "Cotele se citesc din certificat, nu se deduc din lege; verificare sumă = 1",
+       "detail": "Variantă 4B — testament autentic nr. 000/2024 (C.civ. art. 1055, 1088): Ion Ionescu 1/2, Andrei Ionescu 1/4, Elena Ionescu 1/4",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:10Z",
+       "action": "Lipsă de acoperire detectată",
+       "rule": "coverage_gaps(products, heir_certificate)",
+       "detail": "DEP-1 (depozit la termen) nu apare în certificat",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:20Z",
+       "action": "Cerere de supliment trimisă notarului",
+       "rule": "Legea 36/1995 — certificat suplimentar",
+       "detail": "Pentru DEP-1",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-22T14:05:30Z",
+       "action": "Minor detectat",
+       "rule": "Reprezentare legală a minorului (C.civ.)",
+       "detail": "Cerere: acordul scris al reprezentantului legal + cont pe numele Elenei; partea ei rămâne blocată",
+       "document_id": "doc-004"
+      },
+      {
+       "at": "2026-10-27T10:20:00Z",
+       "action": "Credit stins de asigurător",
+       "rule": "Răspuns UNIQA: indemnizație = principal la D",
+       "detail": "CRD-1 principal 9.000,00 lei acoperit",
+       "document_id": "doc-005",
+       "amount": 900000,
+       "audit_id": "A-0003"
+      },
+      {
+       "at": "2026-10-27T10:20:05Z",
+       "action": "Datorie reziduală a masei",
+       "rule": "net_of_debts — C.civ. art. 1114 (limita activului)",
+       "detail": "Dobânda curentă neacoperită de asigurare",
+       "document_id": "doc-005",
+       "amount": -2663
+      },
+      {
+       "at": "2026-11-10T15:30:00Z",
+       "action": "Acoperire completă",
+       "rule": "coverage_gaps = []",
+       "detail": "Certificatul suplimentar adaugă DEP-1",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:05Z",
+       "action": "Masa netă calculată",
+       "rule": "net_of_debts",
+       "detail": "Cont: 3.200,00 + 2.100,00 (pensie sept.) − 26,63 = 5.273,37 lei",
+       "document_id": "doc-006",
+       "amount": 527337
+      },
+      {
+       "at": "2026-11-10T15:30:10Z",
+       "action": "Împărțire pe moștenitori",
+       "rule": "split_by_shares — fracție din bun × cotă; rotunjire determinist (cea mai mare rămășiță)",
+       "detail": "Ion Ionescu 3/4, Andrei Ionescu 1/8, Elena Ionescu 1/8",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:15Z",
+       "action": "Recomandare depozit: așteptarea scadenței",
+       "rule": "C.civ. art. 2187 — lichidarea anticipată cere acordul tuturor",
+       "detail": "Plata depozitului programată la 2027-01-03 (dobânda integrală 1.040,00 lei brut)",
+       "document_id": "doc-006"
+      },
+      {
+       "at": "2026-11-10T15:30:20Z",
+       "action": "Instrucțiune de plată creată",
+       "rule": "POST /payments — doar pending_approval; aprobarea e umană (ops_approver)",
+       "detail": "PAY-1 pentru contul curent, fără partea Elenei (blocată)",
+       "document_id": "doc-006"
+      }
+     ],
+     "deadlines": [
+      {
+       "name": "Termen opțiune succesorală",
+       "date": "2027-09-03",
+       "rule": "C.civ. art. 1103 (1 an de la deces)",
+       "status": "deschis"
+      },
+      {
+       "name": "Dezbatere succesiune la notar (răspunsul trebuie să ajungă înainte)",
+       "date": "2026-10-20",
+       "rule": "Adresa notarului nr. 123/2026",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Avizare daună UNIQA",
+       "date": "2026-10-20",
+       "rule": "30 zile de la aflarea decesului",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Certificat suplimentar (DEP-1)",
+       "date": null,
+       "rule": "coverage_gaps",
+       "status": "îndeplinit"
+      },
+      {
+       "name": "Documente de reprezentare pentru Elena",
+       "date": null,
+       "rule": "minor — reprezentant legal",
+       "status": "în așteptare"
+      },
+      {
+       "name": "Scadența depozitului DEP-1 (plată)",
+       "date": "2027-01-03",
+       "rule": "C.civ. art. 2187",
+       "status": "programat"
+      }
+     ],
+     "open_tasks": [
+      "Așteaptă acordul reprezentantului legal + cont pe numele Elenei",
+      "Aprobare plată PAY-1 (ops_approver)"
+     ],
+     "escalations": [],
+     "payment_plan": {
+      "plan_id": "PP-1",
+      "status": "submitted",
+      "variant": "B",
+      "variant_label": "4B — testament autentic nr. 000/2024 (C.civ. art. 1055, 1088)",
+      "basis_documents": [
+       "doc-004",
+       "doc-006"
+      ],
+      "lines": [
+       {
+        "line_id": "L1",
+        "heir_id": "H1",
+        "name": "Ion Ionescu",
+        "share": "3/4",
+        "product_id": "RO..CUR",
+        "amount": 395503,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": false
+       },
+       {
+        "line_id": "L2",
+        "heir_id": "H2",
+        "name": "Andrei Ionescu",
+        "share": "1/8",
+        "product_id": "RO..CUR",
+        "amount": 65917,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": false
+       },
+       {
+        "line_id": "L3",
+        "heir_id": "H3",
+        "name": "Elena Ionescu",
+        "share": "1/8",
+        "product_id": "RO..CUR",
+        "amount": 65917,
+        "pay_on": "acum",
+        "iban": null,
+        "blocked": true,
+        "minor": true,
+        "legal_representative": "H1",
+        "requires_court_authorization": true,
+        "blocked_reason": "minoră: lipsesc documentele de reprezentare legală și contul pe numele ei"
+       },
+       {
+        "line_id": "L4",
+        "heir_id": "H1",
+        "name": "Ion Ionescu",
+        "share": "3/4",
+        "product_id": "DEP-1",
+        "amount": 1578000,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "blocked_reason": "depozit nescadent: plata la scadență, 2027-01-03"
+       },
+       {
+        "line_id": "L5",
+        "heir_id": "H2",
+        "name": "Andrei Ionescu",
+        "share": "1/8",
+        "product_id": "DEP-1",
+        "amount": 263000,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "blocked_reason": "depozit nescadent: plata la scadență, 2027-01-03"
+       },
+       {
+        "line_id": "L6",
+        "heir_id": "H3",
+        "name": "Elena Ionescu",
+        "share": "1/8",
+        "product_id": "DEP-1",
+        "amount": 263000,
+        "pay_on": "2027-01-03",
+        "iban": null,
+        "blocked": true,
+        "minor": true,
+        "legal_representative": "H1",
+        "requires_court_authorization": true,
+        "blocked_reason": "minoră: lipsesc documentele de reprezentare legală și contul pe numele ei"
+       }
+      ],
+      "withheld": [
+       {
+        "reason": "pension_return_CNPP",
+        "label": "Pensie octombrie — retur CNPP",
+        "amount": 210000
+       }
+      ],
+      "warnings": [
+       "minor_requires_authorization",
+       "deposit_paid_at_maturity"
+      ]
+     },
+     "payments": [
+      {
+       "payment_id": "PAY-1",
+       "plan_id": "PP-1",
+       "status": "pending_approval",
+       "line_ids": [
+        "L1",
+        "L2"
+       ],
+       "total": 461420
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "unmatched_documents": [
+  {
+   "escalation_id": "ESC-0007",
+   "document_id": "doc-007",
+   "document_type": "certificat_deces",
+   "received_at": "2026-11-12",
+   "source": "Agenție (scanare)",
+   "legibility": "illegible",
+   "confidence": 0.31,
+   "fields": [
+    {
+     "name": "nume",
+     "value": "POP█████",
+     "confidence": 0.42
+    },
+    {
+     "name": "prenume",
+     "value": "GHEOR███",
+     "confidence": 0.38
+    },
+    {
+     "name": "cnp",
+     "value": "1█████████ ██",
+     "confidence": 0.12
+    },
+    {
+     "name": "data_decesului",
+     "value": "██.██.2026",
+     "confidence": 0.1
+    },
+    {
+     "name": "serie_numar",
+     "value": "XX 0000000",
+     "confidence": 0.55
+    }
+   ],
+   "reason": "Document ilizibil: CNP și data decesului necitibile (scor 0,31 sub prag 0,80)",
+   "agent_action": "Escaladare; niciun freeze, niciun dosar deschis, dosarul Mariei neatins",
+   "rule": "Nu se blochează pe un document nesigur (POST /freeze → 422 sub prag)",
+   "status": "deschis"
+  }
+ ]
+}

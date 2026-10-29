@@ -1,0 +1,12 @@
+{
+  "id": "holdout-V17",
+  "raw_name": "holdout/V17-deces-scan-ilizibil-pop",
+  "document_type": "death_certificate",
+  "received_on": "2026-09-02",
+  "confidence": 0.38,
+  "fields": {
+    "cnp": null,
+    "date_of_death": null,
+    "document_number": null
+  }
+}

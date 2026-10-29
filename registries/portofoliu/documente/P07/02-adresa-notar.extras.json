@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1580909120612",
+  "name": "PETRESCU VASILE",
+  "case_file": "176/2026",
+  "hearing_date": "2026-09-15",
+  "date_of_death": "2026-08-02",
+  "document_number": "877",
+  "notary_office": "Biroul Individual Notarial „Mureșan Paul”",
+  "notary_name": "Paul MUREȘAN"
+ },
+ "field_confidence": {
+  "cnp": 0.93,
+  "name": 0.97,
+  "case_file": 0.96,
+  "hearing_date": 0.96,
+  "date_of_death": 0.96,
+  "document_number": 0.95,
+  "notary_office": 0.95,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "1580909120612",
+  "name": "PETRESCU VASILE",
+  "case_file": "Dosar succesoral nr. 176/2026",
+  "hearing_date": "Termenul de dezbatere a succesiunii este fixat pentru data de 15.09.2026",
+  "date_of_death": "decedat la data de 02.08.2026",
+  "document_number": "Nr. 877 / 17.08.2026",
+  "notary_office": "Biroul Individual Notarial „Mureșan Paul”",
+  "notary_name": "Notar public Paul MUREȘAN"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.053947499999999995,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P07/02-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:12+00:00",
+  "read": "02-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

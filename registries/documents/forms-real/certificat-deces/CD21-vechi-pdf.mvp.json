@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "2460611226003",
+  "name": "Elena Tudor",
+  "birth_date": "1946-06-11",
+  "date_of_death": "2026-08-19",
+  "father": "TUDOR COSTICĂ",
+  "mother": "MARIN IOANA",
+  "document_series": "BK",
+  "document_number": "343432",
+  "death_record_number": "1261"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "pdf",
+ "id": "CD21-vechi-pdf",
+ "raw_name": "forms-real/certificat-deces/CD21-vechi.pdf",
+ "received_on": "2026-08-23",
+ "_split": "holdout",
+ "_document_variant": "certificat_model_vechi_2011"
+}

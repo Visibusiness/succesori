@@ -1,0 +1,14 @@
+{
+  "id": "real-34",
+  "raw_name": "real-text/34-clauza-ing-credit-protect-notificare-documente-deces.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "decision": null,
+    "loan_contract": null
+  },
+  "_source": "asiguratori/ing-credit-protect-termeni-din-2023-10.pdf (cap. 5.1–5.2, până la ITP)"
+}

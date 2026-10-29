@@ -1,0 +1,36 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H3",
+  "doc_type": "certificat_mostenitor",
+  "received_at": "2026-10-22",
+  "client_id": "RC1001",
+  "source_text": "H3-cote-suma-diferita-de-1.md",
+  "fields": {
+    "nr_certificat": "87",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "mostenitori": [
+      {
+        "prenume": "ION",
+        "cota": "1/4"
+      },
+      {
+        "prenume": "ANDREI",
+        "cota": "3/8"
+      },
+      {
+        "prenume": "ELENA",
+        "cota": "3/4"
+      }
+    ]
+  },
+  "expected_agent": {
+    "sum_cote": "11/8",
+    "escalation": true,
+    "escalation_reason": "shares_invalid",
+    "payment_plan": null,
+    "state_after": "unchanged (escaladare)",
+    "note": "agentul nu corectează cota; cere rectificare notarului (Reg. art. 259)"
+  }
+}

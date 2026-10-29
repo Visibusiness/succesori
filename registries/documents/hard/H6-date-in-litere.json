@@ -1,0 +1,26 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "H6",
+  "doc_type": "adresa_notar",
+  "received_at": "2026-09-28",
+  "client_id": "RC1001",
+  "source_text": "H6-date-in-litere.md",
+  "fields": {
+    "nr_inregistrare_adresa": "412",
+    "data_adresa": "2026-09-28",
+    "nr_dosar_succesoral": "123/2026",
+    "defunct_cnp": "2XXXXXXXXXXXX",
+    "defunct_data_nasterii": "1958-05-12",
+    "defunct_data_decesului": "2026-09-03",
+    "data_referinta_sold": "2026-09-03",
+    "termen_dezbatere": "2026-10-20"
+  },
+  "expected_agent": {
+    "same_as": "02-adresa-notar",
+    "state_after": "NOTARY_ANSWERED",
+    "escalation": false,
+    "termen_intern_raspuns": "2026-10-13",
+    "note": "datele în litere se normalizează la ISO; o dată în litere care nu se poate parsa → escaladare pe câmpul respectiv"
+  }
+}

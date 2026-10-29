@@ -1,0 +1,15 @@
+{
+  "id": "real-15",
+  "raw_name": "real-text/15-nn-ing-formular-f01-anunt-eveniment.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "policy_id": null,
+    "loan_contract": null,
+    "decision": null,
+    "date_of_death": null
+  },
+  "_source": "asiguratori/ing-notificare-eveniment-asigurat.pdf"
+}

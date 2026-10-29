@@ -1,0 +1,27 @@
+{
+  "schema": "mosteniri.dgep.death_signal/v0",
+  "_generated_by_us": true,
+  "_fictiv": true,
+  "_fields_source": "Nota de informare Raiffeisen Bank–DGEP, „Categoriile de date”, lit. b) actualizarea periodică: numele de familie și prenumele, CNP, tipul, seria și numărul actului de identitate, data emiterii și data expirării, adresa de domiciliu, adresa de reședință (după caz), data decesului (după caz). Locul decesului și certificatul de deces nu se transmit pe acest canal.",
+  "message_id": "DGEP-MOCK-2026-08-10-001517",
+  "channel": "periodic_sftp",
+  "batch_week": "2026-W33",
+  "bank_code": "RZBR",
+  "last_name": "PETRESCU",
+  "first_name": "VASILE",
+  "cnp": "1580909120612",
+  "id_document": {
+    "type": "CI",
+    "series": "CJ",
+    "number": "370612",
+    "issue_date": "2021-09-09",
+    "expiry_date": "2031-09-09"
+  },
+  "domicile_address": "Mun. Cluj-Napoca, Str. Fictivă nr. 3, Jud. Cluj",
+  "residence_address": null,
+  "date_of_death": "2026-08-02",
+  "communicated_at": "2026-08-10T06:00:00+03:00",
+  "changed_fields": [
+    "date_of_death"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "hard-H1-formate",
+  "raw_name": "H1-adresa-notar-inainte-dgep__formate.md",
+  "document_type": "notary_request",
+  "received_on": "2026-09-18",
+  "confidence": 0.93,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "reference": "123/2026",
+    "hearing_date": "2026-10-20",
+    "case_file": "123/2026",
+    "document_number": "398",
+    "notary_office": "Biroul Individual Notarial „Exemplu Ana”",
+    "notary_name": "Ana EXEMPLU"
+  },
+  "_deprecated_fields": [
+    "reference"
+  ],
+  "_augmented_from": "hard/H1-adresa-notar-inainte-dgep.md",
+  "_variant": "formate"
+}

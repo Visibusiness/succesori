@@ -1,0 +1,50 @@
+{
+ "document_type": "insurance_certificate",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1561121133425",
+  "policy_id": "UQ-4471203",
+  "insurer": "UNIQA Asigurări de viață S.A.",
+  "loan_contract": "NP-2024-033107",
+  "document_number": "UQ-4471203"
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "policy_id": 0.97,
+  "insurer": 0.95,
+  "loan_contract": 0.95,
+  "document_number": 0.97
+ },
+ "evidence": {
+  "cnp": "C.N.P. 1561121133425",
+  "policy_id": "Număr Certificat de asigurare UQ-4471203",
+  "insurer": "UNIQA Asigurări de viață S.A.",
+  "loan_contract": "nr. NP-2024-033107 din 15.03.2024",
+  "document_number": "CERTIFICAT DE ASIGURARE nr. UQ-4471203"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.05284770000000001,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P03/04-certificat-asigurare-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:00+00:00",
+  "read": "04-certificat-asigurare-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

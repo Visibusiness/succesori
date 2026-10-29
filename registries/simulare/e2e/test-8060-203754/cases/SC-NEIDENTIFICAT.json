@@ -1,0 +1,78 @@
+{
+ "id": "SC-NEIDENTIFICAT",
+ "cif": "-",
+ "customer_name": "Documente neidentificate",
+ "date_of_death": null,
+ "learned_on": null,
+ "milestones": [],
+ "documents": [
+  {
+   "id": "doc-7",
+   "type": "death_certificate",
+   "received_on": "2026-10-28",
+   "confidence": 0.4,
+   "fields": {
+    "cnp": null,
+    "name": null,
+    "birth_date": null,
+    "date_of_death": null,
+    "document_series": "XX",
+    "document_number": null,
+    "death_record_number": null,
+    "father": null,
+    "mother": null,
+    "spouse": null
+   },
+   "raw_name": "07-certificat-deces-ilizibil.md"
+  }
+ ],
+ "events": [
+  {
+   "at": "2026-10-28T20:42:42+00:00",
+   "kind": "decision",
+   "summary": "Validare picată: cnp_missing pe cnp (block): CNP lipsă și nicio identitate alternativă (nume + data nașterii)",
+   "rule": "validare deterministă după LLM (document-extraction-approach §4)",
+   "data": {
+    "document_id": "doc-7",
+    "validation": {
+     "code": "cnp_missing",
+     "field": "cnp",
+     "severity": "block",
+     "detail": "CNP lipsă și nicio identitate alternativă (nume + data nașterii)"
+    }
+   },
+   "id": "E1"
+  },
+  {
+   "at": "2026-10-28T20:42:42+00:00",
+   "kind": "escalation",
+   "summary": "Escaladare: Document „07-certificat-deces-ilizibil.md” ilizibil sau incomplet (tip=death_certificate, încredere=0.40, CNP=lipsă). Nicio acțiune automată; operatorul decide.",
+   "rule": null,
+   "data": {
+    "reason": "document_illegible",
+    "document_id": "doc-7"
+   },
+   "id": "E2"
+  }
+ ],
+ "escalations": [
+  {
+   "id": "ESC-1",
+   "reason": "document_illegible",
+   "detail": "Document „07-certificat-deces-ilizibil.md” ilizibil sau incomplet (tip=death_certificate, încredere=0.40, CNP=lipsă). Nicio acțiune automată; operatorul decide.",
+   "document_id": "doc-7",
+   "resolved": false,
+   "data": {}
+  }
+ ],
+ "deadlines": [],
+ "heirs": [],
+ "coverage_gaps": [],
+ "payment_plan": null,
+ "insurance": {},
+ "flags": [],
+ "contact_channels": {},
+ "processed_document_keys": [],
+ "state": "NEW",
+ "missing": []
+}

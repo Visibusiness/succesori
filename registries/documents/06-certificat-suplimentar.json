@@ -1,0 +1,125 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "06",
+  "doc_type": "certificat_mostenitor_suplimentar",
+  "received_at": "2026-11-10",
+  "client_id": "RC1001",
+  "source_text": "06-certificat-suplimentar.md",
+  "fields": {
+    "nr_certificat": "95",
+    "data_certificat": "2026-11-10",
+    "nr_dosar_succesoral": "123/2026",
+    "birou_notarial": "Biroul Individual Notarial „Exemplu Ana”",
+    "notar": "Ana EXEMPLU",
+    "ref_certificat_initial": {
+      "nr": "87",
+      "data": "2026-10-22"
+    },
+    "temei": "art. 118 alin. (2) din Legea nr. 36/1995",
+    "defunct": {
+      "nume": "IONESCU",
+      "prenume": "MARIA",
+      "cnp": "2XXXXXXXXXXXX",
+      "ultim_domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1, Jud. Exemplu",
+      "data_decesului": "2026-09-03"
+    },
+    "masa_activ": [
+      {
+        "tip": "depozit_termen",
+        "institutie": "Raiffeisen Bank S.A.",
+        "iban": "RO00 RZBR 0000 0000 0000 02",
+        "cota_defunct": "1/2",
+        "valoare_bani": 2000000,
+        "moneda": "RON",
+        "scadenta": "2027-01-03"
+      }
+    ],
+    "mostenitori": [
+      {
+        "nume": "IONESCU",
+        "prenume": "ION",
+        "cnp": "1XXXXXXXXXXX1",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1",
+        "calitate": "sot_supravietuitor",
+        "minor": false,
+        "reprezentant_legal": null,
+        "acceptare": true
+      },
+      {
+        "nume": "IONESCU",
+        "prenume": "ANDREI",
+        "cnp": "1XXXXXXXXXXX2",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 7",
+        "calitate": "fiu",
+        "minor": false,
+        "reprezentant_legal": null,
+        "acceptare": true
+      },
+      {
+        "nume": "IONESCU",
+        "prenume": "ELENA",
+        "cnp": "6XXXXXXXXXXX3",
+        "domiciliu": "Municipiul Exemplu, Str. Fictivă nr. 1",
+        "calitate": "fiica",
+        "minor": true,
+        "varsta": 15,
+        "reprezentant_legal": "IONESCU ION (tată, încuviințare)",
+        "acceptare": true
+      }
+    ],
+    "cote_din": "ref_certificat_initial",
+    "acord_mostenitori": "exprimat",
+    "semnatura_notar": true,
+    "stampila": true
+  },
+  "expected_agent": {
+    "state_after": "PAYMENT_PENDING_APPROVAL",
+    "coverage_gaps": [],
+    "baza_bani": {
+      "CC-1": 527337,
+      "DEP-1_la_scadenta_brut": 2104000
+    },
+    "split_bani_by_variant": {
+      "A": {
+        "CC-1": {
+          "ION": 329585,
+          "ANDREI": 98876,
+          "ELENA": 98876
+        },
+        "DEP-1": {
+          "ION": 1315000,
+          "ANDREI": 394500,
+          "ELENA": 394500
+        }
+      },
+      "B": {
+        "CC-1": {
+          "ION": 395503,
+          "ANDREI": 65917,
+          "ELENA": 65917
+        },
+        "DEP-1": {
+          "ION": 1578000,
+          "ANDREI": 263000,
+          "ELENA": 263000
+        }
+      }
+    },
+    "payment_plan": [
+      {
+        "product_id": "CC-1",
+        "cand": "acum"
+      },
+      {
+        "product_id": "DEP-1",
+        "cand": "2027-01-03",
+        "motiv": "așteptarea scadenței: +104.000 bani dobândă față de lichidare anticipată"
+      }
+    ],
+    "approval": "pending_approval",
+    "blocked_heirs": [
+      "ELENA"
+    ]
+  }
+}

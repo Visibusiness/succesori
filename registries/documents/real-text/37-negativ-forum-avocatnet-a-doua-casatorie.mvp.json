@@ -1,0 +1,15 @@
+{
+  "id": "real-37",
+  "raw_name": "real-text/37-negativ-forum-avocatnet-a-doua-casatorie.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "case_file": null,
+    "heirs": null,
+    "testament": null,
+    "date_of_death": null
+  },
+  "_source": "notari/avocatnet-succesiune-conturi-banci-a-doua-casatorie.txt (primul mesaj)"
+}

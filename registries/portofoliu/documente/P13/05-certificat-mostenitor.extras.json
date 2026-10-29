@@ -1,0 +1,81 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1640318184124",
+  "case_file": "211/2026",
+  "document_number": "64",
+  "testament": false,
+  "heirs": [
+   {
+    "name": "PETRESCU DOINA",
+    "share": "1/4"
+   },
+   {
+    "name": "PETRESCU RADU",
+    "share": "1/4"
+   },
+   {
+    "name": "PETRESCU IOANA",
+    "share": "1/4"
+   },
+   {
+    "name": "PETRESCU SORIN",
+    "share": "1/4"
+   }
+  ],
+  "ibans": [
+   "RO61 RZBR 0000 0000 8501 0001"
+  ],
+  "unidentified_products": [],
+  "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+  "notary_name": "Adrian FICTIV"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "case_file": 0.95,
+  "document_number": 0.95,
+  "testament": 0.9,
+  "heirs": 0.95,
+  "ibans": 0.93,
+  "unidentified_products": 0.9,
+  "notary_office": 0.85,
+  "notary_name": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP 1640318184124",
+  "case_file": "Dosar succesoral nr. 211/2026",
+  "document_number": "CERTIFICAT DE MOȘTENITOR Nr. 64",
+  "testament": "nu rezultă că defunctul ar fi lăsat testament",
+  "heirs": "PETRESCU DOINA, CNP 2661102183771, domiciliată în Mun. Târgu Jiu, Str. Fictivă nr. 14, în calitate de soție supraviețuitoare, cu o cotă de 1/4 (un sfert) din masa succesorală.",
+  "ibans": "IBAN RO61 RZBR 0000 0000 8501 0001",
+  "notary_office": "Biroul Individual Notarial „Fictiv Adrian”",
+  "notary_name": "Notar public,\nAdrian FICTIV"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0646589,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P13/05-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:35+00:00",
+  "read": "05-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

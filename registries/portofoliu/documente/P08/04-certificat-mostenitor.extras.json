@@ -1,0 +1,73 @@
+{
+ "document_type": "heir_certificate",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "2520418351188",
+  "case_file": "61/2026",
+  "document_number": "33",
+  "testament": false,
+  "notary_office": "Biroul Individual Notarial „Varga Mihaela”",
+  "notary_name": "Mihaela VARGA",
+  "heirs": [
+   {
+    "name": "RADU DUMITRU",
+    "share": "1/4"
+   },
+   {
+    "name": "RADU CORINA",
+    "share": "3/4"
+   }
+  ],
+  "ibans": [
+   "RO59 RZBR 0000 0000 0031 0801"
+  ],
+  "unidentified_products": []
+ },
+ "field_confidence": {
+  "cnp": 0.95,
+  "case_file": 0.97,
+  "document_number": 0.95,
+  "testament": 0.95,
+  "notary_office": 0.95,
+  "notary_name": 0.95,
+  "heirs": 0.95,
+  "ibans": 0.93,
+  "unidentified_products": 0.95
+ },
+ "evidence": {
+  "cnp": "RADU ELENA, CNP 2520418351188",
+  "case_file": "Dosar succesoral nr. 61/2026",
+  "document_number": "CERTIFICAT DE MOŞTENITOR Nr. 33",
+  "testament": "nu rezultă că defuncta ar fi lăsat testament",
+  "notary_office": "Biroul Individual Notarial „Varga Mihaela”",
+  "notary_name": "Mihaela VARGA, notar public",
+  "heirs": "RADU DUMITRU, CNP 1491102404306 ... cu o cotă de 1/4 (un sfert) din masa succesorală. 2. RADU CORINA, CNP 2760809403339 ... cu o cotă de 3/4 (trei sferturi) din masa succesorală",
+  "ibans": "IBAN RO59 RZBR 0000 0000 0031 0801"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.057580299999999994,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P08/04-certificat-mostenitor-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:21+00:00",
+  "read": "04-certificat-mostenitor-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3",
+   "V4"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

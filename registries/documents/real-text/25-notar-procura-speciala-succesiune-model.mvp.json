@@ -1,0 +1,14 @@
+{
+  "id": "real-25",
+  "raw_name": "real-text/25-notar-procura-speciala-succesiune-model.md",
+  "document_type": "unknown",
+  "received_on": null,
+  "confidence": 0.3,
+  "fields": {
+    "cnp": null,
+    "heirs": null,
+    "case_file": null,
+    "notary_office": null
+  },
+  "_source": "notari/notaripro-model-procura-succesiune.txt"
+}

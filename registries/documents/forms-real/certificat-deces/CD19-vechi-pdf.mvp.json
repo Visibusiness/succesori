@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "2350626222107",
+  "name": "Mihaela Nistor",
+  "birth_date": "1935-06-26",
+  "date_of_death": "2026-06-18",
+  "father": "NISTOR IULIAN",
+  "mother": "ȚURCANU FLOAREA",
+  "document_series": "DE",
+  "document_number": "223129",
+  "death_record_number": "155"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "pdf",
+ "id": "CD19-vechi-pdf",
+ "raw_name": "forms-real/certificat-deces/CD19-vechi.pdf",
+ "received_on": "2026-06-21",
+ "_split": "holdout",
+ "_document_variant": "certificat_model_vechi_2011"
+}

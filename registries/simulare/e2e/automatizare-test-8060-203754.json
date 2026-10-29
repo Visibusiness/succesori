@@ -1,0 +1,660 @@
+{
+ "rulare": "test-8060-203754",
+ "sursa": "registries/simulare/e2e/test-8060-203754",
+ "dosar": "SC-2026-0001",
+ "stare_finala": "PAID",
+ "smoke": "49/49 PASS",
+ "documente": 7,
+ "operatiuni": {
+  "total": 47,
+  "automat": 25,
+  "agent_ai": 18,
+  "uman_executat": 1,
+  "uman_deschis": 3,
+  "uman_total": 4,
+  "pondere_fara_om_pct": 91.5
+ },
+ "agenti": {
+  "auditor": 3,
+  "case-investigator": 2,
+  "correspondent": 4,
+  "extractor": 7,
+  "heir-communicator": 2
+ },
+ "decizii_umane_executate": [
+  {
+   "at": "2026-10-28T20:44:11+00:00",
+   "kind": "operator",
+   "action": "approve_payment",
+   "case_id": "SC-2026-0001",
+   "plan_id": "PAY-SC-2026-0001",
+   "approver": "smoke-e2e"
+  }
+ ],
+ "decizii_umane_deschise": [
+  {
+   "ce": "semnarea răspunsului către notar (doi oameni, ARCHITECTURE §7)",
+   "eveniment": "SC-2026-0001:E8"
+  },
+  {
+   "ce": "rezolvarea escaladării minor_heir (SC-2026-0001 ESC-1)",
+   "eveniment": "SC-2026-0001:ESC-1"
+  },
+  {
+   "ce": "rezolvarea escaladării document_illegible (SC-NEIDENTIFICAT ESC-1)",
+   "eveniment": "SC-NEIDENTIFICAT:ESC-1"
+  }
+ ],
+ "reactie": {
+  "pe_document": [
+   {
+    "document": "01-dgep-semnal.json",
+    "sosit": "2026-10-28T20:38:03+00:00",
+    "pipeline_s": 8.7,
+    "agenti_s": null,
+    "actiuni": [
+     "frozen",
+     "fees_reversed"
+    ],
+    "stare": "FROZEN",
+    "escaladare": null
+   },
+   {
+    "document": "02-adresa-notar.md",
+    "sosit": "2026-10-28T20:38:13+00:00",
+    "pipeline_s": 9.7,
+    "agenti_s": 23.7,
+    "actiuni": [
+     "notary_answer_drafted"
+    ],
+    "stare": "NOTARY_ANSWERED",
+    "escaladare": null
+   },
+   {
+    "document": "03-certificat-asigurare.md",
+    "sosit": "2026-10-28T20:38:39+00:00",
+    "pipeline_s": 8.6,
+    "agenti_s": 24.6,
+    "actiuni": [
+     "insurance_claim_opened"
+    ],
+    "stare": "INSURANCE_CLAIM_OPEN",
+    "escaladare": null
+   },
+   {
+    "document": "04-certificat-mostenitor-A.md",
+    "sosit": "2026-10-28T20:39:05+00:00",
+    "pipeline_s": 10.5,
+    "agenti_s": 59.5,
+    "actiuni": [
+     "heirs_recorded",
+     "supplement_requested"
+    ],
+    "stare": "SUPPLEMENT_REQUESTED",
+    "escaladare": "minor_heir"
+   },
+   {
+    "document": "05-raspuns-asigurator.md",
+    "sosit": "2026-10-28T20:40:43+00:00",
+    "pipeline_s": 9.4,
+    "agenti_s": 22.4,
+    "actiuni": [
+     "loan_settled_by_insurance"
+    ],
+    "stare": "INSURANCE_SETTLED",
+    "escaladare": null
+   },
+   {
+    "document": "06-certificat-suplimentar.md",
+    "sosit": "2026-10-28T20:41:07+00:00",
+    "pipeline_s": 9.4,
+    "agenti_s": 23.4,
+    "actiuni": [
+     "coverage_complete"
+    ],
+    "stare": "PAYMENT_PENDING_APPROVAL",
+    "escaladare": null
+   },
+   {
+    "document": "07-certificat-deces-ilizibil.md",
+    "sosit": "2026-10-28T20:42:31+00:00",
+    "pipeline_s": 10.3,
+    "agenti_s": 27.3,
+    "actiuni": [],
+    "stare": "NEW",
+    "escaladare": "document_illegible"
+   }
+  ],
+  "pipeline_mediana_s": 9.4,
+  "pipeline_max_s": 10.5,
+  "agenti_mediana_s": 24.15,
+  "agenti_max_s": 59.5,
+  "nota": "pipeline_s = de la scrierea fișierului în inbox la acțiunea pe dosar (include extracția LLM); agenti_s = până la ultimul artefact al agenților (scrisori, mesaje, investigații) pentru acel document"
+ },
+ "douasprezece": [
+  {
+   "nr": 1,
+   "operatiune": "Blocarea debitului și a cardurilor la aflarea decesului",
+   "acum": "automat",
+   "dovada": "Blocare reversibilă: semnal DGEP DGEP-MOCK-2026-09-20-000123 (GDPR art. 22: doar măsuri reversibile). Debit oprit, mandat suspendat (Andrei Ionescu), carduri C-",
+   "eveniment": "SC-2026-0001:E4",
+   "document": "01-dgep-semnal.json",
+   "facut": true,
+   "reactie_s": 8.7
+  },
+  {
+   "nr": 2,
+   "operatiune": "Încetarea împuterniciților (mandatul încetează la deces)",
+   "acum": "automat",
+   "dovada": "Blocare reversibilă: semnal DGEP DGEP-MOCK-2026-09-20-000123 (GDPR art. 22: doar măsuri reversibile). Debit oprit, mandat suspendat (Andrei Ionescu), carduri C-",
+   "eveniment": "SC-2026-0001:E4",
+   "document": "01-dgep-semnal.json",
+   "facut": true,
+   "reactie_s": 8.7
+  },
+  {
+   "nr": 3,
+   "operatiune": "Oprirea și stornarea comisioanelor de după deces",
+   "acum": "automat",
+   "dovada": "Comisioane după deces stornate: 60.00 lei (1 mișcări).",
+   "eveniment": "SC-2026-0001:E5",
+   "document": "01-dgep-semnal.json",
+   "facut": true,
+   "reactie_s": 8.7
+  },
+  {
+   "nr": 4,
+   "operatiune": "Încasările de după deces: pensia de returnat la CNPP",
+   "acum": "automat",
+   "dovada": "Pensie necuvenită (2026-10-15): 2100.00 lei reținuți pentru retur CNPP.",
+   "eveniment": "SC-2026-0001:E6",
+   "document": "01-dgep-semnal.json",
+   "facut": true,
+   "reactie_s": 8.7
+  },
+  {
+   "nr": 5,
+   "operatiune": "Soldurile la data decesului, cu dobânda acumulată",
+   "acum": "automat",
+   "dovada": "Răspuns către notar generat (dosar 123/2026): solduri la 2026-09-03; trimis la semnare.",
+   "eveniment": "SC-2026-0001:E8",
+   "document": "02-adresa-notar.md",
+   "facut": true,
+   "reactie_s": 9.7
+  },
+  {
+   "nr": 6,
+   "operatiune": "Răspunsul scris către notar",
+   "acum": "agent AI + semnătură umană",
+   "dovada": "Răspuns către notar generat (dosar 123/2026): solduri la 2026-09-03; trimis la semnare.",
+   "eveniment": "SC-2026-0001:E8",
+   "document": "02-adresa-notar.md",
+   "facut": true,
+   "reactie_s": 9.7,
+   "artefact_ai": "letters/SC-2026-0001-notary_answer_drafted.md",
+   "reactie_ai_s": 23.7
+  },
+  {
+   "nr": 7,
+   "operatiune": "Dosarul de daună la asigurător (avizare, documente)",
+   "acum": "automat + agent AI",
+   "dovada": "Dosar de daună deschis la UNIQA Asigurări de viață S.A. pentru polița UQ-0000000-FICTIV; avizare până la 2026-11-27. Documente cerute moștenitorilor: cererea de",
+   "eveniment": "SC-2026-0001:E10",
+   "document": "03-certificat-asigurare.md",
+   "facut": true,
+   "reactie_s": 8.6,
+   "artefact_ai": "letters/SC-2026-0001-insurance_claim_opened.md",
+   "reactie_ai_s": 24.6
+  },
+  {
+   "nr": 8,
+   "operatiune": "Cotele din certificatul de moștenitor (citire + verificare sumă = 1)",
+   "acum": "agent AI (extracție) + automat",
+   "dovada": "Certificat de moștenitor: IONESCU ION 1/4, IONESCU ANDREI 3/8, IONESCU ELENA 3/8",
+   "eveniment": "SC-2026-0001:E13",
+   "document": "04-certificat-mostenitor-A.md",
+   "facut": true,
+   "reactie_s": 10.5
+  },
+  {
+   "nr": 9,
+   "operatiune": "Produsele omise din certificat ⇒ cererea de certificat suplimentar",
+   "acum": "automat + agent AI",
+   "dovada": "Certificatul nu acoperă: DEP-1. Cerere de certificat suplimentar generată către notar.",
+   "eveniment": "SC-2026-0001:E15",
+   "document": "04-certificat-mostenitor-A.md",
+   "facut": true,
+   "reactie_s": 10.5,
+   "artefact_ai": "letters/SC-2026-0001-supplement_requested.md",
+   "reactie_ai_s": 40.5
+  },
+  {
+   "nr": 10,
+   "operatiune": "Planul de plată: net de datorii, pe cote, minor blocat",
+   "acum": "automat",
+   "dovada": "Plan de plată generat: 6 linii, 4284.61 lei plătibili acum; așteaptă aprobare umană.",
+   "eveniment": "SC-2026-0001:E23",
+   "document": "06-certificat-suplimentar.md",
+   "facut": true,
+   "reactie_s": 9.4
+  },
+  {
+   "nr": 11,
+   "operatiune": "Urmărirea termenelor (opțiune 1 an, avizare asigurător, dezbatere)",
+   "acum": "automat",
+   "dovada": "3 termene în dosar: succession_option 2027-09-03, notary_answer 2026-10-20, insurance_claim_notice 2026-11-27",
+   "eveniment": "SC-2026-0001:E4",
+   "document": "01-dgep-semnal.json",
+   "facut": true,
+   "reactie_s": 8.7
+  },
+  {
+   "nr": 12,
+   "operatiune": "Plata efectivă către moștenitori",
+   "acum": "decizie umană (aprobare) + execuție automată",
+   "dovada": "Plata aprobată de smoke-e2e: 4284.61 lei către 2 moștenitori; 4 linii rămân blocate.",
+   "eveniment": "SC-2026-0001:E26",
+   "document": "06-certificat-suplimentar.md",
+   "facut": true,
+   "nota": "în smoke aprobă scriptul de test (approver smoke-e2e); în producție, un operator"
+  }
+ ],
+ "douasprezece_sumar": {
+  "complet_automat": 7,
+  "cu_agent_ai": 4,
+  "fara_om": 10,
+  "cu_om": 2,
+  "facute_in_rulare": 12
+ },
+ "operatiuni_detaliu": [
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 01-dgep-semnal.json",
+   "at": "2026-10-28T20:38:12+00:00",
+   "document": "01-dgep-semnal.json",
+   "cost_usd": 0.043805000000000004
+  },
+  {
+   "categorie": "automat",
+   "ce": "Dosar de succesiune deschis pentru Maria Ionescu (RC1001).",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E1",
+   "tip": "decision",
+   "regula": null,
+   "document": null
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: dgep_signal (01-dgep-semnal.json), încredere 0.90",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E2",
+   "tip": "document",
+   "regula": null,
+   "document": "01-dgep-semnal.json"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Deces confirmat la data 2026-09-03 (sursă: dgep_signal); aflat la 2026-10-28.",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E3",
+   "tip": "document",
+   "regula": null,
+   "document": "01-dgep-semnal.json"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Blocare reversibilă: semnal DGEP DGEP-MOCK-2026-09-20-000123 (GDPR art. 22: doar măsuri reversibile). Debit oprit, mandat suspendat (Andrei ",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E4",
+   "tip": "action",
+   "regula": "CGB 3.2.5 b/d, 5.10.4 c, 7.7.1 c; C.civ. art. 2030; D-DGEP: semnal DGEP sau adresă de notar ⇒ doar reversibil, definitiv doar la certificat de deces sau prin operator (GDPR art. 22)",
+   "document": "01-dgep-semnal.json"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Comisioane după deces stornate: 60.00 lei (1 mișcări).",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E5",
+   "tip": "action",
+   "regula": "comision de administrare nejustificat după deces (cazul Bragadiru 2023)",
+   "document": "01-dgep-semnal.json"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Pensie necuvenită (2026-10-15): 2100.00 lei reținuți pentru retur CNPP.",
+   "at": "2026-10-28T20:38:12+00:00",
+   "eveniment": "SC-2026-0001:E6",
+   "tip": "action",
+   "regula": "Legea 360/2023 art. 100, art. 156 alin. 8",
+   "document": "01-dgep-semnal.json"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 02-adresa-notar.md",
+   "at": "2026-10-28T20:38:23+00:00",
+   "document": "02-adresa-notar.md",
+   "cost_usd": 0.04705
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: notary_request (02-adresa-notar.md), încredere 0.90",
+   "at": "2026-10-28T20:38:23+00:00",
+   "eveniment": "SC-2026-0001:E7",
+   "tip": "document",
+   "regula": null,
+   "document": "02-adresa-notar.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Răspuns către notar generat (dosar 123/2026): solduri la 2026-09-03; trimis la semnare.",
+   "at": "2026-10-28T20:38:23+00:00",
+   "eveniment": "SC-2026-0001:E8",
+   "tip": "action",
+   "regula": "Legea 36/1995 art. 81 alin. 2",
+   "document": "02-adresa-notar.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "correspondent",
+   "ce": "letters/SC-2026-0001-notary_answer_drafted.md",
+   "at": "2026-10-28T20:38:37+00:00",
+   "document": "02-adresa-notar.md",
+   "secunde": 13.6,
+   "cost_usd": 0.0558325
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 03-certificat-asigurare.md",
+   "at": "2026-10-28T20:38:48+00:00",
+   "document": "03-certificat-asigurare.md",
+   "cost_usd": 0.0467325
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: insurance_certificate (03-certificat-asigurare.md), încredere 0.90",
+   "at": "2026-10-28T20:38:48+00:00",
+   "eveniment": "SC-2026-0001:E9",
+   "tip": "document",
+   "regula": null,
+   "document": "03-certificat-asigurare.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Dosar de daună deschis la UNIQA Asigurări de viață S.A. pentru polița UQ-0000000-FICTIV; avizare până la 2026-11-27. Documente cerute moșten",
+   "at": "2026-10-28T20:38:48+00:00",
+   "eveniment": "SC-2026-0001:E10",
+   "tip": "action",
+   "regula": "UNIQA Asigurări de viață S.A.: avizare în 30 de zile (ipoteză, de confirmat) de la deces/aflare (Condițiile Generale UNIQA nu sunt publice; 30 de zile e pe daune-viata.uniqa.ro (kb/bank-procedures/asigurare-viata-credit.md), neregăsit pe uniqa.ro/daune)",
+   "document": "03-certificat-asigurare.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "correspondent",
+   "ce": "letters/SC-2026-0001-insurance_claim_opened.md",
+   "at": "2026-10-28T20:39:04+00:00",
+   "document": "03-certificat-asigurare.md",
+   "secunde": 16.0,
+   "cost_usd": 0.061415
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 04-certificat-mostenitor-A.md",
+   "at": "2026-10-28T20:39:16+00:00",
+   "document": "04-certificat-mostenitor-A.md",
+   "cost_usd": 0.0513075
+  },
+  {
+   "categorie": "automat",
+   "ce": "Validare picată: iban_invalid pe ibans (soft): IBAN în format invalid: RO00 RZBR 0000 0000 0000 01",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E11",
+   "tip": "decision",
+   "regula": "validare deterministă după LLM (document-extraction-approach §4)",
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: heir_certificate (04-certificat-mostenitor-A.md), încredere 0.83",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E12",
+   "tip": "document",
+   "regula": null,
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Certificat de moștenitor: IONESCU ION 1/4, IONESCU ANDREI 3/8, IONESCU ELENA 3/8",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E13",
+   "tip": "document",
+   "regula": "cotele vin din certificat, nu din lege",
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Escaladare: IONESCU ELENA este minor (sub 18 ani): plata părții sale se blochează până la acordul scris al reprezentantului legal (C.civ. ar",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E14",
+   "tip": "escalation",
+   "regula": null,
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Certificatul nu acoperă: DEP-1. Cerere de certificat suplimentar generată către notar.",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E15",
+   "tip": "action",
+   "regula": "practica notarială: supliment la certificatul de moștenitor",
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Probleme găsite la 04-certificat-mostenitor-A.md: certificate_incomplete. Expeditor: necunoscut.",
+   "at": "2026-10-28T20:39:16+00:00",
+   "eveniment": "SC-2026-0001:E16",
+   "tip": "decision",
+   "regula": "078: detectare deterministă (agent/deficiencies.py)",
+   "document": "04-certificat-mostenitor-A.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "case-investigator",
+   "ce": "investigations/SC-2026-0001-ESC-1.md",
+   "at": "2026-10-28T20:39:36+00:00",
+   "document": "04-certificat-mostenitor-A.md",
+   "secunde": 19.9,
+   "cost_usd": 0.0716
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "correspondent",
+   "ce": "letters/SC-2026-0001-supplement_requested.md",
+   "at": "2026-10-28T20:39:46+00:00",
+   "document": "04-certificat-mostenitor-A.md",
+   "secunde": 10.7,
+   "cost_usd": 0.06359000000000001
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "heir-communicator",
+   "ce": "messages/SC-2026-0001-01.md",
+   "at": "2026-10-28T20:40:05+00:00",
+   "document": "04-certificat-mostenitor-A.md",
+   "secunde": 18.4,
+   "cost_usd": 0.0768525
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "auditor",
+   "ce": "audit.md",
+   "at": "2026-10-28T20:40:43+00:00",
+   "document": null,
+   "secunde": 71.0,
+   "cost_usd": 0.1657325
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 05-raspuns-asigurator.md",
+   "at": "2026-10-28T20:40:53+00:00",
+   "document": "05-raspuns-asigurator.md",
+   "cost_usd": 0.04704
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: insurer_response (05-raspuns-asigurator.md), încredere 0.90",
+   "at": "2026-10-28T20:40:53+00:00",
+   "eveniment": "SC-2026-0001:E18",
+   "tip": "document",
+   "regula": null,
+   "document": "05-raspuns-asigurator.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Indemnizație primită: 9000.00 lei; creditul stins de asigurător. Rămâne în sarcina masei succesorale: 26.63 lei (dobânda la data decesului, ",
+   "at": "2026-10-28T20:40:53+00:00",
+   "eveniment": "SC-2026-0001:E19",
+   "tip": "action",
+   "regula": "C.civ. art. 1114",
+   "document": "05-raspuns-asigurator.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "correspondent",
+   "ce": "letters/SC-2026-0001-loan_settled_by_insurance.md",
+   "at": "2026-10-28T20:41:06+00:00",
+   "document": "05-raspuns-asigurator.md",
+   "secunde": 13.1,
+   "cost_usd": 0.06878
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 06-certificat-suplimentar.md",
+   "at": "2026-10-28T20:41:17+00:00",
+   "document": "06-certificat-suplimentar.md",
+   "cost_usd": 0.04785249999999999
+  },
+  {
+   "categorie": "automat",
+   "ce": "Validare picată: iban_invalid pe ibans (soft): IBAN în format invalid: RO00 RZBR 0000 0000 0000 02",
+   "at": "2026-10-28T20:41:17+00:00",
+   "eveniment": "SC-2026-0001:E20",
+   "tip": "decision",
+   "regula": "validare deterministă după LLM (document-extraction-approach §4)",
+   "document": "06-certificat-suplimentar.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Primit: supplementary_certificate (06-certificat-suplimentar.md), încredere 0.83",
+   "at": "2026-10-28T20:41:17+00:00",
+   "eveniment": "SC-2026-0001:E21",
+   "tip": "document",
+   "regula": null,
+   "document": "06-certificat-suplimentar.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Toate produsele sunt acoperite de certificat(e).",
+   "at": "2026-10-28T20:41:17+00:00",
+   "eveniment": "SC-2026-0001:E22",
+   "tip": "decision",
+   "regula": null,
+   "document": "06-certificat-suplimentar.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Plan de plată generat: 6 linii, 4284.61 lei plătibili acum; așteaptă aprobare umană.",
+   "at": "2026-10-28T20:41:17+00:00",
+   "eveniment": "SC-2026-0001:E23",
+   "tip": "action",
+   "regula": "C.civ. art. 1114, 2187; plata = acțiune ireversibilă ⇒ aprobare operator",
+   "document": "06-certificat-suplimentar.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Probleme închise de documentul 06-certificat-suplimentar.md: doc-4:certificate_incomplete.",
+   "at": "2026-10-28T20:41:17+00:00",
+   "eveniment": "SC-2026-0001:E24",
+   "tip": "decision",
+   "regula": "078: documentul refăcut închide problema",
+   "document": "06-certificat-suplimentar.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "heir-communicator",
+   "ce": "messages/SC-2026-0001-02.md",
+   "at": "2026-10-28T20:41:31+00:00",
+   "document": "06-certificat-suplimentar.md",
+   "secunde": 13.8,
+   "cost_usd": 0.0800725
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "auditor",
+   "ce": "audit.md",
+   "at": "2026-10-28T20:42:30+00:00",
+   "document": null,
+   "secunde": 71.0,
+   "cost_usd": 0.1657325
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "extractor",
+   "ce": "citire + extracție 07-certificat-deces-ilizibil.md",
+   "at": "2026-10-28T20:42:42+00:00",
+   "document": "07-certificat-deces-ilizibil.md",
+   "cost_usd": 0.0447025
+  },
+  {
+   "categorie": "automat",
+   "ce": "Validare picată: cnp_missing pe cnp (block): CNP lipsă și nicio identitate alternativă (nume + data nașterii)",
+   "at": "2026-10-28T20:42:42+00:00",
+   "eveniment": "SC-NEIDENTIFICAT:E1",
+   "tip": "decision",
+   "regula": "validare deterministă după LLM (document-extraction-approach §4)",
+   "document": "07-certificat-deces-ilizibil.md"
+  },
+  {
+   "categorie": "automat",
+   "ce": "Escaladare: Document „07-certificat-deces-ilizibil.md” ilizibil sau incomplet (tip=death_certificate, încredere=0.40, CNP=lipsă). Nicio acți",
+   "at": "2026-10-28T20:42:42+00:00",
+   "eveniment": "SC-NEIDENTIFICAT:E2",
+   "tip": "escalation",
+   "regula": null,
+   "document": "07-certificat-deces-ilizibil.md"
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "case-investigator",
+   "ce": "investigations/SC-NEIDENTIFICAT-ESC-1.md",
+   "at": "2026-10-28T20:42:59+00:00",
+   "document": "07-certificat-deces-ilizibil.md",
+   "secunde": 17.2,
+   "cost_usd": 0.049007499999999996
+  },
+  {
+   "categorie": "agent_ai",
+   "agent": "auditor",
+   "ce": "audit.md",
+   "at": "2026-10-28T20:44:10+00:00",
+   "document": null,
+   "secunde": 71.0,
+   "cost_usd": 0.1657325
+  },
+  {
+   "categorie": "uman",
+   "ce": "Plata aprobată de smoke-e2e: 4284.61 lei către 2 moștenitori; 4 linii rămân blocate.",
+   "at": "2026-10-28T20:44:11+00:00",
+   "eveniment": "SC-2026-0001:E26",
+   "tip": "decision",
+   "regula": null,
+   "document": "06-certificat-suplimentar.md"
+  }
+ ]
+}

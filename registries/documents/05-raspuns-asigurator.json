@@ -1,0 +1,34 @@
+{
+  "_fictiv": true,
+  "_generated_by_us": true,
+  "doc_id": "05",
+  "doc_type": "raspuns_asigurator",
+  "received_at": "2026-10-27",
+  "client_id": "RC1001",
+  "source_text": "05-raspuns-asigurator.md",
+  "fields": {
+    "insurer": "UNIQA Asigurări de viață S.A.",
+    "nr_raspuns": "7781",
+    "data_raspuns": "2026-10-27",
+    "nr_dosar_dauna": "DV-0451/2026",
+    "insured_name": "IONESCU MARIA",
+    "insured_cnp": "2XXXXXXXXXXXX",
+    "certificate_number": "UQ-0000000-FICTIV",
+    "loan_contract_number": "NP-2023-001001",
+    "data_eveniment": "2026-09-03",
+    "eveniment": "deces",
+    "decizie": "aprobat",
+    "indemnizatie_bani": 900000,
+    "rate_restante_incluse": 0,
+    "beneficiar_plata": "Raiffeisen Bank S.A.",
+    "termen_plata": "10 zile lucrătoare",
+    "motiv_refuz": null
+  },
+  "expected_agent": {
+    "state_after": "INSURANCE_SETTLED",
+    "product_id": "CRD-1",
+    "credit_stins_de_asigurator": true,
+    "datorie_ramasa_masa_bani": 2663,
+    "incasare_asteptata_pana_la": "2026-11-10"
+  }
+}

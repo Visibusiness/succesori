@@ -1,0 +1,13 @@
+{
+  "id": "holdout-V03",
+  "raw_name": "holdout/V03-deces-model-vechi-manual",
+  "document_type": "death_certificate",
+  "received_on": "2026-09-07",
+  "confidence": 0.83,
+  "fields": {
+    "cnp": "2XXXXXXXXXXXX",
+    "date_of_death": "2026-09-03",
+    "document_series": "DM",
+    "document_number": "458213"
+  }
+}

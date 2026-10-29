@@ -1,0 +1,316 @@
+{
+ "pid": 346479,
+ "mode": "watch",
+ "api": "http://127.0.0.1:8060",
+ "state": "idle",
+ "started_at": "2026-10-28T20:37:57+00:00",
+ "last_poll": "2026-10-28T20:44:10+00:00",
+ "inbox": "/tmp/mvp-test-8060/inbox",
+ "agents_enabled": true,
+ "audit_mode": "milestones",
+ "epoch": "cb42b28e6908",
+ "messages_sent": {
+  "SC-2026-0001": "MINOR_REPRESENTATION|acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+ },
+ "processed": [
+  {
+   "at": "2026-10-28T20:38:12+00:00",
+   "file": "01-dgep-semnal.json",
+   "document_type": "dgep_signal",
+   "confidence": 0.9,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "FROZEN",
+    "actions": [
+     "frozen",
+     "fees_reversed"
+    ],
+    "missing": [
+     "certificatul de moștenitor (de la notar)"
+    ],
+    "handoffs_planned": []
+   }
+  },
+  {
+   "at": "2026-10-28T20:38:23+00:00",
+   "file": "02-adresa-notar.md",
+   "document_type": "notary_request",
+   "confidence": 0.9,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "NOTARY_ANSWERED",
+    "actions": [
+     "notary_answer_drafted"
+    ],
+    "missing": [
+     "certificatul de moștenitor (de la notar)"
+    ],
+    "handoffs_planned": [
+     {
+      "agent": "correspondent",
+      "label": "Corespondentul",
+      "trigger": "notary_answer_drafted",
+      "kind": "letters",
+      "key": "SC-2026-0001-notary_answer_drafted",
+      "what": "răspunsul băncii către notar (solduri la data decesului)"
+     }
+    ]
+   }
+  },
+  {
+   "at": "2026-10-28T20:38:48+00:00",
+   "file": "03-certificat-asigurare.md",
+   "document_type": "insurance_certificate",
+   "confidence": 0.9,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "INSURANCE_CLAIM_OPEN",
+    "actions": [
+     "insurance_claim_opened"
+    ],
+    "missing": [
+     "certificatul de moștenitor (de la notar)",
+     "documentele pentru dosarul de daună la asigurător: cererea de despăgubire UNIQA (formularul F1), completată de moștenitor; copia certificatului de deces; copia certificatului medical constatator al decesului; documentele medicale din istoric (scrisori medicale, bilete de externare, investigații); documentele medico-legale care lămuresc împrejurările accidentului",
+     "răspunsul asigurătorului la dosarul de daună"
+    ],
+    "handoffs_planned": [
+     {
+      "agent": "correspondent",
+      "label": "Corespondentul",
+      "trigger": "insurance_claim_opened",
+      "kind": "letters",
+      "key": "SC-2026-0001-insurance_claim_opened",
+      "what": "avizarea daunei către asigurător"
+     }
+    ]
+   }
+  },
+  {
+   "at": "2026-10-28T20:39:16+00:00",
+   "file": "04-certificat-mostenitor-A.md",
+   "document_type": "heir_certificate",
+   "confidence": 0.83,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "SUPPLEMENT_REQUESTED",
+    "actions": [
+     "heirs_recorded",
+     "supplement_requested"
+    ],
+    "missing": [
+     "certificat suplimentar pentru: DEP-1",
+     "acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)",
+     "documentele pentru dosarul de daună la asigurător: cererea de despăgubire UNIQA (formularul F1), completată de moștenitor; copia certificatului de deces; copia certificatului medical constatator al decesului; documentele medicale din istoric (scrisori medicale, bilete de externare, investigații); documentele medico-legale care lămuresc împrejurările accidentului",
+     "răspunsul asigurătorului la dosarul de daună"
+    ],
+    "escalation": "ESC-1",
+    "escalation_reason": "minor_heir",
+    "escalations": [
+     "ESC-1"
+    ],
+    "handoffs_planned": [
+     {
+      "agent": "case-investigator",
+      "label": "Investigatorul",
+      "trigger": "escaladare ESC-1",
+      "kind": "investigations",
+      "key": "SC-2026-0001-ESC-1",
+      "what": "propunerea de rezolvare pentru escaladarea ESC-1"
+     },
+     {
+      "agent": "correspondent",
+      "label": "Corespondentul",
+      "trigger": "supplement_requested",
+      "kind": "letters",
+      "key": "SC-2026-0001-supplement_requested",
+      "what": "cererea de certificat de moștenitor suplimentar către notar"
+     },
+     {
+      "agent": "heir-communicator",
+      "label": "Comunicatorul cu moștenitorii",
+      "trigger": "lipsesc documente",
+      "kind": "messages",
+      "key": "SC-2026-0001-missing",
+      "what": "mesajul către moștenitor cu ce mai lipsește: certificat suplimentar pentru: DEP-1; acordul scris al reprezentantului legal pentru IONESCU ELENA (minor); documentele pentru dosarul de daună la asigurător: cererea de despăgubire UNIQA (formularul F1), completată de moștenitor; copia certificatului de deces; copia certificatului medical constatator al decesului; documentele medicale din istoric (scrisori medicale, bilete de externare, investigații); documentele medico-legale care lămuresc împrejurările accidentului"
+     }
+    ]
+   }
+  },
+  {
+   "at": "2026-10-28T20:40:53+00:00",
+   "file": "05-raspuns-asigurator.md",
+   "document_type": "insurer_response",
+   "confidence": 0.9,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "INSURANCE_SETTLED",
+    "actions": [
+     "loan_settled_by_insurance"
+    ],
+    "missing": [
+     "certificat suplimentar pentru: DEP-1",
+     "acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+    ],
+    "handoffs_planned": [
+     {
+      "agent": "correspondent",
+      "label": "Corespondentul",
+      "trigger": "loan_settled_by_insurance",
+      "kind": "letters",
+      "key": "SC-2026-0001-loan_settled_by_insurance",
+      "what": "nota către notar: creditul a fost stins de asigurător (indemnizația primită) și datoria care rămâne în sarcina masei succesorale"
+     },
+     {
+      "agent": "heir-communicator",
+      "label": "Comunicatorul cu moștenitorii",
+      "trigger": "lipsesc documente",
+      "kind": "messages",
+      "key": "SC-2026-0001-missing",
+      "what": "mesajul către moștenitor cu ce mai lipsește: certificat suplimentar pentru: DEP-1; acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+     }
+    ]
+   }
+  },
+  {
+   "at": "2026-10-28T20:41:17+00:00",
+   "file": "06-certificat-suplimentar.md",
+   "document_type": "supplementary_certificate",
+   "confidence": 0.83,
+   "result": {
+    "case_id": "SC-2026-0001",
+    "state": "PAYMENT_PENDING_APPROVAL",
+    "actions": [
+     "coverage_complete"
+    ],
+    "missing": [
+     "acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+    ],
+    "handoffs_planned": [
+     {
+      "agent": "heir-communicator",
+      "label": "Comunicatorul cu moștenitorii",
+      "trigger": "lipsesc documente",
+      "kind": "messages",
+      "key": "SC-2026-0001-missing",
+      "what": "mesajul către moștenitor cu ce mai lipsește: acordul scris al reprezentantului legal pentru IONESCU ELENA (minor)"
+     }
+    ]
+   }
+  },
+  {
+   "at": "2026-10-28T20:42:42+00:00",
+   "file": "07-certificat-deces-ilizibil.md",
+   "document_type": "death_certificate",
+   "confidence": 0.4,
+   "result": {
+    "case_id": "SC-NEIDENTIFICAT",
+    "state": "NEW",
+    "escalation": "ESC-1",
+    "escalation_reason": "document_illegible",
+    "actions": [],
+    "handoffs_planned": [
+     {
+      "agent": "case-investigator",
+      "label": "Investigatorul",
+      "trigger": "escaladare ESC-1",
+      "kind": "investigations",
+      "key": "SC-NEIDENTIFICAT-ESC-1",
+      "what": "propunerea de rezolvare pentru escaladarea ESC-1"
+     }
+    ]
+   }
+  }
+ ],
+ "agent_calls": [
+  {
+   "at": "2026-10-28T20:38:37+00:00",
+   "agent": "correspondent",
+   "file": "letters/SC-2026-0001-notary_answer_drafted.md",
+   "ok": true,
+   "seconds": 13.6,
+   "cost_usd": 0.0558325
+  },
+  {
+   "at": "2026-10-28T20:39:04+00:00",
+   "agent": "correspondent",
+   "file": "letters/SC-2026-0001-insurance_claim_opened.md",
+   "ok": true,
+   "seconds": 16.0,
+   "cost_usd": 0.061415
+  },
+  {
+   "at": "2026-10-28T20:39:36+00:00",
+   "agent": "case-investigator",
+   "file": "investigations/SC-2026-0001-ESC-1.md",
+   "ok": true,
+   "seconds": 19.9,
+   "cost_usd": 0.0716
+  },
+  {
+   "at": "2026-10-28T20:39:46+00:00",
+   "agent": "correspondent",
+   "file": "letters/SC-2026-0001-supplement_requested.md",
+   "ok": true,
+   "seconds": 10.7,
+   "cost_usd": 0.06359000000000001
+  },
+  {
+   "at": "2026-10-28T20:40:05+00:00",
+   "agent": "heir-communicator",
+   "file": "messages/SC-2026-0001-01.md",
+   "ok": true,
+   "seconds": 18.4,
+   "cost_usd": 0.0768525
+  },
+  {
+   "at": "2026-10-28T20:40:43+00:00",
+   "agent": "auditor",
+   "file": "audit.md",
+   "ok": true,
+   "seconds": 37.6,
+   "cost_usd": 0.1010825
+  },
+  {
+   "at": "2026-10-28T20:41:06+00:00",
+   "agent": "correspondent",
+   "file": "letters/SC-2026-0001-loan_settled_by_insurance.md",
+   "ok": true,
+   "seconds": 13.1,
+   "cost_usd": 0.06878
+  },
+  {
+   "at": "2026-10-28T20:41:31+00:00",
+   "agent": "heir-communicator",
+   "file": "messages/SC-2026-0001-02.md",
+   "ok": true,
+   "seconds": 13.8,
+   "cost_usd": 0.0800725
+  },
+  {
+   "at": "2026-10-28T20:42:30+00:00",
+   "agent": "auditor",
+   "file": "audit.md",
+   "ok": true,
+   "seconds": 58.9,
+   "cost_usd": 0.144345
+  },
+  {
+   "at": "2026-10-28T20:42:59+00:00",
+   "agent": "case-investigator",
+   "file": "investigations/SC-NEIDENTIFICAT-ESC-1.md",
+   "ok": true,
+   "seconds": 17.2,
+   "cost_usd": 0.049007499999999996
+  },
+  {
+   "at": "2026-10-28T20:44:10+00:00",
+   "agent": "auditor",
+   "file": "audit.md",
+   "ok": true,
+   "seconds": 71.0,
+   "cost_usd": 0.1657325
+  }
+ ],
+ "errors": [],
+ "demo_remaining": []
+}

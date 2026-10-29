@@ -1,0 +1,59 @@
+{
+ "document_type": "notary_request",
+ "confidence": 0.95,
+ "fields": {
+  "cnp": "2390819040339",
+  "name": "MATEI AURELIA",
+  "date_of_death": "2025-11-02",
+  "case_file": "12/2026",
+  "hearing_date": "2026-02-17",
+  "document_number": "38",
+  "notary_office": "Biroul Individual Notarial „Lungu Victor”",
+  "notary_name": "Victor LUNGU"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "name": 0.97,
+  "date_of_death": 0.97,
+  "case_file": 0.97,
+  "hearing_date": 0.97,
+  "document_number": 0.95,
+  "notary_office": 0.97,
+  "notary_name": 0.97
+ },
+ "evidence": {
+  "cnp": "CNP 2390819040339",
+  "name": "MATEI AURELIA",
+  "date_of_death": "decedată la data de 02.11.2025",
+  "case_file": "Dosar succesoral nr. 12/2026",
+  "hearing_date": "fixat pentru data de 17.02.2026",
+  "document_number": "Nr. 38 / 13.01.2026",
+  "notary_office": "Birou Individual Notarial „Lungu Victor”",
+  "notary_name": "Notar public Victor LUNGU"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.0562411,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P12/03-adresa-notar-scan.pdf",
+  "extracted_at": "2026-10-28T23:24:31+00:00",
+  "read": "03-adresa-notar-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": null
+ }
+}

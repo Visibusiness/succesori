@@ -1,0 +1,21 @@
+{
+  "id": "B-02",
+  "raw_name": "B-neagu-cristian/scan/02-certificat-deces.pdf",
+  "document_type": "death_certificate",
+  "received_on": "2026-07-20",
+  "confidence": 0.9,
+  "fields": {
+    "cnp": "1750914013511",
+    "name": "Cristian Neagu",
+    "birth_date": "1975-09-14",
+    "date_of_death": "2026-07-02",
+    "father": "NEAGU VASILE",
+    "mother": "POPA FLOAREA",
+    "document_series": "DA",
+    "document_number": "502714",
+    "death_record_number": "36"
+  },
+  "_document_variant": "certificat_fizic_2024",
+  "_model": "anexa3",
+  "_fictiv": true
+}

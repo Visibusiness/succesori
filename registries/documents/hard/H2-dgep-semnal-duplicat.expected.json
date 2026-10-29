@@ -1,0 +1,21 @@
+{
+  "_fictiv": true,
+  "doc_id": "H2",
+  "doc_type": "semnal_dgep",
+  "received_at": "2026-09-27",
+  "client_id": "RC1001",
+  "sequence": [
+    "01-dgep-semnal",
+    "hard/H2-dgep-semnal-duplicat"
+  ],
+  "expected_agent": {
+    "idempotency_key": "cnp+date_of_death",
+    "new_case": false,
+    "freeze_count": 1,
+    "fee_reversals_bani": [
+      6000
+    ],
+    "logged_as": "duplicate",
+    "state_after": "unchanged"
+  }
+}

@@ -1,0 +1,181 @@
+{
+ "_sursa": "kb/scenariu-demo/maria-ionescu.md §2.1–2.5 (varianta A, cu pensia din octombrie); barem pentru scripts/impact_studiu.py",
+ "T1": {
+  "titlu": "Soldurile la 03.09.2026 cu dobânda",
+  "campuri": {
+   "sold_cc": [
+    "lei",
+    "3200.00"
+   ],
+   "dep_principal": [
+    "lei",
+    "20000.00"
+   ],
+   "dep_dobanda": [
+    "lei",
+    "692.38"
+   ],
+   "credit_principal": [
+    "lei",
+    "9000.00"
+   ],
+   "credit_dobanda": [
+    "lei",
+    "26.63"
+   ]
+  }
+ },
+ "T2": {
+  "titlu": "Răspunsul către notar",
+  "campuri": {
+   "scrisoare": [
+    "text",
+    null
+   ],
+   "v_solduri": [
+    "v",
+    "soldurile la D ale celor 3 produse, cu dobânda (3.200,00; 20.000,00 + 692,38; 9.000,00 + 26,63)"
+   ],
+   "v_iban_valuta": [
+    "v",
+    "IBAN-ul și valuta fiecărui cont/depozit (punctul 1 din adresă)"
+   ],
+   "v_credit_asigurare": [
+    "v",
+    "creditul, cu mențiunea asigurării UNIQA UQ-0000000-FICTIV (punctul 3)"
+   ],
+   "v_pensie_sept": [
+    "v",
+    "pensia din 15.09.2026 (2.100,00) raportată ca încasare după deces, care se cuvine"
+   ],
+   "v_cutii": [
+    "v",
+    "mențiunea despre cutiile de valori: nu există (punctul 4)"
+   ],
+   "v_imputerniciti": [
+    "v",
+    "împuternicitul numit (IONESCU ANDREI), cu încetarea mandatului la deces (punctul 5)"
+   ]
+  }
+ },
+ "T3": {
+  "titlu": "Comisioane de stornat",
+  "campuri": {
+   "comision_stornat": [
+    "lei",
+    "60.00"
+   ],
+   "comision_data": [
+    "data",
+    "2026-09-05"
+   ]
+  }
+ },
+ "T4": {
+  "titlu": "Pensia de returnat / păstrat",
+  "campuri": {
+   "pensie_retur": [
+    "lei",
+    "2100.00"
+   ],
+   "pensie_retur_data": [
+    "data",
+    "2026-10-15"
+   ],
+   "pensie_pastrata": [
+    "lei",
+    "2100.00"
+   ]
+  }
+ },
+ "T5": {
+  "titlu": "Cotele și planul de plată",
+  "campuri": {
+   "net_cc": [
+    "lei",
+    "5273.37"
+   ],
+   "cota_ion": [
+    "fractie",
+    "5/8"
+   ],
+   "cota_andrei": [
+    "fractie",
+    "3/16"
+   ],
+   "cota_elena": [
+    "fractie",
+    "3/16"
+   ],
+   "cc_ion": [
+    "lei",
+    "3295.85"
+   ],
+   "cc_andrei": [
+    "lei",
+    "988.76"
+   ],
+   "cc_elena": [
+    "lei",
+    "988.76"
+   ],
+   "elena_blocat": [
+    "da_nu",
+    "da"
+   ],
+   "dep_ion": [
+    "lei",
+    "13150.00"
+   ],
+   "dep_andrei": [
+    "lei",
+    "3945.00"
+   ],
+   "dep_elena": [
+    "lei",
+    "3945.00"
+   ],
+   "depozit_plata_data": [
+    "data",
+    "2027-01-03"
+   ],
+   "platibil_acum": [
+    "lei",
+    "4284.61"
+   ]
+  }
+ },
+ "T6": {
+  "titlu": "Ce lipsește, mesajul către moștenitor, documentul 7",
+  "campuri": {
+   "lipseste": [
+    "text",
+    null
+   ],
+   "mesaj": [
+    "text",
+    null
+   ],
+   "doc7": [
+    "text",
+    null
+   ],
+   "v_lipseste_acord_elena": [
+    "v",
+    "lipsește acordul scris al reprezentantului legal pentru ELENA (minoră); suplimentul a venit deja"
+   ],
+   "v_mesaj_cere_acord": [
+    "v",
+    "mesajul, către IONESCU ION (reprezentantul legal), cere exact acest document și spune cum se trimite"
+   ],
+   "v_mesaj_fara_solduri": [
+    "v",
+    "mesajul nu dezvăluie solduri sau sumele altor moștenitori (secret bancar)"
+   ],
+   "v_doc7_escaladat": [
+    "v",
+    "documentul 7 nu se atașează dosarului Mariei (ilizibil, CNP necitibil, alt client): merge la operator"
+   ]
+  }
+ }
+}

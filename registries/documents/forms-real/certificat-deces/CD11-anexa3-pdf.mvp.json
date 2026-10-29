@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "1730717071911",
+  "name": "Tudor Radu",
+  "birth_date": "1973-07-17",
+  "date_of_death": "2026-09-17",
+  "father": "RADU PETRU",
+  "mother": "RADU FLOAREA",
+  "document_series": "HT",
+  "document_number": "434963",
+  "death_record_number": "1731"
+ },
+ "_fictiv": true,
+ "_model": "anexa3",
+ "_variant": "pdf",
+ "id": "CD11-anexa3-pdf",
+ "raw_name": "forms-real/certificat-deces/CD11-anexa3.pdf",
+ "received_on": "2026-10-20",
+ "_split": "holdout",
+ "_document_variant": "certificat_fizic_2024"
+}

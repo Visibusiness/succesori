@@ -1,0 +1,13 @@
+{
+  "id": "holdout-V04",
+  "raw_name": "holdout/V04-extras-multilingv-pop",
+  "document_type": "death_certificate",
+  "received_on": "2026-08-25",
+  "confidence": 0.92,
+  "fields": {
+    "cnp": null,
+    "date_of_death": "2026-08-14",
+    "document_series": "EMD",
+    "document_number": "0004518"
+  }
+}

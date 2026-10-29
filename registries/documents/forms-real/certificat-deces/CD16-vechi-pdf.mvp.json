@@ -1,0 +1,23 @@
+{
+ "document_type": "death_certificate",
+ "confidence": 0.9,
+ "fields": {
+  "cnp": "2880304086511",
+  "name": "Georgeta Moldovan",
+  "birth_date": "1988-03-04",
+  "date_of_death": "2024-07-05",
+  "father": "MOLDOVAN VASILE",
+  "mother": "GHEORGHE IOANA",
+  "document_series": "CN",
+  "document_number": "354117",
+  "death_record_number": "1376"
+ },
+ "_fictiv": true,
+ "_model": "vechi",
+ "_variant": "pdf",
+ "id": "CD16-vechi-pdf",
+ "raw_name": "forms-real/certificat-deces/CD16-vechi.pdf",
+ "received_on": "2024-07-07",
+ "_split": "train",
+ "_document_variant": "certificat_model_vechi_2011"
+}

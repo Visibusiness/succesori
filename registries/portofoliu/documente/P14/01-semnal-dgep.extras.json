@@ -1,0 +1,44 @@
+{
+ "document_type": "dgep_signal",
+ "confidence": 0.93,
+ "fields": {
+  "cnp": "1750914013511",
+  "date_of_death": "2026-07-02",
+  "document_number": "DGEP-MOCK-2026-07-13-008502"
+ },
+ "field_confidence": {
+  "cnp": 0.97,
+  "date_of_death": 0.97,
+  "document_number": 0.95
+ },
+ "evidence": {
+  "cnp": "CNP: 1750914013511",
+  "date_of_death": "Data decesului: 02.07.2026",
+  "document_number": "Mesaj: DGEP-MOCK-2026-07-13-008502"
+ },
+ "extractor": {
+  "model": "sonnet",
+  "cost_usd": 0.054408700000000004,
+  "input": "file",
+  "model_id": "us.anthropic.claude-sonnet-5-5",
+  "file": "P14/01-semnal-dgep.pdf",
+  "extracted_at": "2026-10-28T23:24:36+00:00",
+  "read": "01-semnal-dgep-scan.pdf"
+ },
+ "validation": {
+  "passed": [
+   "V1",
+   "V3"
+  ],
+  "failed": [],
+  "flags": [],
+  "demo_mode": false,
+  "dropped": []
+ },
+ "guard": {
+  "risk": "low",
+  "kind": "pdf",
+  "flags": [],
+  "cnp_hint": "1750914013511"
+ }
+}

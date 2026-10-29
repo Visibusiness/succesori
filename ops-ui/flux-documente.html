@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluxul documentelor — dosarul Maria Ionescu</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1d2330; --muted:#5f6b7a; --line:#d6dbe3; --acc:#2f6fdb;
+          --ok:#1f8a4c; --warn:#b26a00; --bad:#c0392b; --human:#7a3fb8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14171c; --card:#1d2128; --ink:#e7eaf0; --muted:#9aa5b4; --line:#333a45; --acc:#6aa0ff;
+            --ok:#4cc27e; --warn:#e3a33b; --bad:#ef6b5b; --human:#b98ae8; } }
+  * { box-sizing:border-box }
+  body { margin:0; font:15px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--ink) }
+  main { max-width:1100px; margin:0 auto; padding:24px 16px 60px }
+  h1 { font-size:24px; margin:0 0 4px } h2 { font-size:19px; margin:36px 0 12px }
+  .muted { color:var(--muted) } code { font-size:13px; background:var(--line); padding:1px 5px; border-radius:4px }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px; overflow-x:auto; font-size:13px }
+
+  /* diagrama de ansamblu */
+  .pipe { display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin:16px 0 }
+  .pipe .box { flex:1 1 150px; background:var(--card); border:2px solid var(--acc); border-radius:10px; padding:10px; text-align:center }
+  .pipe .box b { display:block } .pipe .box span { font-size:13px; color:var(--muted) }
+  .pipe .arr { align-self:center; font-size:22px; color:var(--muted) }
+  .pipe .box.human { border-color:var(--human) } .pipe .box.esc { border-color:var(--bad) }
+
+  /* timeline */
+  .tl { position:relative; margin-left:22px; border-left:3px solid var(--line); padding-left:26px }
+  .step { position:relative; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:18px }
+  .step .n { position:absolute; left:-46px; top:12px; width:36px; height:36px; border-radius:50%; background:var(--acc); color:#fff;
+             display:flex; align-items:center; justify-content:center; font-weight:700 }
+  .step.event .n { background:var(--warn); font-size:13px } .step.bad .n { background:var(--bad) } .step.human .n { background:var(--human) }
+  .step h3 { margin:0; font-size:17px } .step .meta { font-size:13px; color:var(--muted); margin-bottom:8px }
+  .cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:10px }
+  .col { border-left:3px solid var(--line); padding-left:10px } .col h4 { margin:0 0 4px; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted) }
+  .col ul { margin:0; padding-left:18px } .col.read { border-color:var(--acc) } .col.do { border-color:var(--ok) } .col.who { border-color:var(--human) }
+  .state { display:inline-block; font:600 12px ui-monospace, monospace; padding:2px 8px; border-radius:999px; background:var(--ok); color:#fff }
+  .state.none { background:var(--muted) }
+  .check { margin-top:10px; font-size:14px; background:var(--bg); border-radius:8px; padding:8px 10px }
+  .check b { color:var(--ok) }
+  table { border-collapse:collapse; width:100%; background:var(--card); font-size:14px } th, td { border:1px solid var(--line); padding:6px 8px; text-align:left }
+  th { background:var(--bg) } td.num { text-align:right; font-variant-numeric:tabular-nums }
+  .legend span { display:inline-block; margin-right:14px; font-size:13px } .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:4px; vertical-align:middle }
+</style>
+</head>
+<body><main>
+<h1>Fluxul documentelor: dosarul Maria Ionescu (<code>SC-2026-0001</code>)</h1>
+<p class="muted">Ce intră, ce citește agentul, ce face și ce trebuie să vezi după fiecare pas. Cifrele vin din
+<code>kb/scenariu-demo/maria-ionescu.md</code> (varianta A, moștenire legală). Deces: <b>03.09.2026</b>.</p>
+
+<h2>1. Ce se întâmplă cu orice document</h2>
+<div class="pipe">
+  <div class="box"><b>Document</b><span>scanare PDF în inbox sau JSON pre-extras</span></div><div class="arr">→</div>
+  <div class="box"><b>Extractor</b><span>citește câmpurile, scor de încredere per câmp</span></div><div class="arr">→</div>
+  <div class="box"><b>Gard + validări</b><span>CNP, IBAN, document rău-intenționat → carantină</span></div><div class="arr">→</div>
+  <div class="box"><b>Pipeline (reguli)</b><span><code>agent/rules.py</code>: acțiuni pe core, fiecare cu regula citată</span></div><div class="arr">→</div>
+  <div class="box"><b>Agenți</b><span>Corespondent (scrisori) · Investigator (escaladări) · Auditor</span></div><div class="arr">→</div>
+  <div class="box human"><b>Operator</b><span>semnează scrisorile, aprobă plata, rezolvă escaladările</span></div>
+</div>
+<div class="pipe">
+  <div class="box esc"><b>Ramura de escaladare</b><span>document ilizibil, CNP necunoscut, cote ≠ 1, retrageri după deces → nimic nu se execută, ajunge la Investigator, apoi la om</span></div>
+</div>
+<p class="legend"><span><span class="dot" style="background:var(--acc)"></span>document</span>
+<span><span class="dot" style="background:var(--warn)"></span>eveniment pe cont</span>
+<span><span class="dot" style="background:var(--human)"></span>acțiunea omului</span>
+<span><span class="dot" style="background:var(--bad)"></span>escaladare</span></p>
+
+<h2>2. Cum treci prin pași</h2>
+<p><b>Din UI:</b> <code>/ui/</code> → <b>Demo ghidat</b> → alegi „scanate” (extractor LLM, 10–20 s/document, cere autopilotul pornit cu
+<code>scripts/test-instance.sh start</code>) sau „pre-extrase” (instant) → alegi varianta A/B → apeși <b>„Trimite: …”</b> o dată pentru fiecare pas.</p>
+<p><b>Din terminal</b> (pe o instanță de test, nu pe :8001 când lucrează alții — reset-ul șterge dosarul):</p>
+<pre>coordonare/bin/test-instance start                          # port 8020
+curl -s -X POST localhost:8020/demo/reset
+curl -s -X POST localhost:8020/demo/step/1                  # apoi 2, 3, ... 7
+curl -s localhost:8020/cases/SC-2026-0001 | python3 -m json.tool   # verifici starea după fiecare pas</pre>
+
+<h2>3. Pas cu pas</h2>
+<div class="tl">
+
+<div class="step">
+  <div class="n">1</div>
+  <h3>Semnalul DGEP</h3>
+  <div class="meta">20.09.2026 · lot electronic de la Evidența Persoanelor · intră mereu direct, fără scanare</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>CNP-ul Mariei</li><li>data decesului 03.09.2026</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>deschide dosarul</li><li>blocare <b>reversibilă</b>: debit, mandatul lui Andrei, carduri, debitări directe</li>
+      <li>stornează comisionul Premium din 05.09: <b>60,00 lei</b></li><li>termen de opțiune succesorală: <b>03.09.2027</b></li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li>nimănui, e doar de informare</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: starea <span class="state">FROZEN</span>, evenimentul de stornare, termenul. <b>Nicio</b> închidere definitivă (doar pe baza semnalului nu e voie).</div>
+</div>
+
+<div class="step">
+  <div class="n">2</div>
+  <h3>Adresa notarului</h3>
+  <div class="meta">28.09.2026 · dosar succesoral 123/2026, dezbatere pe 20.10.2026</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>nr. dosar, notarul, data dezbaterii</li><li>CNP-ul defunctei</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>soldurile <b>la data decesului</b>, nu cele de azi:
+      cont 3.200,00 · depozit 20.000,00 + dobândă 692,38 · credit −9.000,00 − dobândă 26,63</li>
+      <li>pensia din septembrie (2.100 lei), raportată separat, ca încasare după deces</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Corespondent</b>: redactează răspunsul către notar</li><li><b>Operator</b>: îl semnează</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: <span class="state">NOTARY_ANSWERED</span> și scrisoarea către notar în dosar.</div>
+</div>
+
+<div class="step">
+  <div class="n">3</div>
+  <h3>Certificatul de asigurare UNIQA</h3>
+  <div class="meta">30.09.2026 · din dosarul creditului</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>asigurătorul, nr. poliță</li><li>nr. contractului de credit, CNP</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>verifică dacă CNP-ul și creditul se potrivesc</li><li>deschide dosarul de daună</li><li>termen de avizare: <b>20.10.2026</b> (30 de zile)</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Corespondent</b>: avizarea daunei către UNIQA</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: <span class="state">INSURANCE_CLAIM_OPEN</span>, termenul de avizare, scrisoarea către asigurător.</div>
+</div>
+
+<div class="step event">
+  <div class="n">eve</div>
+  <h3>Eveniment: pensia din octombrie</h3>
+  <div class="meta">15.10.2026 · nu e document, e o mișcare pe cont (varianta <code>pensie</code>, activă implicit)</div>
+  <div class="cols">
+    <div class="col do"><h4>Ce face</h4><ul><li>flag <code>pension_return_CNPP</code>: <b>2.100,00 lei</b> de returnat la Casa de Pensii (nu i se cuvin)</li><li>suma nu intră în împărțire</li></ul></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="n">4</div>
+  <h3>Certificatul de moștenitor</h3>
+  <div class="meta">22.10.2026 · <b>aici alegi varianta</b>: A (moștenire legală) sau B (testament ½–¼–¼)</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>moștenitorii și cotele: Ion, Andrei, Elena (15 ani)</li><li>produsele incluse (depozitul <b>lipsește</b>, intenționat)</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>verifică dacă suma cotelor e 1</li><li>observă că depozitul lipsește și cere supliment</li>
+      <li>vede că Elena e minoră: îi blochează partea până la reprezentantul legal</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Corespondent</b>: cererea de supliment către notar</li><li><b>Heir-communicator</b>: „ce mai lipsește” către moștenitori</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: <span class="state">SUPPLEMENT_REQUESTED</span>, depozitul DEP-1 la „ce lipsește”, partea Elenei marcată blocată.</div>
+</div>
+
+<div class="step">
+  <div class="n">5</div>
+  <h3>Răspunsul asigurătorului</h3>
+  <div class="meta">27.10.2026 · UNIQA aprobă 9.000 lei</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>decizia „aprobat”, suma 9.000 lei</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>stinge creditul</li><li>rămâne datorie a masei: dobânda <b>26,63 lei</b> (asigurarea n-o acoperă)</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Corespondent</b>: nota către notar cu datoria rămasă</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: <span class="state">INSURANCE_SETTLED</span>.</div>
+</div>
+
+<div class="step">
+  <div class="n">6</div>
+  <h3>Certificatul suplimentar</h3>
+  <div class="meta">10.11.2026 · notarul adaugă depozitul</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>depozitul, referința la certificatul inițial</li><li>IBAN-urile moștenitorilor</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li>toate produsele sunt acum acoperite</li><li>calculează planul de plată în bani, după cote (tabelul de mai jos)</li>
+      <li>contul curent se plătește acum, depozitul la scadență (03.01.2027)</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Operator</b>: aprobă sau respinge plata</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: <span class="state">PAYMENT_PENDING_APPROVAL</span>. <b>Niciun ban nu pleacă</b> până nu apeși Aprobă.</div>
+</div>
+
+<div class="step human">
+  <div class="n">✓</div>
+  <h3>Aprobarea plății (omul)</h3>
+  <div class="meta">butonul Aprobă din UI sau <code>POST /payments/PAY-SC-2026-0001/approve</code></div>
+  <div class="cols">
+    <div class="col do"><h4>Ce se întâmplă</h4><ul><li>se plătesc Ion și Andrei</li><li>partea Elenei rămâne blocată</li>
+      <li>dacă respingi (de ex. „IBAN lipsă”), dosarul se întoarce la <code>PLAN_DRAFTED</code></li></ul></div>
+  </div>
+</div>
+
+<div class="step bad">
+  <div class="n">7</div>
+  <h3>Un certificat de deces ilizibil (alt client)</h3>
+  <div class="meta">12.11.2026 · scanare proastă de la ghișeu</div>
+  <div class="cols">
+    <div class="col read"><h4>Ce citește</h4><ul><li>nimic sigur: CNP-ul nu se poate citi</li></ul></div>
+    <div class="col do"><h4>Ce face</h4><ul><li><b>escaladează</b></li><li>nu blochează nimic, nu deschide niciun dosar</li></ul></div>
+    <div class="col who"><h4>Cui predă</h4><ul><li><b>Investigator</b>: propune rezolvarea pentru operator</li></ul></div>
+  </div>
+  <div class="check">Ar trebui să vezi: escaladarea în listă, iar dosarul Mariei <b>neschimbat</b>.</div>
+</div>
+</div>
+
+<h2>4. Planul de plată (pasul 6)</h2>
+<p class="muted">De împărțit din contul curent: 3.200,00 + 2.100,00 (pensia din septembrie) − 26,63 = <b>5.273,37 lei</b>.
+Depozitul la scadență, brut: <b>21.040,00 lei</b>. Jumătate e a lui Ion ca soț (bunuri comune), cealaltă jumătate se moștenește.</p>
+<table>
+  <tr><th>Moștenitor</th><th>Varianta A</th><th>Cont curent A</th><th>Depozit A</th><th>Varianta B</th><th>Cont curent B</th><th>Depozit B</th></tr>
+  <tr><td>Ion (soț)</td><td>5/8</td><td class="num">3.295,85</td><td class="num">13.150,00</td><td>3/4</td><td class="num">3.955,03</td><td class="num">15.780,00</td></tr>
+  <tr><td>Andrei</td><td>3/16</td><td class="num">988,76</td><td class="num">3.945,00</td><td>1/8</td><td class="num">659,17</td><td class="num">2.630,00</td></tr>
+  <tr><td>Elena (minoră, blocat)</td><td>3/16</td><td class="num">988,76</td><td class="num">3.945,00</td><td>1/8</td><td class="num">659,17</td><td class="num">2.630,00</td></tr>
+</table>
+
+<h2>5. Variante „și dacă…?”</h2>
+<table>
+  <tr><th>Ce schimbi</th><th>Cum</th><th>Ce trebuie să vezi</th></tr>
+  <tr><td>Andrei retrage 1.000 lei pe 10.09</td><td><code>/demo/reset?variants=pensie,retragere</code></td><td>flag <code>post_death_mandate_withdrawal</code>, escaladare, suma raportată notarului ca de recuperat</td></tr>
+  <tr><td>Fără pensia din octombrie</td><td><code>/demo/reset?variants=</code></td><td>niciun retur la CNPP</td></tr>
+  <tr><td>Pașii 1 și 2 inversați</td><td>trimiți întâi pasul 2</td><td>notarul deschide dosarul și face blocarea; cifrele rămân aceleași</td></tr>
+  <tr><td>DGEP trimis de două ori</td><td>pasul 1 de două ori</td><td>o singură blocare, o singură stornare</td></tr>
+</table>
+</main></body>
+</html>

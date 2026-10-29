@@ -1,0 +1,134 @@
+{
+ "id": "P08",
+ "case_id": "SC-2026-0108",
+ "stage": "platit",
+ "stage_label": "Plătit (cont comun cu soțul)",
+ "customer": {
+  "cif": "RC3108",
+  "name": "Elena Radu",
+  "cnp": "2520418351188",
+  "birth_date": "1952-04-18",
+  "spouse": "Dumitru Radu",
+  "cards": [
+   "C-3108"
+  ]
+ },
+ "products": [
+  {
+   "id": "P08-CC",
+   "type": "current_account",
+   "balance": 1980000,
+   "estate_fraction": "1/2",
+   "iban": "RO59 RZBR 0000 0000 0031 0801"
+  }
+ ],
+ "movements": [
+  {
+   "date": "2026-05-15",
+   "amount": 214000,
+   "kind": "pension_credit"
+  },
+  {
+   "date": "2026-06-15",
+   "amount": 214000,
+   "kind": "pension_credit"
+  }
+ ],
+ "contacts": {
+  "Dumitru Radu": {
+   "email": "dumitru.radu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Timișoara, Str. Fictivă nr. 11, Jud. Timiș"
+  },
+  "Corina Radu": {
+   "email": "corina.radu@example.invalid",
+   "sms": null,
+   "preferred": "email",
+   "verified": true,
+   "is_client": true,
+   "address": "Timișoara, Str. Fictivă nr. 40, Jud. Timiș"
+  }
+ },
+ "steps": [
+  {
+   "doc": {
+    "id": "P08-D1",
+    "received_on": "2026-05-21",
+    "file": "P08/01-semnal-dgep.pdf",
+    "expected_type": "dgep_signal",
+    "expected_fields": {
+     "cnp": "2520418351188",
+     "date_of_death": "2026-05-14",
+     "document_number": "DGEP-MOCK-2026-05-21-000640"
+    }
+   }
+  },
+  {
+   "doc": {
+    "id": "P08-D2",
+    "received_on": "2026-06-02",
+    "file": "P08/02-adresa-notar-scan.pdf",
+    "expected_type": "notary_request",
+    "expected_fields": {
+     "cnp": "2520418351188",
+     "date_of_death": "2026-05-14",
+     "case_file": "61/2026",
+     "document_number": "390",
+     "hearing_date": "2026-06-30",
+     "notary_office": "Biroul Individual Notarial „Varga Mihaela”",
+     "notary_name": "Mihaela VARGA"
+    }
+   }
+  },
+  {
+   "op": "sign",
+   "on": "2026-06-03",
+   "by": "Ioana Marin (back-office succesiuni)"
+  },
+  {
+   "doc": {
+    "id": "P08-D4",
+    "received_on": "2026-09-08",
+    "file": "P08/04-certificat-mostenitor-scan.pdf",
+    "expected_type": "heir_certificate",
+    "expected_fields": {
+     "cnp": "2520418351188",
+     "case_file": "61/2026",
+     "document_number": "33",
+     "testament": false,
+     "heirs": [
+      {
+       "id": "H1",
+       "name": "Dumitru Radu",
+       "share": "1/4"
+      },
+      {
+       "id": "H2",
+       "name": "Corina Radu",
+       "share": "3/4"
+      }
+     ],
+     "ibans": [
+      "RO59 RZBR 0000 0000 0031 0801"
+     ],
+     "notary_office": "Biroul Individual Notarial „Varga Mihaela”",
+     "notary_name": "Mihaela VARGA"
+    }
+   }
+  },
+  {
+   "op": "approve",
+   "on": "2026-09-12",
+   "by": "Andreea Stan"
+  }
+ ],
+ "expected": {
+  "state": "PAID",
+  "escalations": [],
+  "decisions": [],
+  "plan": true
+ }
+}

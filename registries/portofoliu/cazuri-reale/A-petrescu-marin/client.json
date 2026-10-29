@@ -1,0 +1,45 @@
+{
+  "_fictiv": true,
+  "_caz_real": "Judecătoria Târgu Jiu, Sentința civilă nr. 825 din 31.01.2013, dosar 14781/318/2012 (vezi README.md)",
+  "_format": "argumentele lui Bank.add_customer (ramura persistenta, 084): customer, products, movements, ibans, loan_contracts, installments, contacts; sume în bani, date ISO, fracții \"a/b\"",
+  "customer": {
+    "cif": "RC8501",
+    "name": "Marin Petrescu",
+    "cnp": "1640318184124",
+    "birth_date": "1964-03-18",
+    "spouse": "Doina Petrescu",
+    "mandates": [],
+    "cards": ["C-A1"],
+    "frozen": null
+  },
+  "products": [
+    {"id": "CC-A1", "type": "current_account", "balance": 284630, "estate_fraction": "1/2",
+     "_descriere": "cont curent în lei, Pachet ZERO Tot (20 lei/lună dacă nu sunt îndeplinite condițiile), salariul virat pe 10; bun comun"},
+    {"id": "CRD-A1", "type": "personal_loan", "outstanding": 5717563, "rate_pct": 9.95,
+     "last_interest_paid": "2026-07-15", "insurance_policy_id": "UQ-8501001-FICTIV",
+     "_descriere": "Flexicredit NP-2026-085011 din 15.05.2026: 58.700 lei, 60 luni, dobândă fixă 9,95% (cu reducerea de 2% pentru asigurare), rata 1.245,76 lei pe 15; sold principal după rata 2 (15.07.2026)"}
+  ],
+  "movements": [
+    {"date": "2026-07-05", "amount": -2000, "kind": "fee", "fee_code": "ZERO_TOT", "by_mandate_holder": false},
+    {"date": "2026-07-10", "amount": 395000, "kind": "salary_credit", "fee_code": null, "by_mandate_holder": false},
+    {"date": "2026-08-05", "amount": -2000, "kind": "fee", "fee_code": "ZERO_TOT", "by_mandate_holder": false},
+    {"date": "2026-08-10", "amount": 395000, "kind": "salary_credit", "fee_code": null, "by_mandate_holder": false}
+  ],
+  "ibans": {"RO00 RZBR 0000 0000 8501 0001": "CC-A1"},
+  "loan_contracts": {"NP-2026-085011": "CRD-A1"},
+  "installments": {"CRD-A1": 124576},
+  "contacts": {
+    "Doina Petrescu": {"email": "doina.petrescu@example.invalid", "sms": "+40 700 000 851", "preferred": "sms",
+                       "verified": true, "is_client": true, "address": "Mun. Târgu Jiu, Str. Fictivă nr. 14, Jud. Gorj"},
+    "Radu Petrescu": {"email": "radu.petrescu@example.invalid", "sms": "+40 700 000 852", "preferred": "email",
+                      "verified": true, "is_client": true, "address": "Mun. Târgu Jiu, Str. Fictivă nr. 20, Jud. Gorj"}
+  },
+  "etapa_demo": {
+    "stare": "INSURANCE_CLAIM_OPEN",
+    "escaladare_deschisa": "insurance_refused",
+    "plan_de_plata": null,
+    "documente_in_ordine": ["01-dgep-semnal", "02-certificat-deces", "03-certificat-asigurare", "05-adresa-notar",
+                            "06-certificat-mostenitor", "07-raspuns-asigurator-refuz"],
+    "documente_suport": ["04-cerere-despagubire-uniqa"]
+  }
+}

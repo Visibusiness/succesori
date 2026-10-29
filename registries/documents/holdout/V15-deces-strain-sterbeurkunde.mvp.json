@@ -1,0 +1,11 @@
+{
+  "id": "holdout-V15",
+  "raw_name": "holdout/V15-deces-strain-sterbeurkunde",
+  "document_type": "death_certificate",
+  "received_on": "2026-11-04",
+  "confidence": 0.85,
+  "fields": {
+    "cnp": null,
+    "date_of_death": "2026-09-03"
+  }
+}
